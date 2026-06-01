@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>DFT Logística — Operação em mãos que não falham</title>
+<meta name="description" content="Frota própria, rastreamento com IA e farmacêutico in loco. A DFT opera sua logística de ponta a ponta — em contratos dedicados e recorrentes."/>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet"/>
+<style>
+:root{ --navy:#0c1d73; --navy2:#1d1f96; --blue:#2621bf; --orange:#f07820; --orange2:#f5913d; --white:#fff; --light:#f4f6ff; --gray:#6272a0; --border:#dde3f0; --dark:#0a1222; --green:#1f9d6b; --red:#d8584f; }
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Nunito',sans-serif;color:var(--dark);background:var(--white);overflow-x:hidden}
+a{text-decoration:none}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(12,29,115,.96);backdrop-filter:blur(12px);padding:0 48px;display:flex;align-items:center;justify-content:space-between;height:70px;border-bottom:1px solid rgba(255,255,255,.08)}
+.nav-logo img{height:30px;display:block}
+.nav-links{display:flex;gap:30px;align-items:center}
+.nav-links a{color:rgba(255,255,255,.72);font-size:.85rem;font-weight:700;transition:color .2s}
+.nav-links a:hover{color:#fff}
+.nav-cta{background:var(--orange);color:#fff;padding:11px 22px;border-radius:8px;font-size:.85rem;font-weight:800;transition:.2s}
+.nav-cta:hover{background:var(--orange2);transform:translateY(-1px)}
+
+/* HERO com foto */
+.hero{position:relative;min-height:100vh;display:flex;align-items:center;padding:110px 48px 60px;overflow:hidden}
+.hero-bg{position:absolute;inset:0;z-index:-2;background:url('../assets/banner1.jpg') center/cover no-repeat}
+.hero-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(105deg,rgba(8,16,40,.94) 0%,rgba(12,29,115,.86) 45%,rgba(12,29,115,.45) 100%)}
+.hero-inner{max-width:1200px;margin:0 auto;width:100%;position:relative;z-index:1}
+.hero-tag{display:inline-flex;align-items:center;gap:8px;background:rgba(240,120,32,.18);border:1px solid rgba(240,120,32,.4);color:var(--orange2);padding:7px 16px;border-radius:100px;font-size:.72rem;font-weight:800;letter-spacing:1px;text-transform:uppercase;margin-bottom:26px}
+.hero-tag::before{content:'●';font-size:.5rem;animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
+.hero h1{font-size:3.6rem;font-weight:900;color:#fff;line-height:1.06;letter-spacing:-1.5px;margin-bottom:22px;max-width:780px}
+.hero h1 em{color:var(--orange);font-style:normal}
+.hero p{font-size:1.15rem;color:rgba(255,255,255,.82);line-height:1.7;margin-bottom:36px;max-width:560px}
+.hero-cta-row{display:flex;gap:16px;align-items:center;flex-wrap:wrap;margin-bottom:48px}
+.btn-primary{background:var(--orange);color:#fff;padding:16px 34px;border-radius:10px;font-size:1rem;font-weight:800;display:inline-flex;align-items:center;gap:8px;box-shadow:0 8px 28px rgba(240,120,32,.45);transition:.2s;border:none;cursor:pointer;font-family:inherit}
+.btn-primary:hover{background:var(--orange2);transform:translateY(-2px)}
+.btn-ghost{color:#fff;border:2px solid rgba(255,255,255,.35);padding:14px 28px;border-radius:10px;font-weight:700;font-size:.92rem;transition:.2s}
+.btn-ghost:hover{border-color:#fff}
+.hero-stats{display:flex;gap:48px;flex-wrap:wrap}
+.hero-stat-val{font-size:2.2rem;font-weight:900;color:#fff;line-height:1}
+.hero-stat-val span{color:var(--orange)}
+.hero-stat-lbl{font-size:.78rem;color:rgba(255,255,255,.6);margin-top:5px;font-weight:600}
+
+/* LOGOS */
+.logos{background:var(--light);border-bottom:1px solid var(--border);padding:30px 48px}
+.logos-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;gap:40px;flex-wrap:wrap;justify-content:center}
+.logos-lbl{font-size:.68rem;font-weight:800;color:var(--gray);letter-spacing:1.5px;text-transform:uppercase}
+.logos img{height:34px;opacity:.7;filter:grayscale(1);transition:.2s}
+.logos img:hover{opacity:1;filter:none}
+
+section{padding:90px 48px}
+.inner{max-width:1200px;margin:0 auto}
+.tag{display:inline-block;background:rgba(240,120,32,.1);border:1px solid rgba(240,120,32,.25);color:var(--orange);padding:5px 14px;border-radius:100px;font-size:.68rem;font-weight:800;letter-spacing:1px;text-transform:uppercase;margin-bottom:16px}
+.title{font-size:2.3rem;font-weight:900;color:var(--navy);line-height:1.15;letter-spacing:-.5px;margin-bottom:14px}
+.title em{color:var(--orange);font-style:normal}
+.sub{font-size:1rem;color:var(--gray);line-height:1.7;max-width:600px}
+.head{text-align:center;margin-bottom:54px}
+.head .sub{margin:0 auto}
+
+/* SPLIT foto + texto */
+.split{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+.split img{width:100%;border-radius:20px;box-shadow:0 24px 60px rgba(12,29,115,.18)}
+.split .feat{display:flex;gap:14px;margin-bottom:20px}
+.split .feat .ic{width:46px;height:46px;background:var(--navy);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.3rem;flex-shrink:0}
+.split .feat h4{font-size:1.02rem;font-weight:800;color:var(--navy);margin-bottom:3px}
+.split .feat p{font-size:.88rem;color:var(--gray);line-height:1.6}
+
+/* PARA QUEM */
+.fit-bg{background:var(--light)}
+.fit-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.fit-card{background:#fff;border:1px solid var(--border);border-radius:18px;padding:34px;position:relative;overflow:hidden}
+.fit-card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px}
+.fit-card.yes::before{background:linear-gradient(90deg,var(--navy),var(--blue))}
+.fit-card.no::before{background:linear-gradient(90deg,var(--orange),var(--orange2))}
+.fit-head{display:flex;align-items:center;gap:12px;font-size:1.15rem;font-weight:900;color:var(--navy);margin-bottom:22px}
+.fit-list{list-style:none;display:flex;flex-direction:column;gap:14px}
+.fit-list li{display:flex;gap:11px;font-size:.92rem;color:#3a4a70;line-height:1.5}
+.fit-list .mk{font-weight:900;flex-shrink:0}
+.yes .mk{color:var(--green)} .no .mk{color:var(--red)} .no li{color:var(--gray)}
+.exclude{margin-top:26px;background:var(--navy);border-radius:14px;padding:22px 28px;display:flex;gap:16px;align-items:center;color:rgba(255,255,255,.92);font-size:.95rem;line-height:1.55}
+.exclude b{color:var(--orange)}
+
+/* SEGMENTOS com foto */
+.seg-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.seg-card{border-radius:18px;overflow:hidden;border:1px solid var(--border);background:#fff;transition:transform .2s,box-shadow .2s}
+.seg-card:hover{transform:translateY(-5px);box-shadow:0 18px 44px rgba(12,29,115,.16)}
+.seg-photo{height:170px;background-size:cover;background-position:center;position:relative}
+.seg-photo::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,transparent 40%,rgba(12,29,115,.55))}
+.seg-body{padding:22px 24px}
+.seg-name{font-size:1.05rem;font-weight:800;color:var(--navy);margin-bottom:6px}
+.seg-kw{font-size:.84rem;color:var(--gray);line-height:1.55}
+
+/* NÚMEROS sobre foto */
+.numbers{position:relative;padding:0}
+.numbers-bg{position:absolute;inset:0;z-index:-2;background:url('../assets/armazenagem.jpg') center/cover}
+.numbers-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(12,29,115,.95),rgba(29,31,150,.88))}
+.numbers-grid{position:relative;display:grid;grid-template-columns:repeat(4,1fr)}
+.num{text-align:center;padding:56px 20px;position:relative}
+.num+.num::before{content:'';position:absolute;left:0;top:25%;height:50%;width:1px;background:rgba(255,255,255,.12)}
+.num-val{font-size:3rem;font-weight:900;color:#fff;letter-spacing:-1px;line-height:1}
+.num-val span{color:var(--orange)}
+.num-lbl{font-size:.82rem;color:rgba(255,255,255,.65);margin-top:8px;font-weight:600;line-height:1.4}
+
+/* DEPOIMENTOS */
+.dep-bg{background:var(--light)}
+.dep-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.dep-card{background:#fff;border:1px solid var(--border);border-radius:18px;padding:32px;box-shadow:0 4px 20px rgba(12,29,115,.06)}
+.dep-stars{color:#f59e0b;letter-spacing:2px;margin-bottom:14px}
+.dep-text{font-size:.92rem;color:#3a4a70;line-height:1.75;margin-bottom:20px;font-style:italic}
+.dep-author{display:flex;align-items:center;gap:12px}
+.dep-avatar{width:44px;height:44px;background:var(--navy);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800}
+.dep-name{font-size:.85rem;font-weight:800;color:var(--navy)}
+.dep-role{font-size:.72rem;color:var(--gray)}
+
+/* CTA + FORM sobre foto */
+.cta{position:relative;padding:90px 48px}
+.cta-bg{position:absolute;inset:0;z-index:-2;background:url('../assets/transporte.jpg') center/cover}
+.cta-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(120deg,rgba(8,16,40,.96),rgba(12,29,115,.82))}
+.cta-inner{position:relative;max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 420px;gap:50px;align-items:center}
+.cta-copy h2{font-size:2.4rem;font-weight:900;color:#fff;line-height:1.15;margin-bottom:16px}
+.cta-copy h2 em{color:var(--orange);font-style:normal}
+.cta-copy p{color:rgba(255,255,255,.78);font-size:1.05rem;line-height:1.7;margin-bottom:24px}
+.cta-list{list-style:none;display:flex;flex-direction:column;gap:12px}
+.cta-list li{display:flex;gap:11px;color:rgba(255,255,255,.85);font-size:.95rem}
+.cta-list .mk{color:var(--orange);font-weight:900}
+form{background:rgba(255,255,255,.08);backdrop-filter:blur(18px);border:1px solid rgba(255,255,255,.16);border-radius:20px;padding:30px}
+.f-title{font-size:1.15rem;font-weight:800;color:#fff;margin-bottom:4px}
+.f-sub{font-size:.78rem;color:rgba(255,255,255,.55);margin-bottom:20px}
+.f-field{margin-bottom:12px}
+.f-field label{display:block;font-size:.68rem;font-weight:700;color:rgba(255,255,255,.6);letter-spacing:.5px;text-transform:uppercase;margin-bottom:6px}
+.f-field input,.f-field select{width:100%;padding:12px 14px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.18);border-radius:8px;color:#fff;font-size:.88rem;font-family:inherit;outline:none;transition:.2s}
+.f-field input::placeholder{color:rgba(255,255,255,.4)}
+.f-field input:focus,.f-field select:focus{border-color:var(--orange);background:rgba(255,255,255,.14)}
+.f-field select option{background:var(--navy);color:#fff}
+.f-row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.f-submit{width:100%;padding:14px;background:var(--orange);color:#fff;border:none;border-radius:8px;font-size:.95rem;font-weight:800;cursor:pointer;font-family:inherit;margin-top:6px;box-shadow:0 4px 16px rgba(240,120,32,.4);transition:.2s}
+.f-submit:hover{background:var(--orange2);transform:translateY(-1px)}
+.f-note{font-size:.68rem;color:rgba(255,255,255,.5);text-align:center;margin-top:10px;line-height:1.5}
+.f-ok{display:none;text-align:center;padding:18px 6px}
+.f-ok.show{display:block}
+.f-ok .ck{width:54px;height:54px;border-radius:50%;background:rgba(31,157,107,.2);color:#6ee7b7;display:flex;align-items:center;justify-content:center;margin:0 auto 14px;font-size:1.5rem}
+.f-ok h4{color:#fff;margin-bottom:8px}
+.f-ok p{color:rgba(255,255,255,.6);font-size:.82rem}
+
+footer{background:#070d2e;padding:40px 48px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px}
+footer img{height:28px}
+.foot-info{font-size:.76rem;color:rgba(255,255,255,.35)}
+.foot-contact{font-size:.78rem;color:rgba(255,255,255,.45);text-align:right}
+
+.vbadge{position:fixed;left:18px;bottom:18px;z-index:200;background:var(--navy);color:#fff;border:1px solid rgba(255,255,255,.2);padding:8px 16px;border-radius:100px;font-size:.72rem;font-weight:800}
+.vbadge b{color:var(--orange)}
+
+@media(max-width:900px){
+  nav{padding:0 18px}.nav-links a:not(.nav-cta){display:none}
+  .hero{padding:100px 20px 50px}.hero h1{font-size:2.3rem}
+  section{padding:60px 20px}.split{grid-template-columns:1fr;gap:28px}
+  .fit-grid,.dep-grid,.cta-inner{grid-template-columns:1fr;gap:28px}
+  .seg-grid{grid-template-columns:1fr}.numbers-grid{grid-template-columns:1fr 1fr}
+  .num+.num::before{display:none}.logos{padding:22px 18px}.cta{padding:60px 20px}
+}
+</style>
+</head>
+<body>
+<div class="vbadge">Variação <b>1 · Confiança</b></div>
+
+<nav>
+  <div class="nav-logo"><img src="../assets/logo-white.png" alt="DFT Logística"/></div>
+  <div class="nav-links">
+    <a href="#perfil">Para quem é</a><a href="#operacao">Operação</a><a href="#segmentos">Segmentos</a>
+    <a href="#form" class="nav-cta">Solicitar Proposta</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-inner">
+    <div class="hero-tag">Operação dedicada · Contratos recorrentes</div>
+    <h1>Sua operação logística em <em>mãos que não falham</em>.</h1>
+    <p>Frota 100% própria, rastreamento com IA e farmacêutico in loco. A DFT cuida da sua carga de ponta a ponta — para que você foque no crescimento, não em apagar incêndio.</p>
+    <div class="hero-cta-row">
+      <a href="#form" class="btn-primary">Solicitar Proposta →</a>
+      <a href="#operacao" class="btn-ghost">Conheça a operação</a>
+    </div>
+    <div class="hero-stats">
+      <div><div class="hero-stat-val">9<span>+</span></div><div class="hero-stat-lbl">Grandes marcas atendidas</div></div>
+      <div><div class="hero-stat-val">24<span>h</span></div><div class="hero-stat-lbl">Rastreamento em tempo real</div></div>
+      <div><div class="hero-stat-val">100<span>%</span></div><div class="hero-stat-lbl">Frota e equipe própria</div></div>
+    </div>
+  </div>
+</section>
+
+<div class="logos">
+  <span class="logos-lbl">Confiam na DFT</span>
+  <img src="../assets/clientes/millen.png" alt="New Millen"/>
+  <img src="../assets/clientes/ceva.png" alt="Ceva"/>
+  <img src="../assets/clientes/cadiveu.png" alt="Cadiveu"/>
+  <img src="../assets/clientes/levis.png" alt="Levi's"/>
+  <img src="../assets/clientes/aje.png" alt="AJe"/>
+  <img src="../assets/clientes/riclan.png" alt="Riclan"/>
+  <img src="../assets/clientes/agraria.png" alt="Agrária"/>
+</div>
+
+<!-- OPERAÇÃO (split foto) -->
+<section id="operacao">
+  <div class="inner split">
+    <img src="../assets/sobre.png" alt="Operação DFT Logística"/>
+    <div>
+      <span class="tag">Por que a DFT</span>
+      <h2 class="title">Logística que vai <em>além do transporte</em></h2>
+      <p class="sub" style="margin-bottom:28px">Enquanto outros transportam, a DFT opera. Cada detalhe da sua carga é monitorado do carregamento à entrega.</p>
+      <div class="feat"><div class="ic">🚛</div><div><h4>Frota 100% própria</h4><p>Veículos e colaboradores especializados. Controle total, sem terceirização.</p></div></div>
+      <div class="feat"><div class="ic">📡</div><div><h4>Rastreamento com IA</h4><p>Telemetria e câmeras com inteligência artificial, 24h por dia.</p></div></div>
+      <div class="feat"><div class="ic">💊</div><div><h4>Farmacêutico in loco</h4><p>Conformidade e controle de qualidade para cargas sensíveis e reguladas.</p></div></div>
+      <div class="feat"><div class="ic">🔧</div><div><h4>Oficina própria</h4><p>Manutenção preventiva que evita paradas — sua entrega não atrasa.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- PARA QUEM -->
+<section class="fit-bg" id="perfil">
+  <div class="inner">
+    <div class="head"><span class="tag">O encaixe certo</span><h2 class="title">Uma <em>parceira de operação</em>, não um frete avulso</h2></div>
+    <div class="fit-grid">
+      <div class="fit-card yes">
+        <div class="fit-head">✅ A DFT é para você se…</div>
+        <ul class="fit-list">
+          <li><span class="mk">✓</span> Sua operação logística é <b>recorrente e crítica</b></li>
+          <li><span class="mk">✓</span> Você transporta <b>cargas de alto valor agregado</b></li>
+          <li><span class="mk">✓</span> Tem <b>baixa tolerância</b> a avaria, atraso e desvio</li>
+          <li><span class="mk">✓</span> Busca um <b>parceiro de longo prazo</b>, não um cotador</li>
+          <li><span class="mk">✓</span> Seu volume de frete é <b>a partir de ~R$ 30 mil/mês</b></li>
+        </ul>
+      </div>
+      <div class="fit-card no">
+        <div class="fit-head">⛔ A DFT NÃO é para você se…</div>
+        <ul class="fit-list">
+          <li><span class="mk">✕</span> Você precisa de um <b>frete pontual / carreto avulso</b></li>
+          <li><span class="mk">✕</span> Sua decisão é tomada <b>só pelo menor preço</b></li>
+          <li><span class="mk">✕</span> Troca de transportadora <b>a cada cotação</b></li>
+          <li><span class="mk">✕</span> Sua demanda é <b>esporádica e imprevisível</b></li>
+        </ul>
+      </div>
+    </div>
+    <div class="exclude"><span>🚫</span><span>Não trabalhamos com fretes pontuais, carretos ou mudanças avulsas. Nossa operação é desenhada para <b>contratos dedicados e recorrentes</b>.</span></div>
+  </div>
+</section>
+
+<!-- NÚMEROS sobre foto -->
+<section class="numbers">
+  <div class="numbers-bg"></div>
+  <div class="numbers-grid">
+    <div class="num"><div class="num-val">9<span>+</span></div><div class="num-lbl">Grandes marcas atendidas</div></div>
+    <div class="num"><div class="num-val">3<span>x</span></div><div class="num-lbl">Regiões cobertas<br/>NE, SE e Sul</div></div>
+    <div class="num"><div class="num-val">24<span>h</span></div><div class="num-lbl">Monitoramento contínuo</div></div>
+    <div class="num"><div class="num-val">100<span>%</span></div><div class="num-lbl">Frota e equipe própria</div></div>
+  </div>
+</section>
+
+<!-- SEGMENTOS com foto -->
+<section id="segmentos">
+  <div class="inner">
+    <div class="head"><span class="tag">Nichos atendidos</span><h2 class="title">Especialistas no <em>seu segmento</em></h2></div>
+    <div class="seg-grid">
+      <div class="seg-card"><div class="seg-photo" style="background-image:url('../assets/nicho-alimentos.jpg')"></div><div class="seg-body"><div class="seg-name">Alimentos e Bebidas</div><div class="seg-kw">Controle de temperatura, inspeção e armazenagem especializada.</div></div></div>
+      <div class="seg-card"><div class="seg-photo" style="background-image:url('../assets/nicho-correlatos.jpg')"></div><div class="seg-body"><div class="seg-name">Farmacêutico / Correlatos</div><div class="seg-kw">Farmacêutico in loco, conformidade regulatória e rastreabilidade.</div></div></div>
+      <div class="seg-card"><div class="seg-photo" style="background-image:url('../assets/nicho-eletronicos.jpg')"></div><div class="seg-body"><div class="seg-name">Eletrônicos / Alto Valor</div><div class="seg-kw">Câmeras com IA, seguro dedicado e monitoramento 24h.</div></div></div>
+      <div class="seg-card"><div class="seg-photo" style="background-image:url('../assets/nicho-vestuario.jpg')"></div><div class="seg-body"><div class="seg-name">Têxtil / Vestuário Premium</div><div class="seg-kw">Manuseio especializado e rotas dedicadas para marcas premium.</div></div></div>
+      <div class="seg-card"><div class="seg-photo" style="background-image:url('../assets/nicho-agro.jpg')"></div><div class="seg-body"><div class="seg-name">Agronegócio</div><div class="seg-kw">Insumos agrícolas e nutrição animal com cobertura no interior.</div></div></div>
+      <div class="seg-card"><div class="seg-photo" style="background-image:url('../assets/nicho-saneantes.jpg')"></div><div class="seg-body"><div class="seg-name">Saneantes</div><div class="seg-kw">Armazenagem controlada e transporte sem avarias para cargas sensíveis.</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- DEPOIMENTOS -->
+<section class="dep-bg">
+  <div class="inner">
+    <div class="head"><span class="tag">Quem já confia</span><h2 class="title">O que dizem <em>sobre a DFT</em></h2></div>
+    <div class="dep-grid">
+      <div class="dep-card"><div class="dep-stars">★★★★★</div><div class="dep-text">"A DFT transformou nossa operação. Antes tínhamos avarias e atrasos constantes. Hoje temos rastreamento em tempo real e um time que resolve antes de precisarmos ligar."</div><div class="dep-author"><div class="dep-avatar">G</div><div><div class="dep-name">Gestor de Logística</div><div class="dep-role">Indústria alimentícia · SP</div></div></div></div>
+      <div class="dep-card"><div class="dep-stars">★★★★★</div><div class="dep-text">"Precisávamos de uma transportadora que entendesse o setor farmacêutico. A DFT foi a única com farmacêutico in loco e processos que atendem a regulação."</div><div class="dep-author"><div class="dep-avatar">D</div><div><div class="dep-name">Diretora de Supply Chain</div><div class="dep-role">Distribuidora farmacêutica · SP</div></div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA + FORM -->
+<section class="cta" id="form">
+  <div class="cta-bg"></div>
+  <div class="cta-inner">
+    <div class="cta-copy">
+      <span class="tag">Próximo passo</span>
+      <h2>Pronto para uma logística <em>sem surpresas?</em></h2>
+      <p>Solicite uma proposta e descubra como a DFT pode dar previsibilidade à operação da sua empresa.</p>
+      <ul class="cta-list">
+        <li><span class="mk">✓</span> Análise da sua rota e tipo de carga</li>
+        <li><span class="mk">✓</span> Mapeamento de risco e pontos de avaria</li>
+        <li><span class="mk">✓</span> Proposta sob medida, com SLA acordado</li>
+      </ul>
+    </div>
+    <form id="lead-form" novalidate>
+      <div id="f-fields">
+        <div class="f-title">Solicite uma proposta</div>
+        <div class="f-sub">Retornamos em até 24 horas úteis</div>
+        <div class="f-field"><label>Seu nome</label><input name="nome" placeholder="João Silva" required/></div>
+        <div class="f-field"><label>Empresa</label><input name="empresa" placeholder="Nome da empresa" required/></div>
+        <div class="f-row"><div class="f-field"><label>CNPJ</label><input name="cnpj" placeholder="00.000.000/0000-00" required/></div><div class="f-field"><label>WhatsApp</label><input name="whatsapp" placeholder="(11) 9 0000-0000" required/></div></div>
+        <div class="f-field"><label>Volume mensal de frete</label><select name="volume" required><option value="">Selecione</option><option>Até R$ 10 mil</option><option>R$ 10–30 mil</option><option>R$ 30–100 mil</option><option>Acima de R$ 100 mil</option></select></div>
+        <button type="submit" class="f-submit">Quero uma proposta →</button>
+        <div class="f-note">🔒 Atendemos operações recorrentes a partir de ~R$ 30 mil/mês.</div>
+      </div>
+      <div class="f-ok" id="f-ok"><div class="ck">✓</div><h4>Recebemos sua solicitação!</h4><p>Nosso time entra em contato em até 1 dia útil.</p></div>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <img src="../assets/logo-white.png" alt="DFT Logística"/>
+  <div class="foot-info">Rua Serra da Mantiqueira, 73 · Vargem Grande Paulista, SP · comercial3@dftlogistica.com.br</div>
+  <div class="foot-contact">(11) 4159-3558 · (11) 91585-5163<br/>Seg a sex, 7h–18h</div>
+</footer>
+
+<script>
+document.getElementById('lead-form').addEventListener('submit',function(e){e.preventDefault();if(!this.checkValidity()){this.reportValidity();return;}document.getElementById('f-fields').style.display='none';document.getElementById('f-ok').classList.add('show');});
+</script>
+</body>
+</html>
