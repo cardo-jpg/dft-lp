@@ -158,13 +158,19 @@ footer img{height:26px;filter:brightness(0) invert(1);opacity:.6}
         <div><div class="hs-val">100<span>%</span></div><div class="hs-lbl">Frota própria monitorada</div></div>
       </div>
     </div>
-    <div class="panel">
-      <div class="panel-h"><span><span class="dot"></span>Torre de Controle DFT</span><span style="font-size:.74rem;color:var(--muted2)">ao vivo</span></div>
-      <div class="trow"><span class="ic">📦</span><div><b>Carga #4821 · Eletrônicos</b><span>SP → Curitiba</span></div><span class="v">No prazo</span></div>
-      <div class="trow"><span class="ic">🌡️</span><div><b>Temperatura · Farma</b><span>Monitoramento ativo</span></div><span class="v">OK</span></div>
-      <div class="trow"><span class="ic">📷</span><div><b>Câmera IA · Frota 12</b><span>Sem ocorrências</span></div><span class="v">Seguro</span></div>
-      <div class="pline">⚡ OTD do mês: <b style="color:var(--lime);font-family:'Space Grotesk'">98,7%</b> · zero avaria</div>
-    </div>
+    <form class="lead-form" novalidate>
+      <div class="f-fields">
+        <div class="f-title">Falar com especialista</div><div class="f-sub">Resposta em até 1 dia útil</div>
+        <div class="f-field"><label>Seu nome</label><input name="nome" placeholder="João Silva" required/></div>
+        <div class="f-field"><label>Empresa</label><input name="empresa" placeholder="Nome da empresa" required/></div>
+        <div class="f-field"><label>E-mail corporativo</label><input type="email" name="email" placeholder="nome@empresa.com.br" required/></div>
+        <div class="f-row"><div class="f-field"><label>CNPJ</label><input name="cnpj" placeholder="00.000.000/0000-00" required/></div><div class="f-field"><label>WhatsApp</label><input name="whatsapp" placeholder="(11) 9 0000-0000" required/></div></div>
+        <div class="f-field"><label>Volume mensal de frete</label><select name="volume" required><option value="">Selecione</option><option>Até R$ 10 mil</option><option>R$ 10–30 mil</option><option>R$ 30–100 mil</option><option>Acima de R$ 100 mil</option></select></div>
+        <button type="submit" class="f-submit">Quero falar com especialista →</button>
+        <div class="f-note">🔒 Atendemos operações recorrentes a partir de ~R$ 30 mil/mês.</div>
+      </div>
+      <div class="f-ok"><div class="ck">✓</div><h4>Recebemos seu contato!</h4><p>Nosso especialista de Supply Chain fala com você em até 1 dia útil.</p></div>
+    </form>
   </div>
 </section>
 
@@ -251,17 +257,18 @@ footer img{height:26px;filter:brightness(0) invert(1);opacity:.6}
     <div class="cta-copy"><span class="tag">Próximo passo</span><h2>Dê <span class="acc">previsibilidade</span> à sua operação</h2><p>Fale com um especialista e veja, na prática, como a torre de controle da DFT funciona na sua rota.</p>
       <ul class="cta-list"><li><span class="mk">▹</span> Análise da sua rota e tipo de carga</li><li><span class="mk">▹</span> Demonstração do rastreamento em tempo real</li><li><span class="mk">▹</span> Plano dedicado com SLA acordado</li></ul>
     </div>
-    <form id="lead-form" novalidate>
-      <div id="f-fields">
+    <form class="lead-form" novalidate>
+      <div class="f-fields">
         <div class="f-title">Falar com especialista</div><div class="f-sub">Resposta em até 1 dia útil</div>
         <div class="f-field"><label>Seu nome</label><input name="nome" placeholder="João Silva" required/></div>
         <div class="f-field"><label>Empresa</label><input name="empresa" placeholder="Nome da empresa" required/></div>
+        <div class="f-field"><label>E-mail corporativo</label><input type="email" name="email" placeholder="nome@empresa.com.br" required/></div>
         <div class="f-row"><div class="f-field"><label>CNPJ</label><input name="cnpj" placeholder="00.000.000/0000-00" required/></div><div class="f-field"><label>WhatsApp</label><input name="whatsapp" placeholder="(11) 9 0000-0000" required/></div></div>
         <div class="f-field"><label>Volume mensal de frete</label><select name="volume" required><option value="">Selecione</option><option>Até R$ 10 mil</option><option>R$ 10–30 mil</option><option>R$ 30–100 mil</option><option>Acima de R$ 100 mil</option></select></div>
         <button type="submit" class="f-submit">Quero falar com especialista →</button>
         <div class="f-note">🔒 Atendemos operações recorrentes a partir de ~R$ 30 mil/mês.</div>
       </div>
-      <div class="f-ok" id="f-ok"><div class="ck">✓</div><h4>Recebemos seu contato!</h4><p>Nosso especialista de Supply Chain fala com você em até 1 dia útil.</p></div>
+      <div class="f-ok"><div class="ck">✓</div><h4>Recebemos seu contato!</h4><p>Nosso especialista de Supply Chain fala com você em até 1 dia útil.</p></div>
     </form>
   </div>
 </section>
@@ -269,7 +276,7 @@ footer img{height:26px;filter:brightness(0) invert(1);opacity:.6}
 <footer><img src="../assets/logo-white.png" alt="DFT"/><div class="foot-info">Rua Serra da Mantiqueira, 73 · Vargem Grande Paulista, SP · comercial3@dftlogistica.com.br</div><div class="foot-contact">(11) 4159-3558 · (11) 91585-5163<br/>Seg a sex, 7h–18h</div></footer>
 
 <script>
-document.getElementById('lead-form').addEventListener('submit',function(e){e.preventDefault();if(!this.checkValidity()){this.reportValidity();return;}document.getElementById('f-fields').style.display='none';document.getElementById('f-ok').classList.add('show');});
+document.querySelectorAll('form.lead-form').forEach(function(f){f.addEventListener('submit',function(e){e.preventDefault();if(!this.checkValidity()){this.reportValidity();return;}this.querySelector('.f-fields').style.display='none';this.querySelector('.f-ok').classList.add('show');});});
 </script>
 </body>
 </html>
