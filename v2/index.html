@@ -22,7 +22,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(7,13,24,.8);
 .nav-cta:hover{transform:translateY(-1px)}
 
 .hero{position:relative;min-height:100vh;display:flex;align-items:center;padding:110px 48px 60px;overflow:hidden}
-.hero-bg{position:absolute;inset:0;z-index:-2;background:url('../assets/armazenagem.jpg') center/cover}
+.hero-bg{position:absolute;inset:0;z-index:-2;background:url('../assets/dft/crossdocking.jpg') center/cover}
 .hero-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(100deg,rgba(7,13,24,.97) 0%,rgba(7,13,24,.9) 50%,rgba(7,13,24,.55) 100%)}
 .grid-ov{position:absolute;inset:0;z-index:-1;opacity:.5;background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:52px 52px;mask-image:radial-gradient(700px 460px at 25% 40%,#000,transparent 75%)}
 .hero-inner{max-width:1240px;margin:0 auto;width:100%;display:grid;grid-template-columns:1.1fr .9fr;gap:50px;align-items:center;position:relative;z-index:1}
@@ -97,7 +97,7 @@ section{padding:96px 48px}
 .seg-body{padding:20px 22px}.seg-name{font-family:'Montserrat';font-weight:600;color:#fff;margin-bottom:5px}.seg-kw{font-size:.83rem;color:var(--muted)}
 
 .numbers{position:relative;padding:0}
-.numbers-bg{position:absolute;inset:0;z-index:-2;background:url('../assets/nicho-eletronicos.jpg') center/cover}
+.numbers-bg{position:absolute;inset:0;z-index:-2;background:url('../assets/dft/movimentacao-e-expedicao.jpg') center/cover}
 .numbers-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(120deg,rgba(7,13,24,.96),rgba(12,20,36,.9))}
 .ngrid{position:relative;display:grid;grid-template-columns:repeat(4,1fr)}
 .num{text-align:center;padding:56px 20px;position:relative}
@@ -106,7 +106,7 @@ section{padding:96px 48px}
 .num-lbl{font-size:.82rem;color:var(--muted);margin-top:8px}
 
 .cta{position:relative;padding:100px 48px}
-.cta-bg{position:absolute;inset:0;z-index:-2;background:url('../assets/transporte.jpg') center/cover}
+.cta-bg{position:absolute;inset:0;z-index:-2;background:url('../assets/dft/lotacao.jpg') center/cover}
 .cta-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(120deg,rgba(7,13,24,.97),rgba(7,13,24,.8))}
 .cta-in{position:relative;max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 420px;gap:50px;align-items:center}
 .cta-copy h2{font-size:2.5rem;font-weight:700;color:#fff;margin-bottom:16px}
@@ -137,6 +137,15 @@ footer img{height:26px;filter:brightness(0) invert(1);opacity:.6}
 </style>
 </head>
 <body>
+<style>
+.hero .relief{font-weight:600;font-size:1.12rem;color:#fff;max-width:520px;margin:-10px 0 28px;line-height:1.45}
+.dgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.dcard{padding:28px;border:1px solid var(--line);border-radius:16px;background:linear-gradient(160deg,var(--panel),var(--bg2));display:flex;flex-direction:column;gap:16px}
+.dcard .stars{color:var(--cyan2);font-size:.9rem;letter-spacing:2px}
+.dcard .quote{font-size:.95rem;color:var(--ink);line-height:1.6}
+.dcard .who b{display:block;color:#fff;font-weight:700}.dcard .who span{font-size:.8rem;color:var(--muted2)}
+@media(max-width:760px){.dgrid{grid-template-columns:1fr}}
+</style>
 <div class="vbadge">Variação <b>2 · Tech</b></div>
 
 <nav>
@@ -151,11 +160,12 @@ footer img{height:26px;filter:brightness(0) invert(1);opacity:.6}
       <span class="eyebrow">Telemetria · Câmeras IA · Torre de controle</span>
       <h1>Logística <span class="acc">rastreada por IA</span>.<br/>Previsibilidade em tempo real.</h1>
       <p>Cada carga monitorada do embarque à entrega, com dados que antecipam desvios e protegem operações que não podem errar.</p>
+      <p class="relief">Chega de resolver problema de transportadora. <span class="acc">Você tem uma operação para crescer.</span></p>
       <div class="hero-cta"><a href="#form" class="btn btn-p">Falar com especialista →</a><a href="#tech" class="btn btn-g">Ver a tecnologia</a></div>
       <div class="hero-stats">
-        <div><div class="hs-val">24<span>h</span></div><div class="hs-lbl">Rastreamento em tempo real</div></div>
-        <div><div class="hs-val">98,7<span>%</span></div><div class="hs-lbl">OTD médio (no prazo)</div></div>
-        <div><div class="hs-val">100<span>%</span></div><div class="hs-lbl">Frota própria monitorada</div></div>
+        <div><div class="hs-val">10<span>+</span></div><div class="hs-lbl">Anos de mercado</div></div>
+        <div><div class="hs-val">28<span> mil</span></div><div class="hs-lbl">Toneladas transportadas</div></div>
+        <div><div class="hs-val">98<span>%</span></div><div class="hs-lbl">OTD · no prazo</div></div>
       </div>
     </div>
     <form class="lead-form" novalidate>
@@ -167,7 +177,7 @@ footer img{height:26px;filter:brightness(0) invert(1);opacity:.6}
         <div class="f-row"><div class="f-field"><label>CNPJ</label><input name="cnpj" placeholder="00.000.000/0000-00" required/></div><div class="f-field"><label>WhatsApp</label><input name="whatsapp" placeholder="(11) 9 0000-0000" required/></div></div>
         <div class="f-field"><label>Volume mensal de frete</label><select name="volume" required><option value="">Selecione</option><option>Até R$ 10 mil</option><option>R$ 10–30 mil</option><option>R$ 30–100 mil</option><option>Acima de R$ 100 mil</option></select></div>
         <button type="submit" class="f-submit">Quero falar com especialista →</button>
-        <div class="f-note">🔒 Atendemos operações recorrentes a partir de ~R$ 30 mil/mês.</div>
+        <div class="f-note">🔒 Atendimento consultivo para operações dedicadas e recorrentes.</div>
       </div>
       <div class="f-ok"><div class="ck">✓</div><h4>Recebemos seu contato!</h4><p>Nosso especialista de Supply Chain fala com você em até 1 dia útil.</p></div>
     </form>
@@ -176,8 +186,8 @@ footer img{height:26px;filter:brightness(0) invert(1);opacity:.6}
 
 <div class="logos">
   <div class="logos-in">
-    <span class="logos-lbl">Operações monitoradas para</span>
-    <img src="../assets/clientes/millen.png"/><img src="../assets/clientes/ceva.png"/><img src="../assets/clientes/cadiveu.png"/><img src="../assets/clientes/levis.png"/><img src="../assets/clientes/aje.png"/><img src="../assets/clientes/riclan.png"/>
+    <span class="logos-lbl">A confiança de</span>
+    <img src="../assets/clientes/levis.png" alt="Levis"/><img src="../assets/clientes/cadiveu.png" alt="Cadiveu"/><img src="../assets/clientes/millen.png" alt="New Millen"/><img src="../assets/clientes/krindges.png" alt="Krindges"/><img src="../assets/clientes/agraria.png" alt="Agraria"/><img src="../assets/clientes/daus.png" alt="Daus"/>
   </div>
 </div>
 
@@ -192,12 +202,13 @@ footer img{height:26px;filter:brightness(0) invert(1);opacity:.6}
       <div class="tcard"><div class="ic">🔧</div><h3>Manutenção preditiva</h3><p>Oficina própria e dados de frota que evitam paradas não planejadas.</p></div>
       <div class="tcard"><div class="ic">🛡️</div><h3>Gestão de risco</h3><p>Protocolos e seguro dedicado para cargas de alto valor agregado.</p></div>
     </div>
+    <img src="../assets/dft/banner-site-tech.jpg" alt="Monitoramento 24h DFT — câmeras, IA e rastreamento" style="width:100%;border-radius:16px;border:1px solid var(--line);margin-top:36px;display:block"/>
   </div>
 </section>
 
 <section style="background:var(--bg2)">
   <div class="inner split">
-    <img src="../assets/sobre.png" alt="Operação DFT"/>
+    <img src="../assets/dft/monitoramento.jpg" alt="Torre de controle DFT"/>
     <div>
       <span class="tag">Dados, não promessas</span>
       <h2 class="title">Você acompanha cada etapa em <span class="acc">tempo real</span></h2>
@@ -214,10 +225,9 @@ footer img{height:26px;filter:brightness(0) invert(1);opacity:.6}
     <div class="head"><span class="tag">O encaixe certo</span><h2 class="title">Operação dedicada, <span class="acc">não frete avulso</span></h2></div>
     <div class="fit-grid">
       <div class="fit-card yes"><div class="fit-head">✅ A DFT é para você se…</div><ul class="fit-list">
-        <li><span class="mk">✓</span> Sua operação é <b>recorrente e crítica</b></li>
+        <li><span class="mk">✓</span> Sua operação é <b>recorrente e estratégica</b></li>
         <li><span class="mk">✓</span> Transporta <b>cargas de alto valor agregado</b></li>
         <li><span class="mk">✓</span> Precisa de <b>rastreabilidade e dados</b> em tempo real</li>
-        <li><span class="mk">✓</span> Volume de frete <b>a partir de ~R$ 30 mil/mês</b></li>
       </ul></div>
       <div class="fit-card no"><div class="fit-head">⛔ A DFT NÃO é para você se…</div><ul class="fit-list">
         <li><span class="mk">✕</span> Precisa de <b>frete pontual / carreto avulso</b></li>
@@ -225,16 +235,26 @@ footer img{height:26px;filter:brightness(0) invert(1);opacity:.6}
         <li><span class="mk">✕</span> Demanda <b>esporádica e imprevisível</b></li>
       </ul></div>
     </div>
-    <div class="exclude"><span>🚫</span><span>Não operamos fretes pontuais ou carretos avulsos. Nossa tecnologia é desenhada para contratos dedicados e recorrentes.</span></div>
   </div>
 </section>
 
 <section class="numbers"><div class="numbers-bg"></div>
   <div class="ngrid">
-    <div class="num"><div class="num-val">24<span>h</span></div><div class="num-lbl">Monitoramento contínuo</div></div>
-    <div class="num"><div class="num-val">3<span>x</span></div><div class="num-lbl">Regiões · NE, SE e Sul</div></div>
-    <div class="num"><div class="num-val">98,7<span>%</span></div><div class="num-lbl">OTD médio</div></div>
+    <div class="num"><div class="num-val">10<span>+</span></div><div class="num-lbl">Anos de mercado</div></div>
+    <div class="num"><div class="num-val">28<span> mil</span></div><div class="num-lbl">Toneladas transportadas</div></div>
+    <div class="num"><div class="num-val">98<span>%</span></div><div class="num-lbl">OTD · no prazo</div></div>
     <div class="num"><div class="num-val">100<span>%</span></div><div class="num-lbl">Frota própria</div></div>
+  </div>
+</section>
+
+<section>
+  <div class="inner">
+    <div class="head"><span class="tag">Prova de resultado</span><h2 class="title">Quem confia na DFT <span class="acc">comprova resultados</span></h2></div>
+    <div class="dgrid">
+      <div class="dcard"><div class="stars">★★★★★</div><div class="quote">"Empresa referência nacional no segmento de transportes, frota própria, equipe treinada e atendimento nota mil."</div><div class="who"><b>Maycon Rodrigues</b><span>JM Agro Distribuidora</span></div></div>
+      <div class="dcard"><div class="stars">★★★★★</div><div class="quote">"Parceira de longa data, cuida do estoque, da separação e da entrega. Conhece nossas necessidades e garante agilidade com qualidade. Bora DFT!"</div><div class="who"><b>Adriana Puerta</b><span>CEO da Jomer Aramados</span></div></div>
+      <div class="dcard"><div class="stars">★★★★★</div><div class="quote">"Uso os serviços da DFT e sempre dá tudo certo. Muito rápido e eficiente. Sempre sou muito bem atendido pela equipe. Só tenho que agradecer."</div><div class="who"><b>Mário Duarte</b><span>All Horse</span></div></div>
+    </div>
   </div>
 </section>
 
@@ -266,7 +286,7 @@ footer img{height:26px;filter:brightness(0) invert(1);opacity:.6}
         <div class="f-row"><div class="f-field"><label>CNPJ</label><input name="cnpj" placeholder="00.000.000/0000-00" required/></div><div class="f-field"><label>WhatsApp</label><input name="whatsapp" placeholder="(11) 9 0000-0000" required/></div></div>
         <div class="f-field"><label>Volume mensal de frete</label><select name="volume" required><option value="">Selecione</option><option>Até R$ 10 mil</option><option>R$ 10–30 mil</option><option>R$ 30–100 mil</option><option>Acima de R$ 100 mil</option></select></div>
         <button type="submit" class="f-submit">Quero falar com especialista →</button>
-        <div class="f-note">🔒 Atendemos operações recorrentes a partir de ~R$ 30 mil/mês.</div>
+        <div class="f-note">🔒 Atendimento consultivo para operações dedicadas e recorrentes.</div>
       </div>
       <div class="f-ok"><div class="ck">✓</div><h4>Recebemos seu contato!</h4><p>Nosso especialista de Supply Chain fala com você em até 1 dia útil.</p></div>
     </form>
