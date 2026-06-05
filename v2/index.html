@@ -5,13 +5,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>DFT Logística — Logística rastreada por IA</title>
 <meta name="description" content="Telemetria, câmeras com IA e torre de controle. Visibilidade total e previsibilidade em tempo real para cargas de alto valor."/>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"/>
 <style>
-:root{ --bg:#070d18; --bg2:#0c1424; --panel:#101b30; --line:rgba(120,170,230,.16); --cyan:#22d3ee; --cyan2:#38bdf8; --lime:#a3e635; --ink:#e8f1ff; --muted:#93a7c4; --muted2:#6c809e; --red:#fb7185; --ok:#34d399; }
+:root{ --bg:#0a1024; --bg2:#0e1832; --panel:#152040; --line:rgba(120,160,235,.18); --cyan:#2f55d4; --cyan2:#4f78f0; --blue:#2f55d4; --lime:#7fd14a; --ink:#eaf0ff; --muted:#9fb0d4; --muted2:#7184a8; --red:#e4322e; --ok:#34d399; }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
-body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--ink);overflow-x:hidden;line-height:1.6}
-h1,h2,h3,.dsp{font-family:'Space Grotesk',sans-serif;letter-spacing:-.02em;line-height:1.08}
+body{font-family:'Montserrat',sans-serif;background:var(--bg);color:var(--ink);overflow-x:hidden;line-height:1.6}
+h1,h2,h3,.dsp{font-family:'Montserrat',sans-serif;font-weight:800;letter-spacing:-.02em;line-height:1.08}
 a{text-decoration:none;color:inherit}
 .acc{color:transparent;background:linear-gradient(120deg,var(--cyan),var(--cyan2));-webkit-background-clip:text;background-clip:text}
 nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(7,13,24,.8);backdrop-filter:blur(14px);border-bottom:1px solid var(--line);padding:0 48px;display:flex;align-items:center;justify-content:space-between;height:68px}
@@ -37,19 +37,19 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(7,13,24,.8);
 .btn-g{background:rgba(255,255,255,.05);border:1px solid var(--line);color:#fff}
 .btn-g:hover{background:rgba(255,255,255,.1)}
 .hero-stats{display:flex;gap:40px;flex-wrap:wrap}
-.hs-val{font-family:'Space Grotesk';font-size:2rem;font-weight:700;color:#fff}
+.hs-val{font-family:'Montserrat';font-size:2rem;font-weight:700;color:#fff}
 .hs-val span{color:var(--cyan)}
 .hs-lbl{font-size:.74rem;color:var(--muted2);margin-top:4px}
 
 /* painel telemetria */
 .panel{background:linear-gradient(160deg,var(--panel),var(--bg2));border:1px solid var(--line);border-radius:20px;padding:24px;box-shadow:0 30px 70px -30px #000}
-.panel-h{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;font-family:'Space Grotesk';font-weight:600;font-size:.92rem}
+.panel-h{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;font-family:'Montserrat';font-weight:600;font-size:.92rem}
 .dot{width:9px;height:9px;border-radius:50%;background:var(--ok);box-shadow:0 0 12px var(--ok);display:inline-block;margin-right:8px;animation:pulse 1.8s infinite}
 @keyframes pulse{0%,100%{opacity:1}50%{opacity:.35}}
 .trow{display:flex;align-items:center;gap:12px;padding:13px 14px;border-radius:11px;background:rgba(255,255,255,.03);border:1px solid var(--line);margin-bottom:10px}
 .trow .ic{width:34px;height:34px;border-radius:9px;background:rgba(34,211,238,.12);display:grid;place-items:center;color:var(--cyan);flex:none;font-size:1rem}
 .trow b{font-size:.86rem}.trow span{font-size:.74rem;color:var(--muted2);display:block}
-.trow .v{margin-left:auto;font-family:'Space Grotesk';font-weight:600;font-size:.86rem;color:var(--lime)}
+.trow .v{margin-left:auto;font-family:'Montserrat';font-weight:600;font-size:.86rem;color:var(--lime)}
 .pline{height:52px;border-radius:11px;margin-top:6px;background:linear-gradient(90deg,rgba(34,211,238,.03),rgba(34,211,238,.14),rgba(34,211,238,.03));border:1px solid var(--line);display:flex;align-items:center;padding:0 16px;gap:10px;color:var(--muted);font-size:.78rem}
 
 .logos{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:rgba(255,255,255,.015);padding:26px 48px}
@@ -83,7 +83,7 @@ section{padding:96px 48px}
 .fit-card{border-radius:16px;padding:32px;border:1px solid var(--line)}
 .fit-card.yes{border-color:rgba(34,211,238,.3);background:linear-gradient(160deg,rgba(34,211,238,.06),transparent)}
 .fit-card.no{border-color:rgba(251,113,133,.25);background:linear-gradient(160deg,rgba(251,113,133,.05),transparent)}
-.fit-head{font-family:'Space Grotesk';font-size:1.1rem;font-weight:700;margin-bottom:20px;color:#fff}
+.fit-head{font-family:'Montserrat';font-size:1.1rem;font-weight:700;margin-bottom:20px;color:#fff}
 .fit-list{list-style:none;display:flex;flex-direction:column;gap:13px}
 .fit-list li{display:flex;gap:11px;font-size:.92rem}
 .yes .mk{color:var(--ok);font-weight:800}.no .mk{color:var(--red);font-weight:800}.no li{color:var(--muted)}
@@ -94,7 +94,7 @@ section{padding:96px 48px}
 .seg-card:hover{transform:translateY(-4px);border-color:var(--cyan)}
 .seg-photo{height:160px;background-size:cover;background-position:center;position:relative}
 .seg-photo::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,transparent 35%,rgba(7,13,24,.85))}
-.seg-body{padding:20px 22px}.seg-name{font-family:'Space Grotesk';font-weight:600;color:#fff;margin-bottom:5px}.seg-kw{font-size:.83rem;color:var(--muted)}
+.seg-body{padding:20px 22px}.seg-name{font-family:'Montserrat';font-weight:600;color:#fff;margin-bottom:5px}.seg-kw{font-size:.83rem;color:var(--muted)}
 
 .numbers{position:relative;padding:0}
 .numbers-bg{position:absolute;inset:0;z-index:-2;background:url('../assets/nicho-eletronicos.jpg') center/cover}
@@ -102,7 +102,7 @@ section{padding:96px 48px}
 .ngrid{position:relative;display:grid;grid-template-columns:repeat(4,1fr)}
 .num{text-align:center;padding:56px 20px;position:relative}
 .num+.num::before{content:'';position:absolute;left:0;top:25%;height:50%;width:1px;background:var(--line)}
-.num-val{font-family:'Space Grotesk';font-size:3rem;font-weight:700;color:#fff}.num-val span{color:var(--cyan)}
+.num-val{font-family:'Montserrat';font-size:3rem;font-weight:700;color:#fff}.num-val span{color:var(--cyan)}
 .num-lbl{font-size:.82rem;color:var(--muted);margin-top:8px}
 
 .cta{position:relative;padding:100px 48px}
@@ -114,7 +114,7 @@ section{padding:96px 48px}
 .cta-list{list-style:none;display:flex;flex-direction:column;gap:12px;color:var(--muted);font-size:.95rem}
 .cta-list .mk{color:var(--cyan);font-weight:800}
 form{background:linear-gradient(160deg,var(--panel),var(--bg2));border:1px solid var(--line);border-radius:20px;padding:30px;box-shadow:0 30px 70px -30px #000}
-.f-title{font-family:'Space Grotesk';font-size:1.2rem;font-weight:600;color:#fff;margin-bottom:4px}
+.f-title{font-family:'Montserrat';font-size:1.2rem;font-weight:600;color:#fff;margin-bottom:4px}
 .f-sub{font-size:.78rem;color:var(--muted2);margin-bottom:20px}
 .f-field{margin-bottom:12px}
 .f-field label{display:block;font-size:.7rem;font-weight:600;color:var(--muted);margin-bottom:6px}
