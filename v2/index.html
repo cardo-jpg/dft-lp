@@ -130,7 +130,7 @@ form{background:linear-gradient(160deg,var(--panel),var(--bg2));border:1px solid
 .f-ok .ck{width:54px;height:54px;border-radius:50%;background:rgba(52,211,153,.15);color:var(--ok);display:grid;place-items:center;margin:0 auto 14px;font-size:1.4rem}.f-ok h4{color:#fff;margin-bottom:8px}.f-ok p{color:var(--muted);font-size:.82rem}
 
 footer{border-top:1px solid var(--line);padding:40px 48px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px}
-footer img{height:26px;filter:brightness(0) invert(1);opacity:.6}
+footer img{height:30px}
 .foot-info{font-size:.76rem;color:var(--muted2)}.foot-contact{font-size:.78rem;color:var(--muted);text-align:right}
 .vbadge{position:fixed;left:18px;bottom:18px;z-index:200;background:var(--panel);color:#fff;border:1px solid var(--line);padding:8px 16px;border-radius:100px;font-size:.72rem;font-weight:700}
 .vbadge b{color:var(--cyan)}
@@ -297,7 +297,7 @@ footer img{height:26px;filter:brightness(0) invert(1);opacity:.6}
   </div>
 </section>
 
-<footer><img src="../assets/logo-white.png" alt="DFT"/><div class="foot-info">Rua Serra da Mantiqueira, 73 · Vargem Grande Paulista, SP · comercial3@dftlogistica.com.br</div><div class="foot-contact">(11) 4159-3558 · (11) 91585-5163<br/>Seg a sex, 7h–18h</div></footer>
+<footer><img src="../assets/logo.png" alt="DFT Logística"/><div class="foot-info">Rua Serra da Mantiqueira, 73 · Vargem Grande Paulista, SP · comercial3@dftlogistica.com.br</div><div class="foot-contact">(11) 4159-3558 · (11) 91585-5163<br/>Seg a sex, 7h–18h</div></footer>
 
 <script>
 document.querySelectorAll('form.lead-form').forEach(function(f){f.addEventListener('submit',function(e){e.preventDefault();if(!this.checkValidity()){this.reportValidity();return;}this.querySelector('.f-fields').style.display='none';this.querySelector('.f-ok').classList.add('show');});});
