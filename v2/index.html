@@ -15,7 +15,7 @@ h1,h2,h3,.dsp{font-family:'Montserrat',sans-serif;font-weight:800;letter-spacing
 a{text-decoration:none;color:inherit}
 .acc{color:transparent;background:linear-gradient(120deg,var(--cyan),var(--cyan2));-webkit-background-clip:text;background-clip:text}
 nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(7,13,24,.8);backdrop-filter:blur(14px);border-bottom:1px solid var(--line);padding:0 48px;display:flex;align-items:center;justify-content:space-between;height:68px}
-.nav-logo img{height:28px;display:block;filter:brightness(0) invert(1)}
+.nav-logo img{height:34px;display:block;filter:brightness(0) invert(1)}
 .nav-links{display:flex;gap:30px;align-items:center;font-size:.86rem;color:var(--muted);font-weight:600}
 .nav-links a:hover{color:#fff}
 .nav-cta{background:linear-gradient(120deg,var(--cyan),var(--cyan2));color:#04121f;padding:11px 22px;border-radius:9px;font-weight:700;box-shadow:0 8px 24px -8px rgba(34,211,238,.6);transition:.2s}
@@ -139,6 +139,8 @@ footer img{height:26px;filter:brightness(0) invert(1);opacity:.6}
 </head>
 <body>
 <style>
+.hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.05);border:1px solid var(--line);border-radius:100px;padding:7px 15px;font-size:.82rem;font-weight:600;color:var(--ink);margin-bottom:22px}
+.hero-badge span{color:var(--cyan2)}
 .hero .relief{font-weight:600;font-size:1.12rem;color:#fff;max-width:520px;margin:-10px 0 28px;line-height:1.45}
 .dgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
 .dcard{padding:28px;border:1px solid var(--line);border-radius:16px;background:linear-gradient(160deg,var(--panel),var(--bg2));display:flex;flex-direction:column;gap:16px}
@@ -159,8 +161,9 @@ footer img{height:26px;filter:brightness(0) invert(1);opacity:.6}
   <div class="hero-inner">
     <div>
       <span class="eyebrow">Telemetria · Câmeras IA · Torre de controle</span>
-      <h1>Logística <span class="acc">rastreada por IA</span>.<br/>Previsibilidade em tempo real.</h1>
-      <p>Cada carga monitorada do embarque à entrega, com dados que antecipam desvios e protegem operações que não podem errar.</p>
+      <div class="hero-badge"><span>👤</span> Especialista dedicado à sua operação</div>
+      <h1>Não é só rastreamento.<br/><span class="acc">É alguém olhando</span> pela sua carga.</h1>
+      <p>Nossa torre de controle combina IA e especialistas dedicados para reagir antes que o problema te alcance.</p>
       <p class="relief">Chega de resolver problema de transportadora. <span class="acc">Você tem uma operação para crescer.</span></p>
       <div class="hero-cta"><a href="#form" class="btn btn-p">Falar com especialista →</a><a href="#tech" class="btn btn-g">Ver a tecnologia</a></div>
       <div class="hero-stats">
