@@ -318,7 +318,6 @@ document.querySelectorAll('form.lead-form').forEach(function(f){
     fetch(SCRIPT_URL, {
       method: 'POST',
       mode: 'no-cors',
-      headers: {'Content-Type': 'application/json'},
       body: JSON.stringify(data)
     }).catch(function(){});
   });
