@@ -296,7 +296,49 @@ footer img{height:42px}
 <footer><img src="../assets/logo-white.png" alt="DFT Logística"/><div class="foot-info">Rua Serra da Mantiqueira, 73 · Vargem Grande Paulista, SP · comercial3@dftlogistica.com.br</div><div class="foot-contact">(11) 4159-3558 · (11) 91585-5163<br/>Seg a sex, 7h–18h</div></footer>
 
 <script>
-document.querySelectorAll('form.lead-form').forEach(function(f){f.addEventListener('submit',function(e){e.preventDefault();if(!this.checkValidity()){this.reportValidity();return;}this.querySelector('.f-fields').style.display='none';this.querySelector('.f-ok').classList.add('show');});});
+var SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbykDzmz2-GzyYjirGQZvqvl6BDmq9xotPRYIHGu5mKZT4m8eMMfbeGVjbPWrSItH6d4/exec';
+
+document.querySelectorAll('form.lead-form').forEach(function(f){
+  f.addEventListener('submit', function(e){
+    e.preventDefault();
+    if (!this.checkValidity()) { this.reportValidity(); return; }
+    var form = this;
+    var utms = new URLSearchParams(window.location.search);
+    var data = {
+      nome:         form.querySelector('[name="nome"]').value,
+      empresa:      form.querySelector('[name="empresa"]').value,
+      email:        form.querySelector('[name="email"]').value,
+      cnpj:         form.querySelector('[name="cnpj"]').value,
+      whatsapp:     form.querySelector('[name="whatsapp"]').value,
+      volume:       form.querySelector('[name="volume"]').value,
+      origem:       'LP DFT v2',
+      utm_source:   utms.get('utm_source')   || '',
+      utm_medium:   utms.get('utm_medium')   || '',
+      utm_campaign: utms.get('utm_campaign') || '',
+      utm_content:  utms.get('utm_content')  || '',
+      utm_term:     utms.get('utm_term')     || ''
+    };
+    form.querySelector('.f-fields').style.display = 'none';
+    form.querySelector('.f-ok').classList.add('show');
+    if (!document.getElementById('__gf__')) {
+      var ifr = document.createElement('iframe');
+      ifr.id = '__gf__'; ifr.name = '__gf__';
+      ifr.style.cssText = 'position:absolute;width:1px;height:1px;left:-9999px;top:-9999px';
+      document.body.appendChild(ifr);
+    }
+    var hf = document.createElement('form');
+    hf.method = 'GET'; hf.action = SCRIPT_URL; hf.target = '__gf__';
+    hf.style.display = 'none';
+    Object.keys(data).forEach(function(k){
+      var i = document.createElement('input');
+      i.type = 'hidden'; i.name = k; i.value = data[k];
+      hf.appendChild(i);
+    });
+    document.body.appendChild(hf);
+    hf.submit();
+    setTimeout(function(){ try{document.body.removeChild(hf);}catch(e){} }, 5000);
+  });
+});
 </script>
 </body>
 </html>
