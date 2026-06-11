@@ -316,9 +316,7 @@ document.querySelectorAll('form.lead-form').forEach(function(f){
     form.querySelector('.f-fields').style.display = 'none';
     form.querySelector('.f-ok').classList.add('show');
     var params = new URLSearchParams(data);
-    fetch(SCRIPT_URL + '?' + params.toString(), {
-      mode: 'no-cors'
-    }).catch(function(){});
+    new Image().src = SCRIPT_URL + '?' + params.toString() + '&t=' + Date.now();
   });
 });
 </script>
