@@ -315,8 +315,23 @@ document.querySelectorAll('form.lead-form').forEach(function(f){
     };
     form.querySelector('.f-fields').style.display = 'none';
     form.querySelector('.f-ok').classList.add('show');
-    var params = new URLSearchParams(data);
-    new Image().src = SCRIPT_URL + '?' + params.toString() + '&t=' + Date.now();
+    if (!document.getElementById('__gf__')) {
+      var ifr = document.createElement('iframe');
+      ifr.id = '__gf__'; ifr.name = '__gf__';
+      ifr.style.cssText = 'position:absolute;width:1px;height:1px;left:-9999px;top:-9999px';
+      document.body.appendChild(ifr);
+    }
+    var hf = document.createElement('form');
+    hf.method = 'POST'; hf.action = SCRIPT_URL; hf.target = '__gf__';
+    hf.style.display = 'none';
+    Object.keys(data).forEach(function(k){
+      var i = document.createElement('input');
+      i.type = 'hidden'; i.name = k; i.value = data[k];
+      hf.appendChild(i);
+    });
+    document.body.appendChild(hf);
+    hf.submit();
+    setTimeout(function(){ try{document.body.removeChild(hf);}catch(e){} }, 5000);
   });
 });
 </script>
