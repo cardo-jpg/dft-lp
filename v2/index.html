@@ -328,7 +328,7 @@ document.querySelectorAll('form.lead-form').forEach(function(f){
       document.body.appendChild(ifr);
     }
     var hf = document.createElement('form');
-    hf.method = 'POST'; hf.action = SCRIPT_URL; hf.target = '__gf__';
+    hf.method = 'GET'; hf.action = SCRIPT_URL; hf.target = '__gf__';
     hf.style.display = 'none';
     Object.keys(data).forEach(function(k){
       var i = document.createElement('input');
