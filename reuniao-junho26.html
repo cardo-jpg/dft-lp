@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Reunião DFT Logística — Junho 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Fraunces:wght@500;700&display=swap" rel="stylesheet"/>
+<style>
+:root{
+  --bg:#07071a;
+  --card:rgba(255,255,255,.05);
+  --card2:rgba(255,255,255,.08);
+  --brd:rgba(255,255,255,.1);
+  --txt:#e8eaf6;
+  --mu:#c4cbe8;
+  --accent:#4f6ef7;
+  --accent2:#6b8aff;
+  --green:#34d399;
+  --amber:#fbbf24;
+  --red:#f87171;
+  --orange:#fb923c;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{
+  font-family:'Nunito',sans-serif;
+  background:var(--bg);
+  color:var(--txt);
+  min-height:100vh;
+  background:
+    radial-gradient(1100px 700px at -5% -15%, rgba(25,25,120,.45) 0%, transparent 60%),
+    radial-gradient(800px 600px at 105% 105%, rgba(38,33,191,.18) 0%, transparent 60%),
+    var(--bg);
+}
+.gl{height:3px;background:linear-gradient(90deg,#2621bf,#4285f4,#6b8aff,#2621bf);background-size:300%;animation:gl 4s linear infinite;}
+@keyframes gl{0%{background-position:0%}100%{background-position:300%}}
+header{background:rgba(10,10,36,.85);backdrop-filter:blur(14px);border-bottom:1px solid var(--brd);}
+.hi{max-width:900px;margin:0 auto;padding:24px 36px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+.brand{font-size:.72rem;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:var(--accent2);margin-bottom:4px;}
+h1{font-family:'Fraunces',serif;font-size:1.5rem;color:#fff;}
+h1 em{font-style:italic;color:var(--accent2);}
+.subtitle{font-size:.82rem;color:var(--mu);margin-top:3px;}
+.date-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.07);border:1px solid var(--brd);border-radius:8px;padding:8px 16px;font-size:.82rem;font-weight:800;color:#fff;}
+main{max-width:900px;margin:0 auto;padding:40px 36px 80px;}
+.sec{font-size:.68rem;font-weight:800;letter-spacing:2.5px;text-transform:uppercase;color:var(--accent2);display:flex;align-items:center;gap:10px;margin-bottom:20px;margin-top:52px;}
+.sec:first-child{margin-top:0;}
+.sec::after{content:'';flex:1;height:1px;background:var(--brd);}
+.sec span{background:rgba(107,138,255,.12);border:1px solid rgba(107,138,255,.25);border-radius:6px;padding:2px 10px;}
+
+/* métricas */
+.metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;}
+.m-card{background:var(--card2);border:1px solid var(--brd);border-radius:14px;padding:20px 16px;text-align:center;position:relative;overflow:hidden;}
+.m-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;}
+.m-card.c-blue::before{background:var(--accent);}
+.m-card.c-green::before{background:var(--green);}
+.m-card.c-amber::before{background:var(--amber);}
+.m-card.c-red::before{background:var(--red);}
+.m-card.c-orange::before{background:var(--orange);}
+.m-lbl{font-size:.65rem;font-weight:800;text-transform:uppercase;letter-spacing:1px;color:var(--mu);margin-bottom:6px;}
+.m-val{font-size:1.65rem;font-weight:900;color:#fff;line-height:1;}
+.m-sub{font-size:.7rem;color:var(--mu);margin-top:5px;line-height:1.4;}
+
+/* timeline */
+.timeline{display:flex;flex-direction:column;gap:0;}
+.titem{display:flex;gap:20px;padding:20px 0;border-bottom:1px solid var(--brd);}
+.titem:last-child{border-bottom:none;}
+.t-dot{flex:none;width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1rem;margin-top:2px;}
+.t-dot.done{background:rgba(52,211,153,.15);border:1px solid rgba(52,211,153,.3);}
+.t-body{}
+.t-tag{font-size:.62rem;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;color:var(--accent2);margin-bottom:4px;}
+.t-title{font-size:.95rem;font-weight:800;color:#fff;margin-bottom:4px;}
+.t-desc{font-size:.82rem;color:var(--mu);line-height:1.55;}
+
+/* card simples */
+.card{background:var(--card);border:1px solid var(--brd);border-radius:14px;padding:24px 28px;margin-bottom:12px;}
+.card-title{font-size:.95rem;font-weight:800;color:#fff;margin-bottom:10px;display:flex;align-items:center;gap:10px;}
+.card p{font-size:.85rem;color:var(--mu);line-height:1.65;}
+.card ul{list-style:none;display:flex;flex-direction:column;gap:8px;margin-top:8px;}
+.card ul li{font-size:.85rem;color:var(--mu);padding-left:20px;position:relative;line-height:1.5;}
+.card ul li::before{content:'→';position:absolute;left:0;color:var(--accent2);font-weight:700;}
+
+/* alerta */
+.alert{border-radius:14px;padding:22px 26px;margin-bottom:12px;display:flex;gap:16px;align-items:flex-start;}
+.alert.amber{background:rgba(251,191,36,.06);border:1px solid rgba(251,191,36,.25);}
+.alert.blue{background:rgba(79,110,247,.06);border:1px solid rgba(79,110,247,.25);}
+.alert.green{background:rgba(52,211,153,.06);border:1px solid rgba(52,211,153,.25);}
+.alert.red{background:rgba(248,113,113,.06);border:1px solid rgba(248,113,113,.25);}
+.alert-icon{font-size:1.3rem;flex:none;margin-top:1px;}
+.alert-body{}
+.alert-title{font-size:.9rem;font-weight:800;color:#fff;margin-bottom:6px;}
+.alert-text{font-size:.82rem;color:var(--mu);line-height:1.65;}
+.alert-text strong{color:#fff;}
+
+/* destaque pergunta */
+.question{background:linear-gradient(135deg,rgba(79,110,247,.1),rgba(107,138,255,.05));border:1px solid rgba(107,138,255,.3);border-radius:14px;padding:28px 32px;text-align:center;}
+.question p{font-size:.82rem;color:var(--mu);margin-bottom:14px;}
+.question .q-text{font-family:'Fraunces',serif;font-size:1.25rem;color:#fff;line-height:1.45;}
+
+@media(max-width:640px){
+  .hi{padding:20px 20px;}
+  main{padding:32px 20px 60px;}
+  .metrics{grid-template-columns:1fr 1fr;}
+}
+</style>
+</head>
+<body>
+<div class="gl"></div>
+<header>
+  <div class="hi">
+    <div>
+      <div class="brand">Cardô Marketing × DFT Logística</div>
+      <h1>Reunião de <em>Resultados</em></h1>
+      <div class="subtitle">Visão geral do trabalho realizado e próximos passos</div>
+    </div>
+    <div class="date-badge">📅 Junho de 2026</div>
+  </div>
+</header>
+
+<main>
+
+  <!-- 01 RESULTADOS -->
+  <div class="sec"><span>01</span> Resultados até hoje</div>
+
+  <div class="metrics">
+    <div class="m-card c-green">
+      <div class="m-lbl">Leads B2B gerados</div>
+      <div class="m-val">20+</div>
+      <div class="m-sub">Leads com CNPJ e volume declarado</div>
+    </div>
+    <div class="m-card c-blue">
+      <div class="m-lbl">Formulários Meta</div>
+      <div class="m-val">15</div>
+      <div class="m-sub">CPL R$6,33 — base de contato adicional</div>
+    </div>
+    <div class="m-card c-amber">
+      <div class="m-lbl">CPL Google (real)</div>
+      <div class="m-val">~R$259</div>
+      <div class="m-sub">Calculado sobre leads confirmados na planilha</div>
+    </div>
+    <div class="m-card c-orange">
+      <div class="m-lbl">Investimento total</div>
+      <div class="m-val">~R$3,5k</div>
+      <div class="m-sub">Google + Meta desde o início das campanhas</div>
+    </div>
+  </div>
+
+  <div class="alert blue" style="margin-top:16px;">
+    <div class="alert-icon">💡</div>
+    <div class="alert-body">
+      <div class="alert-title">Sobre o CPL histórico</div>
+      <div class="alert-text">Anteriormente foi dito que o CPL nunca passou de R$200. Isso acontecia porque <strong>não havia rastreamento estruturado</strong> — o custo por lead era calculado sem saber quantos leads realmente vinham dos anúncios. Com o Google Tag Manager e a planilha integrada, agora temos o número real.</div>
+    </div>
+  </div>
+
+  <!-- 02 O QUE FIZEMOS -->
+  <div class="sec"><span>02</span> Tudo o que foi feito</div>
+
+  <div class="timeline">
+    <div class="titem">
+      <div class="t-dot done">⚙️</div>
+      <div class="t-body">
+        <div class="t-tag">Setup inicial</div>
+        <div class="t-title">Estrutura de rastreamento do zero</div>
+        <div class="t-desc">Instalação do Google Tag Manager na LP, criação da integração com Google Sheets via Apps Script, configuração de UTMs em todas as campanhas — agora sabemos exatamente de qual anúncio veio cada lead.</div>
+      </div>
+    </div>
+    <div class="titem">
+      <div class="t-dot done">🖥️</div>
+      <div class="t-body">
+        <div class="t-tag">Landing Page</div>
+        <div class="t-title">LP v2 — criada e publicada</div>
+        <div class="t-desc">Nova landing page B2B com formulário integrado à planilha, rastreamento de UTMs, copy alinhada ao público de contratos, formulário qualificado por CNPJ e volume mensal. Nesta semana: headline otimizada para bater com as pesquisas do Google, campo e-mail removido para reduzir atrito, experiência mobile melhorada.</div>
+      </div>
+    </div>
+    <div class="titem">
+      <div class="t-dot done">📊</div>
+      <div class="t-body">
+        <div class="t-tag">Campanhas Google</div>
+        <div class="t-title">Estrutura Contratos B2B + Branding</div>
+        <div class="t-desc">Criação dos grupos G01 e G02 com palavras-chave segmentadas, desativação da aplicação automática de lances (o Google mudava a estratégia automaticamente sem aviso), adição de novas palavras de alto potencial, pausamento de keywords de baixo volume que consumiam orçamento sem retorno.</div>
+      </div>
+    </div>
+    <div class="titem">
+      <div class="t-dot done">🔁</div>
+      <div class="t-body">
+        <div class="t-tag">Reativação</div>
+        <div class="t-title">Retorno das campanhas que convertiam</div>
+        <div class="t-desc">As campanhas V2 e Original — que historicamente geraram 15 conversões rastreadas — foram reativadas com a nova LP e estratégia Maximizar Conversões sem CPA forçado, preservando o histórico de aprendizado do algoritmo.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 03 LEILÕES PERDIDOS -->
+  <div class="sec"><span>03</span> Leilões perdidos por verba</div>
+
+  <div class="alert amber">
+    <div class="alert-icon">⚠️</div>
+    <div class="alert-body">
+      <div class="alert-title">Deixamos de aparecer em boa parte das buscas</div>
+      <div class="alert-text">
+        O Google Ads trabalha por leilão — cada vez que alguém pesquisa "operador logístico SP", concorrentes com maior orçamento aparecem na nossa frente. Com o orçamento atual, a campanha de Branding chegou a perder <strong>22% das impressões por limitação de verba</strong>, e a campanha de Contratos opera abaixo do potencial de alcance do mercado.<br/><br/>
+        Isso significa que existe demanda qualificada que <strong>não nos vê</strong> porque o orçamento acabou antes do fim do dia. Não é problema de qualidade de anúncio ou de palavra-chave — é matemática de leilão.
+      </div>
+    </div>
+  </div>
+
+  <!-- 04 O QUE PRECISAMOS MELHORAR -->
+  <div class="sec"><span>04</span> O que identificamos para melhorar</div>
+
+  <div class="card">
+    <div class="card-title">📈 Do lado das campanhas</div>
+    <ul>
+      <li>Aumentar o orçamento diário para reduzir a perda de impressões e aparecer mais vezes para o público certo</li>
+      <li>Consolidar o período de aprendizado das campanhas reativadas — o Google precisa de 30-50 conversões para otimizar com precisão</li>
+      <li>Monitorar os termos de pesquisa semanalmente para negativar buscas irrelevantes</li>
+    </ul>
+  </div>
+  <div class="card">
+    <div class="card-title">🖥️ Do lado da LP</div>
+    <ul>
+      <li>Testes A/B de headline após acúmulo de dados suficientes</li>
+      <li>Adicionar mais provas sociais — depoimentos de contratos recorrentes, não apenas avaliações genéricas</li>
+      <li>Trabalhar a velocidade de carregamento — iniciamos as otimizações de performance hoje</li>
+    </ul>
+  </div>
+
+  <!-- 05 FEEDBACK DOS LEADS -->
+  <div class="sec"><span>05</span> Precisamos do feedback de vocês</div>
+
+  <div class="alert red">
+    <div class="alert-icon">🔄</div>
+    <div class="alert-body">
+      <div class="alert-title">Sem retorno, não conseguimos otimizar</div>
+      <div class="alert-text">
+        Desde o início das campanhas, temos solicitado feedback sobre os leads que entraram — <strong>o que aconteceu com cada contato, se virou negócio, se era qualificado, por que não fechou</strong>. Esse retorno é fundamental para que possamos ajustar a segmentação, as palavras-chave e a própria LP.<br/><br/>
+        Quando não sabemos o que acontece depois que o lead chega, estamos otimizando no escuro. Precisamos estabelecer um processo simples: uma vez por semana, um retorno rápido sobre os leads da semana anterior.
+      </div>
+    </div>
+  </div>
+
+  <!-- 06 CPL REALISTA -->
+  <div class="sec"><span>06</span> CPL realista para o mercado</div>
+
+  <div class="alert amber">
+    <div class="alert-icon">📌</div>
+    <div class="alert-body">
+      <div class="alert-title">R$50 por lead B2B qualificado não é realista</div>
+      <div class="alert-text">
+        O mercado de logística B2B no Google é altamente competitivo. Transportadoras, operadores logísticos e plataformas de gestão disputam os mesmos leilões. Um lead com CNPJ, volume declarado e interesse real em contrato recorrente tem um custo de aquisição compatível com o valor do contrato que pode gerar.<br/><br/>
+        <strong>CPL entre R$150 e R$350 é a realidade desse segmento</strong> — e é um número saudável quando um contrato fechado representa R$30 a R$100 mil por mês em frete. A conta precisa ser feita olhando para o LTV, não para o custo isolado do lead.
+      </div>
+    </div>
+  </div>
+
+  <!-- 07 ALINHAMENTO DE MÉTRICAS -->
+  <div class="sec"><span>07</span> Alinhamento de expectativas</div>
+
+  <div class="question">
+    <p>Para que possamos trabalhar com clareza e entregar o que realmente importa para vocês, precisamos responder juntos a esta pergunta:</p>
+    <div class="q-text">"Qual é a métrica de sucesso que vocês esperam da Cardô?"</div>
+    <p style="margin-top:16px;">Nosso objetivo é entregar <strong style="color:#fff;">leads dentro do ICP</strong> — ou seja, empresas com operação recorrente, carga de alto valor e volume compatível com o serviço da DFT. Não trabalhamos com volume de MQL sem qualificação. Se o alvo for quantidade, a estratégia muda. Se for qualidade dentro do perfil ideal, estamos no caminho certo.</p>
+  </div>
+
+  <!-- 08 PROCESSO COMERCIAL -->
+  <div class="sec"><span>08</span> Processo comercial</div>
+
+  <div class="alert green">
+    <div class="alert-icon">🤝</div>
+    <div class="alert-body">
+      <div class="alert-title">A conversão não termina quando o lead chega</div>
+      <div class="alert-text">
+        Geramos o contato, mas o fechamento depende de como ele é abordado do outro lado. Algumas perguntas que nos ajudam a entender o cenário:<br/><br/>
+        <strong>→ Qual o tempo médio de primeiro contato com o lead após ele entrar?</strong><br/>
+        <strong>→ Existe um script ou fluxo de abordagem definido?</strong><br/>
+        <strong>→ Os leads que não fecharam — qual foi o motivo declarado?</strong><br/><br/>
+        Entendemos que vocês têm um time comercial com seu próprio ritmo. Nossa intenção não é questionar, mas trabalhar junto para que o investimento em mídia se converta em receita real. Para isso, precisamos que o processo de feedback seja parte da rotina — não algo que acontece quando lembramos.
+      </div>
+    </div>
+  </div>
+
+  <div class="card" style="margin-top:0;border-color:rgba(107,138,255,.25);background:rgba(79,110,247,.06);">
+    <div class="card-title">📋 Próximos passos combinados</div>
+    <ul>
+      <li>Definir uma métrica de sucesso clara e compartilhada entre DFT e Cardô</li>
+      <li>Estabelecer retorno semanal dos leads — qualificado ou não, e por quê</li>
+      <li>Avaliar aumento de orçamento para reduzir impressões perdidas em leilão</li>
+      <li>Monitorar conversões das campanhas reativadas nos próximos 7-10 dias</li>
+    </ul>
+  </div>
+
+</main>
+</body>
+</html>
