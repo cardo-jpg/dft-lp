@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Reunião DFT Logística — Junho 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Fraunces:wght@500;700&display=swap" rel="stylesheet"/>
+<style>
+:root{
+  --bg:#07071a;
+  --card:rgba(255,255,255,.05);
+  --card2:rgba(255,255,255,.08);
+  --brd:rgba(255,255,255,.1);
+  --txt:#ffffff;
+  --mu:#ffffff;
+  --accent:#4f6ef7;
+  --accent2:#6b8aff;
+  --green:#34d399;
+  --amber:#fbbf24;
+  --red:#f87171;
+  --orange:#fb923c;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Nunito',sans-serif;background:var(--bg);color:var(--txt);min-height:100vh;
+  background:radial-gradient(1100px 700px at -5% -15%,rgba(25,25,120,.45) 0%,transparent 60%),
+    radial-gradient(800px 600px at 105% 105%,rgba(38,33,191,.18) 0%,transparent 60%),var(--bg);}
+.gl{height:3px;background:linear-gradient(90deg,#2621bf,#4285f4,#6b8aff,#2621bf);background-size:300%;animation:gl 4s linear infinite;}
+@keyframes gl{0%{background-position:0%}100%{background-position:300%}}
+header{background:rgba(10,10,36,.85);backdrop-filter:blur(14px);border-bottom:1px solid var(--brd);}
+.hi{max-width:960px;margin:0 auto;padding:24px 36px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+.brand{font-size:.94rem;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:var(--accent2);margin-bottom:4px;}
+h1{font-family:'Fraunces',serif;font-size:1.95rem;color:#fff;}
+h1 em{font-style:italic;color:var(--accent2);}
+.subtitle{font-size:1.07rem;color:#fff;margin-top:3px;}
+.date-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.07);border:1px solid var(--brd);border-radius:8px;padding:8px 16px;font-size:1.07rem;font-weight:800;color:#fff;}
+main{max-width:960px;margin:0 auto;padding:40px 36px 80px;}
+.sec{font-size:.88rem;font-weight:800;letter-spacing:2.5px;text-transform:uppercase;color:var(--accent2);display:flex;align-items:center;gap:10px;margin-bottom:20px;margin-top:52px;}
+.sec:first-child{margin-top:0;}
+.sec::after{content:'';flex:1;height:1px;background:var(--brd);}
+.sec span{background:rgba(107,138,255,.12);border:1px solid rgba(107,138,255,.25);border-radius:6px;padding:2px 10px;}
+
+.metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;}
+.m-card{background:var(--card2);border:1px solid var(--brd);border-radius:14px;padding:20px 16px;text-align:center;position:relative;overflow:hidden;}
+.m-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;}
+.m-card.c-blue::before{background:var(--accent);}
+.m-card.c-green::before{background:var(--green);}
+.m-card.c-amber::before{background:var(--amber);}
+.m-card.c-red::before{background:var(--red);}
+.m-card.c-orange::before{background:var(--orange);}
+.m-lbl{font-size:.85rem;font-weight:800;text-transform:uppercase;letter-spacing:1px;color:#fff;margin-bottom:6px;}
+.m-val{font-size:2.15rem;font-weight:900;color:#fff;line-height:1;}
+.m-sub{font-size:.91rem;color:#fff;margin-top:5px;line-height:1.4;}
+
+.timeline{display:flex;flex-direction:column;gap:0;}
+.titem{display:flex;gap:20px;padding:20px 0;border-bottom:1px solid var(--brd);}
+.titem:last-child{border-bottom:none;}
+.t-dot{flex:none;width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1rem;margin-top:2px;background:rgba(52,211,153,.15);border:1px solid rgba(52,211,153,.3);}
+.t-tag{font-size:.81rem;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;color:var(--accent2);margin-bottom:4px;}
+.t-title{font-size:1.24rem;font-weight:800;color:#fff;margin-bottom:4px;}
+.t-desc{font-size:1.07rem;color:#fff;line-height:1.6;}
+.t-desc strong{color:#fff;}
+
+.card{background:var(--card);border:1px solid var(--brd);border-radius:14px;padding:24px 28px;margin-bottom:12px;}
+.card-title{font-size:1.24rem;font-weight:800;color:#fff;margin-bottom:12px;display:flex;align-items:center;gap:10px;}
+.card p{font-size:1.07rem;color:#fff;line-height:1.65;}
+.card ul{list-style:none;display:flex;flex-direction:column;gap:8px;margin-top:8px;}
+.card ul li{font-size:1.07rem;color:#fff;padding-left:20px;position:relative;line-height:1.5;}
+.card ul li::before{content:'→';position:absolute;left:0;color:var(--accent2);font-weight:700;}
+.card ul li strong{color:#fff;}
+
+.alert{border-radius:14px;padding:22px 26px;margin-bottom:12px;display:flex;gap:16px;align-items:flex-start;}
+.alert.amber{background:rgba(251,191,36,.06);border:1px solid rgba(251,191,36,.25);}
+.alert.blue{background:rgba(79,110,247,.06);border:1px solid rgba(79,110,247,.25);}
+.alert.green{background:rgba(52,211,153,.06);border:1px solid rgba(52,211,153,.25);}
+.alert.red{background:rgba(248,113,113,.06);border:1px solid rgba(248,113,113,.25);}
+.alert-icon{font-size:1.3rem;flex:none;margin-top:1px;}
+.alert-title{font-size:1.17rem;font-weight:800;color:#fff;margin-bottom:6px;}
+.alert-text{font-size:1.07rem;color:#fff;line-height:1.65;}
+.alert-text strong{color:#fff;}
+
+/* budget sim */
+.sim-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;}
+.sim-card{background:var(--card2);border:1px solid var(--brd);border-radius:14px;padding:22px 18px;}
+.sim-name{font-size:.88rem;font-weight:800;text-transform:uppercase;letter-spacing:1px;color:#fff;margin-bottom:4px;}
+.sim-camp{font-size:1.3rem;font-weight:800;color:#fff;margin-bottom:14px;}
+.sim-row{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;font-size:1.04rem;}
+.sim-lbl{color:#fff;}
+.sim-val{font-weight:700;color:#fff;}
+.sim-val.red{color:var(--red);}
+.sim-val.amber{color:var(--amber);}
+.sim-divider{height:1px;background:var(--brd);margin:12px 0;}
+.sim-scenario{padding:10px 0;border-bottom:1px dashed rgba(255,255,255,.06);}
+.sim-scenario:last-child{border-bottom:none;}
+.sim-sc-name{font-size:.94rem;font-weight:700;color:#fff;margin-bottom:4px;}
+.sim-sc-row{display:flex;justify-content:space-between;font-size:1.01rem;}
+.sim-sc-budget{font-weight:800;color:#fff;}
+.sim-sc-leads{color:var(--green);font-weight:700;}
+
+/* leads table */
+.leads-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;}
+.lead-chip{background:var(--card);border:1px solid var(--brd);border-radius:10px;padding:12px 16px;}
+.lead-chip-name{font-size:1.1rem;font-weight:700;color:#fff;margin-bottom:2px;}
+.lead-chip-info{font-size:.94rem;color:#fff;}
+.lead-chip.ql{border-color:rgba(52,211,153,.3);background:rgba(52,211,153,.05);}
+.lead-chip.par{border-color:rgba(251,191,36,.3);background:rgba(251,191,36,.04);}
+.lead-chip.low{border-color:rgba(248,113,113,.2);}
+
+.question{background:linear-gradient(135deg,rgba(79,110,247,.1),rgba(107,138,255,.05));border:1px solid rgba(107,138,255,.3);border-radius:14px;padding:28px 32px;text-align:center;}
+.question p{font-size:1.07rem;color:#fff;margin-bottom:14px;}
+.question .q-text{font-family:'Fraunces',serif;font-size:1.56rem;color:#fff;line-height:1.5;}
+.question p strong{color:#fff;}
+
+@media(max-width:700px){
+  .hi{padding:20px;}main{padding:28px 16px 60px;}
+  .metrics,.sim-grid,.leads-grid{grid-template-columns:1fr 1fr;}
+}
+</style>
+</head>
+<body>
+<div class="gl"></div>
+<header>
+  <div class="hi">
+    <div>
+      <div class="brand">Cardô Marketing × DFT Logística</div>
+      <h1>Reunião de <em>Resultados</em></h1>
+      <div class="subtitle">Visão geral do trabalho realizado, dados reais e próximos passos</div>
+    </div>
+    <div class="date-badge">📅 Junho de 2026</div>
+  </div>
+</header>
+
+<main>
+
+  <!-- 01 RESULTADOS -->
+  <div class="sec"><span>01</span> Resultados até hoje</div>
+
+  <div class="metrics">
+    <div class="m-card c-green">
+      <div class="m-lbl">Leads gerados</div>
+      <div class="m-val">25+</div>
+      <div class="m-sub">Contatos com CNPJ e volume declarado na planilha</div>
+    </div>
+    <div class="m-card c-amber">
+      <div class="m-lbl">CPL Google (real)</div>
+      <div class="m-val">~R$259</div>
+      <div class="m-sub">Calculado sobre leads confirmados na planilha</div>
+    </div>
+    <div class="m-card c-orange">
+      <div class="m-lbl">Impressões perdidas</div>
+      <div class="m-val">68%</div>
+      <div class="m-sub">Demanda Ativa perde 68% dos leilões por orçamento</div>
+    </div>
+  </div>
+
+  <div class="alert blue" style="margin-top:14px;">
+    <div class="alert-icon">💡</div>
+    <div class="alert-body">
+      <div class="alert-title">Agora temos rastreamento real — e isso muda a leitura dos números</div>
+      <div class="alert-text">Antes da Cardô, não havia rastreamento estruturado. O custo por lead era uma estimativa sem origem confirmada. Com GTM, planilha integrada e UTMs em todas as campanhas, <strong>cada lead tem fonte, data e canal registrados.</strong> O que mudou não foi o CPL — foi a precisão da informação.</div>
+    </div>
+  </div>
+
+  <!-- 02 VELOCIDADE DE EXECUÇÃO -->
+  <div class="sec"><span>02</span> Velocidade de execução</div>
+
+  <div class="card">
+    <div class="card-title">⚡ Tempo de resposta da Cardô</div>
+    <ul>
+      <li><strong>1 semana</strong> aguardando todos os acessos da DFT. Assim que chegaram: tudo configurado em <strong>3 dias.</strong></li>
+      <li>Todas as campanhas sempre no ar em no <strong>máximo 1 dia</strong> após solicitação.</li>
+      <li>CNPJ solicitado em 28/04 → LP atualizada em 07/05 — <strong>9 dias úteis.</strong></li>
+      <li>Prévia das novas LPs solicitada em 29/05 → <strong>3 prévias entregues em 01/06.</strong></li>
+      <li>Mais de <strong>1.000 palavras negativas</strong> adicionadas (a conta tinha ~100 antes).</li>
+    </ul>
+  </div>
+
+  <!-- 03 TUDO QUE FOI FEITO -->
+  <div class="sec"><span>03</span> Tudo o que foi feito</div>
+
+  <div class="timeline">
+    <div class="titem">
+      <div class="t-dot">⚙️</div>
+      <div class="t-body">
+        <div class="t-tag">Setup inicial</div>
+        <div class="t-title">Rastreamento do zero — GTM, Sheets e UTMs</div>
+        <div class="t-desc">Instalação do Google Tag Manager na LP, integração com Google Sheets via Apps Script, configuração de UTMs em todas as campanhas. Agora cada lead tem origem rastreada: qual anúncio, qual palavra-chave, qual canal.</div>
+      </div>
+    </div>
+    <div class="titem">
+      <div class="t-dot">🖥️</div>
+      <div class="t-body">
+        <div class="t-tag">Landing Page</div>
+        <div class="t-title">LP v2 — criada, otimizada e publicada</div>
+        <div class="t-desc">Nova LP com formulário integrado à planilha, CNPJ para qualificação, copy alinhada ao ICP. Nesta semana: headline reescrita para bater com as pesquisas do Google ("Operador logístico dedicado para indústrias"), campo e-mail removido para reduzir atrito, experiência mobile reestruturada.</div>
+      </div>
+    </div>
+    <div class="titem">
+      <div class="t-dot">📊</div>
+      <div class="t-body">
+        <div class="t-tag">Campanhas Google</div>
+        <div class="t-title">Estrutura, negativos e qualidade de tráfego</div>
+        <div class="t-desc"><strong>+1.000 palavras negativas</strong> adicionadas (conta tinha ~100 antes). Palavras amplas migradas para correspondência exata e de frase. Auto-aplicação de lances desativada — o Google não troca mais a estratégia automaticamente. Novos anúncios responsivos criados. Estratégia alternada entre Maximizar Conversões e Maximizar Cliques conforme fase de aprendizado.</div>
+      </div>
+    </div>
+    <div class="titem">
+      <div class="t-dot">🔁</div>
+      <div class="t-body">
+        <div class="t-tag">Esta semana</div>
+        <div class="t-title">Reativação das campanhas que mais converteram</div>
+        <div class="t-desc">As campanhas V2 e Original — que historicamente geraram <strong>15 conversões rastreadas</strong> — foram reativadas com a nova LP e estratégia Maximizar Conversões sem CPA forçado, preservando o histórico de aprendizado do algoritmo.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 04 LEADS -->
+  <div class="sec"><span>04</span> Leads gerados</div>
+
+  <div class="leads-grid" style="margin-bottom:12px;">
+    <div class="lead-chip par"><div class="lead-chip-name">VetBR Saúde Animal</div><div class="lead-chip-info">Alta aderência · lead quente · não fechou</div></div>
+    <div class="lead-chip par"><div class="lead-chip-name">Tranter Indústria</div><div class="lead-chip-info">Industrial · Em andamento</div></div>
+    <div class="lead-chip par"><div class="lead-chip-name">Werner Alimentos</div><div class="lead-chip-info">Em qualificação · reunião realizada</div></div>
+    <div class="lead-chip par"><div class="lead-chip-name">Cisbra Agroindustrial</div><div class="lead-chip-info">Agronegócio · em prospecção</div></div>
+    <div class="lead-chip par"><div class="lead-chip-name">EUROTECHNIKER</div><div class="lead-chip-info">Equipamentos industriais · Em andamento</div></div>
+    <div class="lead-chip par"><div class="lead-chip-name">IDENTITA Cosméticos</div><div class="lead-chip-info">Potencial recorrente · Em negociação</div></div>
+    <div class="lead-chip par"><div class="lead-chip-name">BRL Distribuidora</div><div class="lead-chip-info">Pneus/peças · Em negociação</div></div>
+    <div class="lead-chip par"><div class="lead-chip-name">Nor Import</div><div class="lead-chip-info">Alimentos e Bebidas · Sem retorno</div></div>
+    <div class="lead-chip par"><div class="lead-chip-name">Ok Corporations</div><div class="lead-chip-info">Eletrônicos · Em análise</div></div>
+    <div class="lead-chip low"><div class="lead-chip-name">SertCana · SENAI · MDI Medical</div><div class="lead-chip-info">Demanda pontual / baixa aderência</div></div>
+    <div class="lead-chip low"><div class="lead-chip-name">OHMEX · MarBrasil · Clarity Glass</div><div class="lead-chip-info">Pontual / FOB / sem recorrência</div></div>
+    <div class="lead-chip low"><div class="lead-chip-name">Bovmeat · Mathis · ALVES RIBEIRO</div><div class="lead-chip-info">Têxtil / Construtora / Em sondagem</div></div>
+  </div>
+
+  <div class="alert green">
+    <div class="alert-icon">✅</div>
+    <div class="alert-body">
+      <div class="alert-title">Agora temos o ICP definido — isso muda a otimização</div>
+      <div class="alert-text">Com o alinhamento de hoje — faturamento mínimo R$30k, porte médio/grande, regiões SP/Sul/RJ, segmentos Eletrônicos, Saúde, Automotivo, Bens Premium — conseguimos refinar palavras-chave, negativar segmentos fora do perfil e ajustar a LP para falar diretamente com esse público. <strong>Quanto mais claro o ICP, mais eficiente fica cada real investido.</strong></div>
+    </div>
+  </div>
+
+  <!-- 05 LEILÕES PERDIDOS -->
+  <div class="sec"><span>05</span> Estamos perdendo leilões por falta de verba</div>
+
+  <div class="alert amber" style="margin-bottom:16px;">
+    <div class="alert-icon">⚠️</div>
+    <div class="alert-body">
+      <div class="alert-title">68% das buscas qualificadas não nos veem</div>
+      <div class="alert-text">Na campanha de Demanda Ativa, <strong>68,2% das impressões são perdidas por limitação de orçamento</strong> — ou seja, a cada 10 empresas que pesquisam "operador logístico SP", a DFT aparece para menos de 2. Isso não é problema de qualidade de anúncio. É matemática de leilão: quem tem mais verba, aparece mais.</div>
+    </div>
+  </div>
+
+  <div class="sim-grid">
+    <div class="sim-card">
+      <div class="sim-name">Google Ads</div>
+      <div class="sim-camp">Campanha de Marca</div>
+      <div class="sim-row"><span class="sim-lbl">Orçamento atual</span><span class="sim-val">R$11,19/dia</span></div>
+      <div class="sim-row"><span class="sim-lbl">Perdendo por verba</span><span class="sim-val red">48,8%</span></div>
+      <div class="sim-row"><span class="sim-lbl">Perdendo por qualidade</span><span class="sim-val amber">37,0%</span></div>
+      <div class="sim-divider"></div>
+      <div class="sim-scenario"><div class="sim-sc-name">Conservador +15%</div><div class="sim-sc-row"><span class="sim-sc-budget">R$12,86/dia</span><span class="sim-sc-leads">+6 leads/mês</span></div></div>
+      <div class="sim-scenario"><div class="sim-sc-name">Moderado +30%</div><div class="sim-sc-row"><span class="sim-sc-budget">R$14,54/dia</span><span class="sim-sc-leads">+12 leads/mês</span></div></div>
+      <div class="sim-scenario"><div class="sim-sc-name">Crescimento +50%</div><div class="sim-sc-row"><span class="sim-sc-budget">R$16,78/dia</span><span class="sim-sc-leads">+19 leads/mês</span></div></div>
+    </div>
+    <div class="sim-card" style="border-color:rgba(248,113,113,.3);">
+      <div class="sim-name">Google Ads</div>
+      <div class="sim-camp">Demanda Ativa</div>
+      <div class="sim-row"><span class="sim-lbl">Orçamento atual</span><span class="sim-val">R$47,72/dia</span></div>
+      <div class="sim-row"><span class="sim-lbl">Perdendo por verba</span><span class="sim-val red">68,2% ⚠️</span></div>
+      <div class="sim-row"><span class="sim-lbl">Perdendo por qualidade</span><span class="sim-val amber">22,2%</span></div>
+      <div class="sim-divider"></div>
+      <div class="sim-scenario"><div class="sim-sc-name">Conservador +15%</div><div class="sim-sc-row"><span class="sim-sc-budget">R$54,87/dia</span><span class="sim-sc-leads">+3 leads/mês</span></div></div>
+      <div class="sim-scenario"><div class="sim-sc-name">Moderado +30%</div><div class="sim-sc-row"><span class="sim-sc-budget">R$62,03/dia</span><span class="sim-sc-leads">+6 leads/mês</span></div></div>
+      <div class="sim-scenario"><div class="sim-sc-name">Crescimento +50%</div><div class="sim-sc-row"><span class="sim-sc-budget">R$71,58/dia</span><span class="sim-sc-leads">+10 leads/mês</span></div></div>
+    </div>
+    <div class="sim-card">
+      <div class="sim-name">Google Ads</div>
+      <div class="sim-camp">Segmentos ICP</div>
+      <div class="sim-row"><span class="sim-lbl">Orçamento atual</span><span class="sim-val">R$43,89/dia</span></div>
+      <div class="sim-row"><span class="sim-lbl">Perdendo por verba</span><span class="sim-val red">40,5%</span></div>
+      <div class="sim-row"><span class="sim-lbl">Perdendo por qualidade</span><span class="sim-val amber">14,8%</span></div>
+      <div class="sim-divider"></div>
+      <div class="sim-scenario"><div class="sim-sc-name">Conservador +15%</div><div class="sim-sc-row"><span class="sim-sc-budget">R$50,47/dia</span><span class="sim-sc-leads">+5 leads/mês</span></div></div>
+      <div class="sim-scenario"><div class="sim-sc-name">Moderado +30%</div><div class="sim-sc-row"><span class="sim-sc-budget">R$57,06/dia</span><span class="sim-sc-leads">+9 leads/mês</span></div></div>
+      <div class="sim-scenario"><div class="sim-sc-name">Crescimento +50%</div><div class="sim-sc-row"><span class="sim-sc-budget">R$65,83/dia</span><span class="sim-sc-leads">+15 leads/mês</span></div></div>
+    </div>
+  </div>
+
+  <!-- 06 CPL REALISTA -->
+  <div class="sec"><span>06</span> CPL realista para o mercado</div>
+
+  <div class="alert amber">
+    <div class="alert-icon">📌</div>
+    <div class="alert-body">
+      <div class="alert-title">R$50 por lead B2B qualificado não é o que o mercado pratica</div>
+      <div class="alert-text">
+        O mercado de logística B2B no Google é altamente competitivo. Transportadoras, operadores e plataformas de gestão disputam os mesmos leilões. <strong>CPL entre R$150 e R$350 é a realidade desse segmento</strong> — e é um número saudável quando um contrato fechado representa R$30k a R$100k/mês em frete.<br/><br/>
+        A conta precisa ser feita olhando para o LTV, não para o custo isolado do lead. Um lead a R$259 que vira um contrato de R$40k/mês por 12 meses representa CAC de 0,05% da receita gerada.
+      </div>
+    </div>
+  </div>
+
+  <!-- 07 FEEDBACK DOS LEADS -->
+  <div class="sec"><span>07</span> O feedback de vocês otimiza as campanhas</div>
+
+  <div class="alert blue">
+    <div class="alert-icon">🔄</div>
+    <div class="alert-body">
+      <div class="alert-title">Como o retorno comercial entra no processo de otimização</div>
+      <div class="alert-text">
+        A devolutiva que recebemos sobre os leads esta semana foi aplicada diretamente: identificamos segmentos fora do ICP, ajustamos negativos e refinamos a segmentação. Esse é o ciclo que faz o investimento ficar mais preciso com o tempo.<br/><br/>
+        O processo funciona assim: <strong>marketing gera o contato qualificado → comercial qualifica e retorna o status → marketing ajusta a campanha.</strong> Quanto mais esse ciclo rodar, menos verba vai para leads fora do perfil e mais vai para quem tem potencial real de fechar.
+      </div>
+    </div>
+  </div>
+
+  <!-- 08 MÉTRICAS -->
+  <div class="sec"><span>08</span> O que está sob nossa gestão</div>
+
+  <div class="question">
+    <p>Temos controle total sobre o que é nosso. É importante que isso fique claro:</p>
+    <div class="q-text">Geramos o lead qualificado. O fechamento é comercial.</div>
+    <p style="margin-top:16px;">Nossa entrega é o <strong>MQL — lead dentro do ICP</strong>, com perfil, porte e segmento alinhados à DFT. Segmentação, palavras-chave, anúncio, LP e qualificação inicial: <strong>isso está nas nossas mãos e está sendo gerenciado.</strong> A etapa seguinte — abordagem, proposta e fechamento — é o processo comercial de vocês. Os dois processos precisam funcionar bem para o resultado aparecer.</p>
+  </div>
+
+  <!-- 09 PROCESSO COMERCIAL -->
+  <div class="sec"><span>09</span> Como o funil funciona na prática</div>
+
+  <div class="alert green">
+    <div class="alert-icon">🤝</div>
+    <div class="alert-body">
+      <div class="alert-title">MQL e SQL — dois filtros, dois times</div>
+      <div class="alert-text">
+        O lead que chega pelo anúncio passou pelo nosso filtro de MQL: perfil de empresa, segmento e região compatíveis com a DFT. O que acontece depois disso é o filtro comercial — SQL — que avalia recorrência, volume real e intenção de fechar.<br/><br/>
+        Esses são dois processos distintos com responsabilidades distintas. Confundir os dois leva a uma leitura errada dos resultados. <strong>Um lead fora do SQL não significa que o MQL falhou</strong> — significa que passou pelo filtro de marketing e não passou pelo filtro comercial, o que é completamente normal em qualquer operação B2B.
+      </div>
+    </div>
+  </div>
+
+  <div class="card" style="border-color:rgba(107,138,255,.25);background:rgba(79,110,247,.06);margin-top:0;">
+    <div class="card-title">📋 Próximos passos</div>
+    <ul>
+      <li>Avaliar aumento de orçamento para reduzir os 68% de impressões perdidas na Demanda Ativa</li>
+      <li>Retorno semanal dos leads — qualificado, em andamento ou perdido e por quê</li>
+      <li>Definir juntos a métrica principal de sucesso da parceria</li>
+      <li>Monitorar conversões das campanhas reativadas nos próximos 7–10 dias</li>
+      <li>Meta Ads: retomar quando os novos vídeos estiverem disponíveis</li>
+    </ul>
+  </div>
+
+</main>
+</body>
+</html>
