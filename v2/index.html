@@ -156,7 +156,16 @@ footer img{height:42px}
 .dcard .stars{color:var(--cyan2);font-size:.9rem;letter-spacing:2px}
 .dcard .quote{font-size:.95rem;color:var(--ink);line-height:1.6}
 .dcard .who b{display:block;color:#fff;font-weight:700}.dcard .who span{font-size:.8rem;color:var(--muted2)}
-@media(max-width:760px){.dgrid{grid-template-columns:1fr}}
+.cam-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.cam{margin:0;border:1px solid var(--line);border-radius:16px;overflow:hidden;background:var(--panel)}
+.cam img{width:100%;height:300px;object-fit:cover;display:block}
+.cam figcaption{padding:16px 20px;font-size:.9rem;color:var(--muted)}
+.forn{text-align:center;margin-top:48px}
+.forn-lbl{display:block;font-size:.7rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--muted2);margin-bottom:22px}
+.forn-logos{display:flex;flex-wrap:wrap;gap:16px;justify-content:center;align-items:center}
+.chip{background:#fff;border-radius:12px;padding:14px 22px;height:64px;display:flex;align-items:center;justify-content:center}
+.chip img{max-height:34px;max-width:130px;object-fit:contain;display:block}
+@media(max-width:760px){.dgrid{grid-template-columns:1fr}.cam-grid{grid-template-columns:1fr}.cam img{height:240px}}
 </style>
 
 <nav>
@@ -205,13 +214,19 @@ footer img{height:42px}
 <section id="tech">
   <div class="inner">
     <div class="head"><h2 class="title">Tecnologia que tira a <span class="acc">incerteza</span> da operação</h2><p class="sub">Tecnologia monitorada por especialistas dedicados à sua operação. Visibilidade, controle e gestão de risco em tempo real — para você ter certeza de que alguém já está cuidando disso.</p></div>
-    <div class="tgrid">
-      <div class="tcard"><div class="ic">📡</div><h3>Rastreamento com IA</h3><p>Telemetria em tempo real com inteligência sobre desvios de rota e prazo, do embarque à entrega.</p></div>
-      <div class="tcard"><div class="ic">📷</div><h3>Câmeras com IA</h3><p>Monitoramento ativo de risco e direção, reduzindo desvio e avaria antes que virem prejuízo.</p></div>
-      <div class="tcard"><div class="ic">🖥️</div><h3>Torre de controle</h3><p>Painel próprio para acompanhar toda a operação. Transparência total, sem cobrar status.</p></div>
-      <div class="tcard"><div class="ic">💊</div><h3>Farmacêutico in loco</h3><p>Controle de qualidade e conformidade para cargas sensíveis e reguladas.</p></div>
-      <div class="tcard"><div class="ic">🔧</div><h3>Manutenção preditiva</h3><p>Oficina própria e dados de frota que evitam paradas não planejadas.</p></div>
-      <div class="tcard"><div class="ic">🛡️</div><h3>Gestão de risco</h3><p>Protocolos e seguro dedicado para cargas de alto valor agregado.</p></div>
+    <div class="cam-grid">
+      <figure class="cam"><img src="../assets/dft/camera-controle.jpg" alt="Sala de controle DFT monitorando câmeras ao vivo" loading="lazy"/><figcaption>Sala de controle própria acompanhando cada câmera em tempo real.</figcaption></figure>
+      <figure class="cam"><img src="../assets/dft/camera-caminhao.jpg" alt="Câmera com IA instalada na frota DFT" loading="lazy"/><figcaption>Câmeras com IA na frota — externas e na cabine — para segurança e direção.</figcaption></figure>
+    </div>
+    <div class="forn">
+      <span class="forn-lbl">Tecnologia e segurança em parceria com</span>
+      <div class="forn-logos">
+        <div class="chip"><img src="../assets/fornecedores/sascar.png" alt="Sascar" loading="lazy"/></div>
+        <div class="chip"><img src="../assets/fornecedores/onixsat.png" alt="Onix Sat" loading="lazy"/></div>
+        <div class="chip"><img src="../assets/fornecedores/omnilink.png" alt="Omnilink" loading="lazy"/></div>
+        <div class="chip"><img src="../assets/fornecedores/t4s.png" alt="T4S" loading="lazy"/></div>
+        <div class="chip"><img src="../assets/fornecedores/sompo.png" alt="Sompo Seguros" loading="lazy"/></div>
+      </div>
     </div>
     <img src="../assets/dft/banner-site-tech.jpg" alt="Monitoramento 24h DFT — câmeras, IA e rastreamento" style="width:100%;border-radius:16px;border:1px solid var(--line);margin-top:36px;display:block" loading="lazy"/>
   </div>
