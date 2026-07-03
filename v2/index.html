@@ -103,9 +103,9 @@ section{padding:96px 48px}
 .seg-photo::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,transparent 35%,rgba(7,13,24,.85))}
 .seg-body{padding:20px 22px}.seg-name{font-family:'Montserrat';font-weight:600;color:#fff;margin-bottom:5px}.seg-kw{font-size:.83rem;color:var(--muted)}
 
-.numbers{position:relative;padding:0}
-.numbers-bg{position:absolute;inset:0;z-index:-2;background:url('../assets/dft/movimentacao-e-expedicao.jpg') center/cover}
-.numbers-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(120deg,rgba(7,13,24,.96),rgba(12,20,36,.9))}
+.numbers{position:relative;padding:0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.numbers-bg{position:absolute;inset:0;z-index:-2;background:linear-gradient(160deg,var(--bg2),var(--panel))}
+.numbers-bg::after{content:'';position:absolute;inset:0;background:radial-gradient(680px 320px at 50% 0%,rgba(47,85,212,.12),transparent 72%)}
 .ngrid{position:relative;display:grid;grid-template-columns:repeat(4,1fr)}
 .num{text-align:center;padding:56px 20px;position:relative}
 .num+.num::before{content:'';position:absolute;left:0;top:25%;height:50%;width:1px;background:var(--line)}
