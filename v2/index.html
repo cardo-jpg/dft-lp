@@ -165,7 +165,21 @@ footer img{height:42px}
 .forn-logos{display:flex;flex-wrap:wrap;gap:16px;justify-content:center;align-items:center}
 .chip{background:#fff;border-radius:12px;padding:16px 28px;height:88px;display:flex;align-items:center;justify-content:center}
 .chip img{max-height:52px;max-width:165px;object-fit:contain;display:block}
-@media(max-width:760px){.dgrid{grid-template-columns:1fr}.cam-grid{grid-template-columns:1fr}.cam img{height:240px}}
+.protege{margin-top:8px}
+.protege-h{text-align:center;font-size:1.7rem;font-weight:800;color:#fff;margin-bottom:14px}
+.protege-sub{text-align:center;max-width:760px;margin:0 auto 44px;color:var(--muted);font-size:1rem}
+.prot-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-bottom:60px;align-items:start}
+.prot-col{text-align:center;display:flex;flex-direction:column;align-items:center;gap:8px}
+.prot-logos{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;align-items:center;margin-bottom:10px;min-height:60px}
+.prot-logos .chip{height:60px;padding:10px 16px}
+.prot-logos .chip img{max-height:38px;max-width:120px}
+.prot-col h4{color:var(--cyan2);font-size:1.1rem;font-weight:700}
+.prot-col p{color:var(--muted);font-size:.9rem;max-width:250px}
+.protege-h2{text-align:center;font-size:1.4rem;font-weight:800;color:#fff;max-width:660px;margin:0 auto 34px}
+.cam-grid-3{grid-template-columns:repeat(3,1fr)}
+.cam-grid-3 .cam img{height:240px}
+.cam-cap{text-align:center;color:var(--muted);font-size:.92rem;margin-top:22px}
+@media(max-width:760px){.dgrid{grid-template-columns:1fr}.cam-grid{grid-template-columns:1fr}.cam img{height:240px}.prot-grid{grid-template-columns:1fr}.cam-grid-3{grid-template-columns:1fr}}
 </style>
 
 <nav>
@@ -212,20 +226,38 @@ footer img{height:42px}
 
 <section id="tech">
   <div class="inner">
-    <div class="head"><h2 class="title">Tecnologia que tira a <span class="acc">incerteza</span> da operação</h2><p class="sub">Tecnologia monitorada por especialistas dedicados à sua operação. Visibilidade, controle e gestão de risco em tempo real — para você ter certeza de que alguém já está cuidando disso.</p></div>
-    <div class="cam-grid">
-      <figure class="cam"><img src="../assets/dft/camera-controle.jpg" alt="Sala de controle DFT monitorando câmeras ao vivo" loading="lazy"/><figcaption>Sala de controle própria acompanhando cada câmera em tempo real.</figcaption></figure>
-      <figure class="cam"><img src="../assets/dft/camera-caminhao.jpg" alt="Câmera com IA instalada na frota DFT" loading="lazy"/><figcaption>Câmeras com IA na frota — externas e na cabine — para segurança e direção.</figcaption></figure>
-    </div>
-    <div class="forn">
-      <span class="forn-lbl">Tecnologia e segurança em parceria com</span>
-      <div class="forn-logos">
-        <div class="chip"><img src="../assets/fornecedores/sascar.png" alt="Sascar" loading="lazy"/></div>
-        <div class="chip"><img src="../assets/fornecedores/onixsat.png" alt="Onix Sat" loading="lazy"/></div>
-        <div class="chip"><img src="../assets/fornecedores/omnilink.png" alt="Omnilink" loading="lazy"/></div>
-        <div class="chip"><img src="../assets/fornecedores/t4s.png" alt="T4S" loading="lazy"/></div>
-        <div class="chip"><img src="../assets/fornecedores/sompo.png" alt="Sompo Seguros" loading="lazy"/></div>
+    <div class="head"><h2 class="title">Tecnologia que tira a <span class="acc">incerteza</span> da operação</h2><p class="sub">Tecnologia monitorada por especialistas dedicados à sua operação. Visibilidade, controle e gestão de risco em tempo real — para você ter certeza de que alguém já está cuidando.</p></div>
+    <div class="protege">
+      <h3 class="protege-h">Para nós, transportar é <span class="acc">proteger</span>.</h3>
+      <p class="protege-sub">Cargas de alto valor precisam mais do que transporte: precisam de um sistema inteligente de segurança, pronto para agir a qualquer momento. Por isso contamos com as melhores ferramentas do mercado:</p>
+      <div class="prot-grid">
+        <div class="prot-col">
+          <div class="prot-logos">
+            <div class="chip"><img src="../assets/fornecedores/omnilink.png" alt="Omnilink" loading="lazy"/></div>
+            <div class="chip"><img src="../assets/fornecedores/onixsat.png" alt="Onix Sat" loading="lazy"/></div>
+            <div class="chip"><img src="../assets/fornecedores/sascar.png" alt="Sascar" loading="lazy"/></div>
+          </div>
+          <h4>Rastreamento Multicamadas</h4>
+          <p>3 tipos de rastreadores para monitoramento completo.</p>
+        </div>
+        <div class="prot-col">
+          <div class="prot-logos"><div class="chip"><img src="../assets/fornecedores/t4s.png" alt="T4S" loading="lazy"/></div></div>
+          <h4>Bloqueador</h4>
+          <p>Imobilização segura em casos de emergência.</p>
+        </div>
+        <div class="prot-col">
+          <div class="prot-logos"><div class="chip"><img src="../assets/fornecedores/sompo.png" alt="Sompo Seguros" loading="lazy"/></div></div>
+          <h4>Seguro Especializado</h4>
+          <p>Cobertura de até R$ 5 milhões por embarque.</p>
+        </div>
       </div>
+      <h3 class="protege-h2">Também contamos com um monitoramento inteligente com <span class="acc">câmeras internas e externas</span>.</h3>
+      <div class="cam-grid cam-grid-3">
+        <figure class="cam"><img src="../assets/dft/camera-controle.jpg" alt="Câmera com IA — segurança e eficiência na direção" loading="lazy"/></figure>
+        <figure class="cam"><img src="../assets/dft/camera-caminhao.jpg" alt="Câmera externa instalada na frota DFT" loading="lazy"/></figure>
+        <figure class="cam"><img src="../assets/dft/monitoramento.jpg" alt="Sala de monitoramento acompanhando as câmeras ao vivo" loading="lazy"/></figure>
+      </div>
+      <p class="cam-cap">Identificação de fadiga, movimentos estranhos e uso de celular.</p>
     </div>
     <img src="../assets/dft/banner-site-tech.jpg" alt="Monitoramento 24h DFT — câmeras, IA e rastreamento" style="width:100%;border-radius:16px;border:1px solid var(--line);margin-top:36px;display:block" loading="lazy"/>
   </div>
@@ -251,8 +283,8 @@ footer img{height:42px}
     <div class="fit-grid" style="grid-template-columns:1fr;max-width:820px;margin:0 auto">
       <div class="fit-card yes"><div class="fit-head">✅ A DFT é para você se…</div><ul class="fit-list">
         <li><span class="mk">✓</span> Você precisa de <b>atendimento dedicado</b> — sem robô, sem 0800, só gente de verdade do outro lado da linha.</li>
-        <li><span class="mk">✓</span> Você valoriza uma <b>equipe própria</b>, treinada para o tipo de carga que você movimenta.</li>
-        <li><span class="mk">✓</span> Você quer <b>frota nova, rastreamento em tempo real e visibilidade total</b> — sem precisar cobrar nada de ninguém.</li>
+        <li><span class="mk">✓</span> Você valoriza uma <b>equipe própria</b>, treinada especificamente para o tipo de carga que você movimenta.</li>
+        <li><span class="mk">✓</span> Você quer <b>uma operação com frota nova, rastreamento em tempo real e visibilidade total</b> — sem precisar cobrar nada de ninguém.</li>
       </ul></div>
     </div>
     <div style="text-align:center;margin-top:40px"><a href="#form" class="btn btn-p">Fale com a equipe →</a></div>
