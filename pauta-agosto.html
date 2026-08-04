@@ -35,7 +35,8 @@ main{max-width:1000px;margin:0 auto;padding:36px 36px 80px;}
 .mcard::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;}
 .mcard.g::before{background:#10b981;}.mcard.b::before{background:var(--accent);}.mcard.a::before{background:#f59e0b;}.mcard.r::before{background:#ef4444;}
 .mlbl{font-size:.84rem;font-weight:800;text-transform:uppercase;letter-spacing:1px;color:var(--txt);margin-bottom:8px;}
-.mval{font-size:1.75rem;font-weight:900;color:var(--txt);line-height:1;}
+.mval{font-size:1.55rem;font-weight:900;color:var(--txt);line-height:1;display:flex;align-items:baseline;gap:6px;flex-wrap:wrap;}
+.mval .old{color:#9aa0c0;font-size:1.05rem;font-weight:800;}
 .msub{font-size:.9rem;color:var(--mu);margin-top:8px;line-height:1.4;font-weight:600;}
 .tcard{background:var(--card);border:1.5px solid var(--brd2);border-radius:16px;overflow:hidden;box-shadow:0 4px 14px rgba(61,90,241,.07);}
 .ct{width:100%;border-collapse:collapse;}
@@ -86,7 +87,7 @@ main{max-width:1000px;margin:0 auto;padding:36px 36px 80px;}
       <h1>Pauta — <em>Fechamento do mês</em></h1>
       <div class="sub">Visão geral · leads · campanhas · próximos passos</div>
     </div>
-    <div class="badge">📅 04/jul – 04/ago 2026</div>
+    <div class="badge">📅 Junho × Julho 2026</div>
   </div>
 </header>
 <main>
@@ -98,14 +99,30 @@ main{max-width:1000px;margin:0 auto;padding:36px 36px 80px;}
   </div>
   <p class="intro" style="margin-bottom:0">O trabalho está virando cliente de verdade. E a melhor parte: como você vê a seguir, <strong>ainda tem muito fechamento parado na mesa</strong>, esperando retorno.</p>
 
-  <div class="sec"><span>01</span> O mês em números — Google Ads</div>
+  <div class="sec"><span>01</span> Junho × Julho — a evolução</div>
+  <p class="intro">Comparando <strong>junho</strong> (04/jun–04/jul) com <strong>julho</strong> (04/jul–04/ago): mais conversões, e muito mais baratas.</p>
   <div class="mg mg-4">
-    <div class="mcard b"><div class="mlbl">Investimento</div><div class="mval">R$ 2.798</div><div class="msub">no mês · R$ 93/dia</div></div>
-    <div class="mcard b"><div class="mlbl">Cliques</div><div class="mval">686</div><div class="msub">CTR 6,43% · muito acima da média B2B</div></div>
-    <div class="mcard g"><div class="mlbl">Conversões (Google)</div><div class="mval">102</div><div class="msub">formulários enviados</div></div>
-    <div class="mcard g"><div class="mlbl">Custo por conversão</div><div class="mval">R$ 27,44</div><div class="msub">saudável para o segmento</div></div>
+    <div class="mcard g"><div class="mlbl">Conversões</div><div class="mval"><span class="old">29</span> → 102</div><div class="msub">▲ mais que triplicou</div></div>
+    <div class="mcard g"><div class="mlbl">Custo por conversão</div><div class="mval"><span class="old">R$58</span> → R$27</div><div class="msub">▼ 53% mais barato</div></div>
+    <div class="mcard g"><div class="mlbl">Taxa de conversão</div><div class="mval"><span class="old">4,8%</span> → 14,9%</div><div class="msub">▲ triplicou</div></div>
+    <div class="mcard g"><div class="mlbl">CTR</div><div class="mval"><span class="old">4,3%</span> → 6,4%</div><div class="msub">▲ anúncio mais relevante</div></div>
   </div>
-  <p class="note">"Conversões" é a contagem do Google (formulários enviados, modelada). No CRM entram os leads qualificados que o comercial registra — é sobre eles que falamos no bloco 02.</p>
+  <div class="tcard" style="margin-top:14px">
+    <table class="ct">
+      <thead><tr><th>Campanha</th><th>CPA Junho</th><th>CPA Julho</th><th>Conversões (jun → jul)</th></tr></thead>
+      <tbody>
+        <tr><td>🔍 Demanda Ativa V2</td><td class="r">R$ 204,33</td><td class="g">R$ 51,83</td><td>6 → 44,5</td></tr>
+        <tr><td>🛡️ Branding</td><td>R$ 19,95</td><td class="g">R$ 8,56</td><td>23 → 57,5</td></tr>
+        <tr><td>Total</td><td class="r">R$ 58,10</td><td class="g">R$ 27,44</td><td>29 → 102</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="alert green" style="margin-top:14px">
+    <div class="alert-icon">🔧</div>
+    <div><div class="alert-title">A virada da Demanda Ativa V2 + corte de desperdício</div>
+    <div class="alert-text">A Demanda Ativa saiu de um <strong>CPA de R$204 (junho) para R$52 (julho)</strong> — de 6 para 44 conversões. E ainda cortamos um vazamento: em junho, <strong>R$1.067 iam para uma campanha ("Contratos B2B") que gerava quase nada</strong>; em julho esse dinheiro foi realocado para o que converte.</div></div>
+  </div>
+  <p class="note">"Conversões" é a contagem do Google (formulários, modelada). Comparação usa as campanhas ativas (Branding + Demanda V2). No CRM entram os leads qualificados — é sobre eles que falamos no bloco 02.</p>
 
   <div class="sec hot"><span>02</span> ⚠️ O ponto do mês — leads sem resposta</div>
   <p class="intro">Fechamos <strong>2 clientes</strong> com os leads que conseguimos conversar. Agora o potencial: <strong>a maioria dos leads ainda está parada no "não atende / sem resposta"</strong> no CRM — são os <strong>próximos fechamentos esperando retorno</strong>.</p>
