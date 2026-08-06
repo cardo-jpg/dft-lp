@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>SPIN Selling — Guia Prático · DFT Logística</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet"/>
+<style>
+:root{
+  --navy:#1a237e; --navy2:#283593; --red:#ED1C24;
+  --ink:#141a3d; --mu:#5b638c; --line:#e2e6f3; --bg2:#f5f7fc;
+  --s:#3d5af1; --p:#f59e0b; --i:#ef4444; --n:#10b981;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Nunito',sans-serif;color:var(--ink);background:#e9ecf6;line-height:1.6;}
+.page{max-width:820px;margin:24px auto;background:#fff;box-shadow:0 8px 30px rgba(20,26,61,.12);}
+.pad{padding:44px 52px;}
+
+/* CAPA */
+.cover{background:linear-gradient(135deg,var(--navy) 0%,var(--navy2) 100%);color:#fff;padding:56px 52px;}
+.cover .kx{font-size:.78rem;font-weight:900;letter-spacing:3px;text-transform:uppercase;color:#90caf9;margin-bottom:14px;}
+.cover h1{font-family:'Fraunces',serif;font-size:2.9rem;font-weight:700;line-height:1.05;letter-spacing:-.01em;}
+.cover h1 em{font-style:italic;color:#ff8a8f;}
+.cover .sc{font-size:1.1rem;color:rgba(255,255,255,.82);margin-top:14px;max-width:560px;font-weight:600;}
+.cover .by{margin-top:26px;font-size:.85rem;color:rgba(255,255,255,.6);font-weight:700;}
+
+h2{font-family:'Fraunces',serif;font-size:1.5rem;font-weight:700;color:var(--navy);margin-bottom:10px;}
+p{font-size:1rem;color:var(--ink);margin-bottom:12px;}
+p.mu{color:var(--mu);}
+.lead{font-size:1.05rem;color:var(--mu);font-weight:600;margin-bottom:20px;}
+
+.intro-box{background:var(--bg2);border:1px solid var(--line);border-left:4px solid var(--red);border-radius:12px;padding:20px 24px;margin:18px 0;}
+.intro-box b{color:var(--navy);}
+
+.spin-map{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:22px 0 8px;}
+.sm{border-radius:12px;padding:16px 12px;text-align:center;color:#fff;}
+.sm .l{font-size:2rem;font-weight:900;line-height:1;}
+.sm .w{font-size:.82rem;font-weight:800;margin-top:4px;}
+.sm.s{background:var(--s);}.sm.p{background:var(--p);}.sm.i{background:var(--i);}.sm.n{background:var(--n);}
+
+.block{border:1px solid var(--line);border-radius:16px;overflow:hidden;margin:20px 0;page-break-inside:avoid;}
+.bh{padding:18px 24px;color:#fff;display:flex;align-items:center;gap:16px;}
+.bh.s{background:linear-gradient(120deg,var(--s),#5b74f5);}
+.bh.p{background:linear-gradient(120deg,var(--p),#fbbf24);}
+.bh.i{background:linear-gradient(120deg,var(--i),#f87171);}
+.bh.n{background:linear-gradient(120deg,var(--n),#34d399);}
+.bh .big{font-size:2.4rem;font-weight:900;line-height:1;}
+.bh .t b{font-size:1.25rem;font-weight:900;display:block;}
+.bh .t span{font-size:.9rem;opacity:.9;font-weight:700;}
+.bb{padding:20px 24px;}
+.bb .goal{font-size:.95rem;color:var(--mu);margin-bottom:14px;}
+.bb .goal b{color:var(--navy);}
+.qlbl{font-size:.72rem;font-weight:900;letter-spacing:1.5px;text-transform:uppercase;color:var(--red);margin-bottom:8px;}
+.qs{list-style:none;display:flex;flex-direction:column;gap:8px;}
+.qs li{font-size:.98rem;color:var(--ink);padding-left:24px;position:relative;line-height:1.5;}
+.qs li::before{content:'“';position:absolute;left:0;top:-2px;color:var(--red);font-weight:900;font-size:1.3rem;font-family:'Fraunces',serif;}
+.qs li b{color:var(--navy);}
+
+.tips{background:var(--bg2);border:1px solid var(--line);border-radius:16px;padding:24px 28px;margin:24px 0;page-break-inside:avoid;}
+.tips h2{margin-bottom:14px;}
+.tips ul{list-style:none;display:flex;flex-direction:column;gap:11px;}
+.tips ul li{font-size:1rem;padding-left:28px;position:relative;line-height:1.5;}
+.tips ul li::before{content:'✓';position:absolute;left:0;color:var(--n);font-weight:900;font-size:1.1rem;}
+.tips ul li b{color:var(--navy);}
+
+.flow{background:var(--navy);color:#fff;border-radius:16px;padding:26px 30px;margin:24px 0;page-break-inside:avoid;}
+.flow h2{color:#fff;}
+.flow .sc{color:rgba(255,255,255,.75);font-size:.95rem;margin-bottom:16px;}
+.flowrow{display:flex;align-items:center;gap:10px;flex-wrap:wrap;font-weight:800;font-size:.95rem;}
+.fx{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.22);border-radius:10px;padding:10px 16px;}
+.fx b{color:#90caf9;display:block;font-size:.72rem;letter-spacing:1px;}
+.arr{color:#ff8a8f;font-size:1.3rem;font-weight:900;}
+
+.foot{border-top:2px solid var(--line);margin-top:8px;padding-top:18px;font-size:.85rem;color:var(--mu);text-align:center;}
+.foot b{color:var(--navy);}
+
+.hint{max-width:820px;margin:0 auto 24px;padding:14px 20px;background:#fff8e1;border:1px solid #ffe082;border-radius:10px;font-size:.9rem;color:#8a6d00;font-weight:700;}
+
+@page{ size:A4; margin:14mm; }
+@media print{
+  body{background:#fff;}
+  .page{box-shadow:none;margin:0;max-width:100%;}
+  .hint{display:none;}
+  .block,.tips,.flow{page-break-inside:avoid;}
+}
+</style>
+</head>
+<body>
+
+<div class="hint">💡 Para salvar como PDF: aperte <b>Ctrl + P</b> → em "Destino" escolha <b>"Salvar como PDF"</b> → Salvar. Pronto pra enviar!</div>
+
+<div class="page">
+
+  <!-- CAPA -->
+  <div class="cover">
+    <div class="kx">Guia prático de vendas</div>
+    <h1>SPIN Selling<br/><em>perguntas que vendem</em></h1>
+    <div class="sc">A técnica de venda consultiva adaptada para o comercial da DFT Logística — transporte de cargas de alto valor.</div>
+    <div class="by">Preparado por Cardô Marketing · para o time comercial da DFT</div>
+  </div>
+
+  <div class="pad">
+    <h2>Por que SPIN funciona (principalmente aqui)</h2>
+    <p class="lead">No transporte de cargas de alto valor, ninguém compra por impulso — compra por <b>confiança</b>. E confiança não se cria empurrando; se cria <b>perguntando</b>.</p>
+    <p>SPIN é um método de <b>venda consultiva</b> criado por Neil Rackham. Em vez de listar os diferenciais da DFT logo de cara, você faz <b>perguntas na ordem certa</b> — e é o próprio cliente que chega à conclusão de que precisa da gente. A venda deixa de ser "convencer" e vira "ele percebeu sozinho".</p>
+    <div class="intro-box">
+      <b>A regra de ouro:</b> quem pergunta, conduz. Fale menos, pergunte mais. O ideal é o cliente falar <b>70% do tempo</b> — cada dor que ele verbaliza é um argumento de venda que você nem precisou dar.
+    </div>
+
+    <div class="spin-map">
+      <div class="sm s"><div class="l">S</div><div class="w">Situação</div></div>
+      <div class="sm p"><div class="l">P</div><div class="w">Problema</div></div>
+      <div class="sm i"><div class="l">I</div><div class="w">Implicação</div></div>
+      <div class="sm n"><div class="l">N</div><div class="w">Necessidade</div></div>
+    </div>
+    <p class="mu" style="text-align:center;font-size:.9rem;">A ordem importa: entenda o cenário → ache a dor → amplie a dor → faça ele desejar a solução.</p>
+  </div>
+
+  <div class="pad" style="padding-top:0;">
+
+    <!-- S -->
+    <div class="block">
+      <div class="bh s"><div class="big">S</div><div class="t"><b>Situação</b><span>Entenda o cenário atual do cliente</span></div></div>
+      <div class="bb">
+        <div class="goal"><b>Objetivo:</b> mapear como funciona a logística dele hoje. Sem julgar, só entender. (Não exagere nessa etapa — o cliente cansa se for só interrogatório.)</div>
+        <div class="qlbl">Perguntas para a DFT</div>
+        <ul class="qs">
+          <li>Como funciona a logística de vocês hoje — frota própria ou terceirizada?</li>
+          <li>Quantos envios vocês fazem por mês, em média?</li>
+          <li>Que tipo de carga vocês movimentam? Qual o valor médio de um embarque?</li>
+          <li>Para quais regiões vocês mais entregam?</li>
+          <li>Quem cuida do transporte hoje? Como vocês escolheram essa transportadora?</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- P -->
+    <div class="block">
+      <div class="bh p"><div class="big">P</div><div class="t"><b>Problema</b><span>Descubra as dores e dificuldades</span></div></div>
+      <div class="bb">
+        <div class="goal"><b>Objetivo:</b> fazer ele reconhecer que tem um problema. Aqui você planta a semente — é a etapa que muda a conversa.</div>
+        <div class="qlbl">Perguntas para a DFT</div>
+        <ul class="qs">
+          <li>Vocês já tiveram problema com <b>avaria ou extravio</b> de carga?</li>
+          <li>Como está a <b>pontualidade</b> das entregas? Já perderam prazo com um cliente importante?</li>
+          <li>Já tiveram algum <b>susto com segurança</b> — tentativa de roubo, desvio de rota?</li>
+          <li>Quando dá algum problema, o atendimento da transportadora atual <b>resolve rápido</b>?</li>
+          <li>Vocês conseguem <b>acompanhar onde a carga está</b> em tempo real, ou ficam no escuro?</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- I -->
+    <div class="block">
+      <div class="bh i"><div class="big">I</div><div class="t"><b>Implicação</b><span>Amplie a dor — mostre o custo do problema</span></div></div>
+      <div class="bb">
+        <div class="goal"><b>Objetivo:</b> transformar um "probleminha" em algo que <b>dói de verdade</b>. Faça ele conectar o problema ao prejuízo (dinheiro, cliente, tempo, reputação). Esta é a etapa mais poderosa.</div>
+        <div class="qlbl">Perguntas para a DFT</div>
+        <ul class="qs">
+          <li>Quando uma carga de alto valor é avariada, <b>quanto isso custa</b> — produto + retrabalho + cliente insatisfeito?</li>
+          <li>Um atraso de entrega já fez vocês <b>perderem um cliente ou um contrato</b>?</li>
+          <li>Numa tentativa de roubo, o seguro cobre tudo? E o <b>desgaste com o seu cliente</b> que ficou sem a mercadoria?</li>
+          <li>Quanto tempo a sua equipe gasta <b>"correndo atrás" da transportadora</b> quando algo dá errado?</li>
+          <li>Esse problema de logística acaba <b>tirando o foco de vocês</b> do que realmente importa: crescer o negócio?</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- N -->
+    <div class="block">
+      <div class="bh n"><div class="big">N</div><div class="t"><b>Necessidade de solução</b><span>Faça o cliente verbalizar o valor</span></div></div>
+      <div class="bb">
+        <div class="goal"><b>Objetivo:</b> em vez de VOCÊ dizer os benefícios, faça <b>ele dizer</b>. Quando o cliente fala em voz alta o quanto a solução ajudaria, ele se convence sozinho.</div>
+        <div class="qlbl">Perguntas para a DFT</div>
+        <ul class="qs">
+          <li>Se vocês tivessem <b>visibilidade total da carga 24h</b> — sabendo onde ela está a qualquer momento — o quanto isso ajudaria?</li>
+          <li>Quanto valeria ter uma transportadora com <b>frota própria que trata a sua carga como se fosse dela</b>?</li>
+          <li>Se a pontualidade subisse para <b>98% no prazo</b>, que diferença isso faria para o seu cliente final?</li>
+          <li>Um <b>atendimento dedicado</b> — sem 0800, sem robô, gente de verdade — resolveria essa dor de cabeça?</li>
+          <li>Faz sentido a gente marcar 20 minutos pra eu te mostrar, na prática, como a DFT garante isso?</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- DICAS -->
+    <div class="tips">
+      <h2>💡 Dicas de ouro na hora de aplicar</h2>
+      <ul>
+        <li><b>Não pule para a solução cedo demais.</b> A tentação é falar da DFT no 1º "problema". Segure — só apresente a solução depois da etapa N, quando ele já "sente" a dor.</li>
+        <li><b>Ouça e anote.</b> Cada dor que ele cita, você usa depois: "você comentou que já perdeu prazo… é exatamente isso que a gente resolve com 98% de OTD."</li>
+        <li><b>Uma pergunta de cada vez.</b> Deixe o silêncio trabalhar — não responda por ele.</li>
+        <li><b>WhatsApp primeiro.</b> Muitos não atendem ligação fria. Comece com uma mensagem curta e consultiva antes de ligar.</li>
+        <li><b>Velocidade vence.</b> Lead que preencheu o formulário está quente <b>agora</b> — falar em minutos converte muito mais que falar no dia seguinte.</li>
+      </ul>
+    </div>
+
+    <!-- FLUXO RÁPIDO -->
+    <div class="flow">
+      <h2>Roteiro rápido — cola de bolso</h2>
+      <div class="sc">A sequência da conversa, do "oi" ao "vamos marcar":</div>
+      <div class="flowrow">
+        <div class="fx"><b>SITUAÇÃO</b>Como é hoje?</div>
+        <span class="arr">→</span>
+        <div class="fx"><b>PROBLEMA</b>O que incomoda?</div>
+        <span class="arr">→</span>
+        <div class="fx"><b>IMPLICAÇÃO</b>Quanto isso custa?</div>
+        <span class="arr">→</span>
+        <div class="fx"><b>NECESSIDADE</b>E se resolvesse?</div>
+        <span class="arr">→</span>
+        <div class="fx" style="background:var(--red);border-color:var(--red);"><b>FECHAMENTO</b>Vamos marcar?</div>
+      </div>
+    </div>
+
+    <div class="foot">
+      <b>SPIN Selling</b> · Guia prático para o comercial da <b>DFT Logística</b><br/>
+      Transportar é proteger — e vender também começa por entender.
+    </div>
+
+  </div>
+</div>
+
+</body>
+</html>
