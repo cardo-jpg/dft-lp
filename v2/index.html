@@ -210,7 +210,7 @@ footer img{height:42px}
         <div class="f-title">Falar com especialista</div><div class="f-sub">Resposta em até 1 dia útil</div>
         <div class="f-field"><label>Seu nome</label><input name="nome" placeholder="João Silva" required/></div>
         <div class="f-field"><label>Empresa</label><input name="empresa" placeholder="Nome da empresa" required/></div>
-        <div class="f-row"><div class="f-field"><label>CNPJ</label><input name="cnpj" placeholder="00.000.000/0000-00" required/></div><div class="f-field"><label>WhatsApp</label><input name="whatsapp" placeholder="(11) 9 0000-0000" required/></div></div>
+        <div class="f-row"><div class="f-field"><label>CNPJ</label><input name="cnpj" placeholder="00.000.000/0000-00" inputmode="numeric" maxlength="18" required/></div><div class="f-field"><label>WhatsApp</label><input name="whatsapp" placeholder="(11) 9 0000-0000" required/></div></div>
         <div class="f-field"><label>Faturamento mensal de frete</label><select name="volume" required><option value="">Selecione</option><option>Até R$ 10 mil</option><option>R$ 10–30 mil</option><option>R$ 30–100 mil</option><option>Acima de R$ 100 mil</option></select></div>
         <button type="submit" class="f-submit">Quero falar com especialista →</button>
         <div class="f-note">🔒 Atendimento consultivo para operações dedicadas e recorrentes.</div>
@@ -319,7 +319,7 @@ footer img{height:42px}
         <div class="f-title">Falar com especialista</div><div class="f-sub">Resposta em até 1 dia útil</div>
         <div class="f-field"><label>Seu nome</label><input name="nome" placeholder="João Silva" required/></div>
         <div class="f-field"><label>Empresa</label><input name="empresa" placeholder="Nome da empresa" required/></div>
-        <div class="f-row"><div class="f-field"><label>CNPJ</label><input name="cnpj" placeholder="00.000.000/0000-00" required/></div><div class="f-field"><label>WhatsApp</label><input name="whatsapp" placeholder="(11) 9 0000-0000" required/></div></div>
+        <div class="f-row"><div class="f-field"><label>CNPJ</label><input name="cnpj" placeholder="00.000.000/0000-00" inputmode="numeric" maxlength="18" required/></div><div class="f-field"><label>WhatsApp</label><input name="whatsapp" placeholder="(11) 9 0000-0000" required/></div></div>
         <div class="f-field"><label>Faturamento mensal de frete</label><select name="volume" required><option value="">Selecione</option><option>Até R$ 10 mil</option><option>R$ 10–30 mil</option><option>R$ 30–100 mil</option><option>Acima de R$ 100 mil</option></select></div>
         <button type="submit" class="f-submit">Quero falar com especialista →</button>
         <div class="f-note">🔒 Atendimento consultivo para operações dedicadas e recorrentes.</div>
@@ -334,9 +334,58 @@ footer img{height:42px}
 <script>
 var SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbykDzmz2-GzyYjirGQZvqvl6BDmq9xotPRYIHGu5mKZT4m8eMMfbeGVjbPWrSItH6d4/exec';
 
+// --- Mascara + validacao de CNPJ (bloqueia CPF e numeros invalidos) ---
+function _soDigitos(v){ return (v||'').replace(/\D/g,''); }
+function _mascaraCNPJ(v){
+  v = _soDigitos(v).slice(0,14);
+  v = v.replace(/^(\d{2})(\d)/,'$1.$2');
+  v = v.replace(/^(\d{2})\.(\d{3})(\d)/,'$1.$2.$3');
+  v = v.replace(/\.(\d{3})(\d)/,'.$1/$2');
+  v = v.replace(/(\d{4})(\d)/,'$1-$2');
+  return v;
+}
+function _cnpjValido(v){
+  var c = _soDigitos(v);
+  if (c.length !== 14) return false;
+  if (/^(\d)\1{13}$/.test(c)) return false; // rejeita 00000000000000, etc.
+  var calc = function(base){
+    var soma = 0, pos = base.length - 7;
+    for (var i = base.length; i >= 1; i--){
+      soma += parseInt(base.charAt(base.length - i)) * pos--;
+      if (pos < 2) pos = 9;
+    }
+    var r = soma % 11;
+    return r < 2 ? 0 : 11 - r;
+  };
+  var d1 = calc(c.slice(0,12));
+  if (d1 !== parseInt(c.charAt(12))) return false;
+  var d2 = calc(c.slice(0,13));
+  if (d2 !== parseInt(c.charAt(13))) return false;
+  return true;
+}
+document.querySelectorAll('input[name="cnpj"]').forEach(function(inp){
+  inp.addEventListener('input', function(){
+    var pos = this.value.length;
+    this.value = _mascaraCNPJ(this.value);
+    this.setCustomValidity('');
+  });
+});
+
 document.querySelectorAll('form.lead-form').forEach(function(f){
   f.addEventListener('submit', function(e){
     e.preventDefault();
+    var cnpjEl = this.querySelector('[name="cnpj"]');
+    if (cnpjEl){
+      if (!_cnpjValido(cnpjEl.value)){
+        var d = _soDigitos(cnpjEl.value);
+        cnpjEl.setCustomValidity(d.length === 11
+          ? 'Este é um CPF. Informe o CNPJ da sua empresa (14 dígitos).'
+          : 'Informe um CNPJ válido (14 dígitos).');
+        cnpjEl.reportValidity();
+        return;
+      }
+      cnpjEl.setCustomValidity('');
+    }
     if (!this.checkValidity()) { this.reportValidity(); return; }
     var form = this;
     window.dataLayer = window.dataLayer || [];
