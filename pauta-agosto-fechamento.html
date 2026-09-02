@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Pauta — DFT Logística · Fechamento de Agosto</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Fraunces:wght@500;700&display=swap" rel="stylesheet"/>
+<style>
+:root{
+  --bg:#eef0f8; --card:#ffffff; --card2:#e8ecf8; --brd:#d4d8ee; --brd2:#c2c8e8;
+  --txt:#0d0d2b; --mu:#5b638c; --accent:#3d5af1; --accent2:#2f4bd4;
+  --green:#047857; --greenb:#dcfce7; --amber:#92400e; --amberb:#fef3c7; --red:#b91c1c; --redb:#fee2e2;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Nunito',sans-serif;background:var(--bg);color:var(--txt);min-height:100vh;}
+.gl{height:4px;background:linear-gradient(90deg,#2621bf,#4285f4,#6b8aff,#2621bf);background-size:300%;animation:gl 4s linear infinite;}
+@keyframes gl{0%{background-position:0%}100%{background-position:300%}}
+header{background:linear-gradient(135deg,#1a237e 0%,#283593 100%);}
+.hi{max-width:1000px;margin:0 auto;padding:26px 36px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+.brand{font-size:.95rem;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:#90caf9;margin-bottom:3px;}
+h1{font-family:'Fraunces',serif;font-size:2.1rem;color:#fff;}
+h1 em{font-style:italic;color:#90caf9;}
+.sub{font-size:1.1rem;color:rgba(255,255,255,.8);margin-top:2px;}
+.badge{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.25);border-radius:8px;padding:8px 16px;font-size:.95rem;font-weight:800;color:#fff;}
+main{max-width:1000px;margin:0 auto;padding:36px 36px 80px;}
+.sec{font-size:.95rem;font-weight:800;letter-spacing:2.5px;text-transform:uppercase;color:var(--accent2);display:flex;align-items:center;gap:12px;margin-bottom:18px;margin-top:46px;}
+.sec:first-child{margin-top:0;}
+.sec::after{content:'';flex:1;height:2px;background:var(--brd2);}
+.sec span{background:rgba(61,90,241,.12);border:1.5px solid rgba(61,90,241,.3);border-radius:6px;padding:3px 12px;color:var(--accent2);}
+.sec.ok span{background:rgba(16,185,129,.12);border-color:rgba(16,185,129,.4);color:var(--green);}.sec.ok{color:var(--green);}
+.sec.hot span{background:rgba(239,68,68,.12);border-color:rgba(239,68,68,.4);color:var(--red);}.sec.hot{color:var(--red);}
+.intro{font-size:1.02rem;color:var(--txt);max-width:840px;margin-bottom:6px;font-weight:600;}
+.mg{display:grid;gap:14px;}.mg-4{grid-template-columns:repeat(4,1fr);}.mg-3{grid-template-columns:repeat(3,1fr);}
+.mcard{background:var(--card);border:1.5px solid var(--brd2);border-radius:16px;padding:20px 18px;position:relative;overflow:hidden;box-shadow:0 4px 14px rgba(61,90,241,.08);}
+.mcard::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;}
+.mcard.g::before{background:#10b981;}.mcard.b::before{background:var(--accent);}.mcard.a::before{background:#f59e0b;}.mcard.r::before{background:#ef4444;}
+.mlbl{font-size:.84rem;font-weight:800;text-transform:uppercase;letter-spacing:1px;color:var(--txt);margin-bottom:8px;}
+.mval{font-size:1.7rem;font-weight:900;color:var(--txt);line-height:1;}
+.msub{font-size:.9rem;color:var(--mu);margin-top:8px;line-height:1.4;font-weight:600;}
+.big-stat{background:linear-gradient(160deg,#dcfce7,#f0fdf4);border:2px solid #86efac;border-radius:18px;padding:26px 30px;text-align:center;margin-bottom:16px;}
+.big-stat .n{font-size:2.6rem;font-weight:900;color:var(--green);line-height:1.1;}
+.big-stat .t{font-size:1.05rem;font-weight:800;color:var(--txt);margin-top:6px;}
+.tcard{background:var(--card);border:1.5px solid var(--brd2);border-radius:16px;overflow:hidden;box-shadow:0 4px 14px rgba(61,90,241,.07);}
+.ct{width:100%;border-collapse:collapse;}
+.ct th{font-size:.82rem;font-weight:800;text-transform:uppercase;letter-spacing:.3px;color:var(--txt);text-align:center;padding:11px 12px;border-bottom:2px solid var(--brd2);background:var(--card2);}
+.ct th:first-child{text-align:left;}
+.ct td{font-size:.96rem;padding:11px 12px;border-bottom:1.5px solid var(--brd);color:var(--txt);font-weight:600;text-align:center;}
+.ct td:first-child{text-align:left;font-weight:800;}
+.ct tbody tr:nth-child(even) td{background:#f7f8fd;}
+.ct tr:last-child td{border-bottom:none;background:#eef2ff;font-weight:900;}
+.ct .g{color:var(--green);font-weight:900;}.ct .r{color:var(--red);font-weight:900;}
+.pill{display:inline-block;font-size:.72rem;font-weight:900;padding:2px 8px;border-radius:20px;}
+.pill.top{background:#dcfce7;color:var(--green);}.pill.mid{background:#e0e7ff;color:var(--accent2);}
+.alert{border-radius:16px;padding:20px 24px;margin-bottom:14px;display:flex;gap:16px;align-items:flex-start;}
+.alert.green{background:var(--greenb);border:1.5px solid #86efac;border-left:4px solid #10b981;}
+.alert.amber{background:var(--amberb);border:1.5px solid #fcd34d;border-left:4px solid #f59e0b;}
+.alert.red{background:var(--redb);border:1.5px solid #fca5a5;border-left:4px solid #ef4444;}
+.alert.blue{background:#eff2ff;border:1.5px solid #c7d2fe;border-left:4px solid var(--accent);}
+.alert-icon{font-size:1.4rem;flex:none;margin-top:2px;}
+.alert-title{font-size:1.15rem;font-weight:800;color:var(--txt);margin-bottom:6px;}
+.alert-text{font-size:1rem;color:var(--txt);line-height:1.65;}
+.card{background:var(--card);border:1.5px solid var(--brd2);border-radius:16px;padding:22px 26px;margin-bottom:14px;box-shadow:0 4px 14px rgba(61,90,241,.07);}
+.card ul{list-style:none;display:flex;flex-direction:column;gap:11px;}
+.card ul li{font-size:1rem;color:var(--txt);padding-left:24px;position:relative;line-height:1.55;}
+.card ul li::before{content:'→';position:absolute;left:0;color:var(--accent);font-weight:900;}
+.card ul li strong{color:var(--txt);}
+.highlight{background:linear-gradient(135deg,#1a237e,#283593);border-radius:16px;padding:28px 32px;text-align:center;margin-top:14px;box-shadow:0 6px 20px rgba(26,35,126,.2);}
+.highlight p{font-size:1rem;color:rgba(255,255,255,.85);margin-bottom:14px;}
+.highlight .htext{font-family:'Fraunces',serif;font-size:1.5rem;color:#fff;line-height:1.5;}
+.highlight .htext em{color:#90caf9;font-style:italic;}
+.note{font-size:.85rem;color:#6b7280;margin-top:12px;font-style:italic;}
+@media(max-width:680px){.hi{padding:18px 20px;}main{padding:28px 16px 60px;}.mg-4,.mg-3{grid-template-columns:1fr 1fr;}.ct{font-size:.8rem;}}
+</style>
+</head>
+<body>
+<div class="gl"></div>
+<header>
+  <div class="hi">
+    <div>
+      <div class="brand">Cardô Marketing × DFT Logística</div>
+      <h1>Pauta — <em>Fechamento de Agosto</em></h1>
+      <div class="sub">Menos leads, muito mais qualidade — o pipeline amadureceu</div>
+    </div>
+    <div class="badge">📅 Agosto 2026</div>
+  </div>
+</header>
+<main>
+
+  <div class="sec ok"><span>★</span> O destaque do mês — o pipeline amadureceu</div>
+  <div class="big-stat">
+    <div class="n">JBS Friboi · em análise de tabela</div>
+    <div class="t">Uma das maiores empresas do país entrou pela LP, teve <strong>reunião realizada</strong> e está <strong>dentro do ICP</strong> — negociando tabela. 🎉</div>
+  </div>
+  <p class="intro">E não foi só ela. Agosto trouxe <strong>empresas grandes avançando pra reunião</strong> — exatamente o resultado das otimizações que fizemos:</p>
+  <div class="tcard">
+    <table class="ct">
+      <thead><tr><th>Empresa</th><th>Volume/mês</th><th>Estágio</th></tr></thead>
+      <tbody>
+        <tr><td>JBS Friboi</td><td class="g">Acima de R$100 mil <span class="pill top">ICP</span></td><td>Reunião feita · análise de tabela</td></tr>
+        <tr><td>APTK Spirits</td><td class="g">R$30–100 mil <span class="pill mid">ICP</span></td><td>Reunião feita · análise de volumetria</td></tr>
+        <tr><td>Globalplastic Autopeças</td><td class="g">Acima de R$100 mil <span class="pill top">ICP</span></td><td>Agendando reunião (carga dedicada)</td></tr>
+        <tr><td>Ondacom Telecom</td><td class="g">Acima de R$100 mil <span class="pill top">ICP</span></td><td>Agendando reunião (armazena p/ Vivo, TIM)</td></tr>
+        <tr><td>Imagine Decor</td><td class="g">Acima de R$100 mil <span class="pill top">ICP</span></td><td>B2B · 300 envios/mês</td></tr>
+        <tr><td>Agronippo</td><td class="g">Acima de R$100 mil <span class="pill top">ICP</span></td><td>Agronegócio · em contato</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="sec"><span>01</span> Os números do mês — Google Ads</div>
+  <p class="intro">Sendo transparentes: o volume caiu vs julho — e isso é <strong>proposital</strong> (cortamos o tráfego ruim) + teve alguns dias de oscilação na conta. O foco do mês virou <strong>qualidade, não quantidade</strong>.</p>
+  <div class="mg mg-4">
+    <div class="mcard b"><div class="mlbl">Investimento</div><div class="mval">R$ 2.889</div><div class="msub">no mês</div></div>
+    <div class="mcard b"><div class="mlbl">Cliques</div><div class="mval">523</div><div class="msub">CTR 5,95%</div></div>
+    <div class="mcard a"><div class="mlbl">Conversões</div><div class="mval">53</div><div class="msub">formulários enviados</div></div>
+    <div class="mcard a"><div class="mlbl">Custo por conversão</div><div class="mval">R$ 54,52</div><div class="msub">subiu vs julho (esperado)</div></div>
+  </div>
+  <div class="tcard" style="margin-top:14px">
+    <table class="ct">
+      <thead><tr><th>Campanha</th><th>Investido</th><th>Cliques</th><th>CTR</th><th>Conversões</th><th>CPA</th></tr></thead>
+      <tbody>
+        <tr><td>🔍 Demanda Ativa V2</td><td>R$ 2.769</td><td>453</td><td>5,43%</td><td>43</td><td class="g">R$ 64,42</td></tr>
+        <tr><td>🛡️ Branding</td><td>R$ 119</td><td>70</td><td>16,13%</td><td>10</td><td class="g">R$ 11,95</td></tr>
+        <tr><td>Total</td><td>R$ 2.889</td><td>523</td><td>5,95%</td><td>53</td><td class="g">R$ 54,52</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="alert blue" style="margin-top:14px">
+    <div class="alert-icon">💡</div>
+    <div><div class="alert-title">Por que menos conversão não é problema aqui</div>
+    <div class="alert-text">Em julho tivemos mais conversões (102), mas eram muitas de <strong>leads pequenos/fora do perfil</strong> (transportadoras, frete até R$10 mil). Em agosto, com o tráfego limpo, vêm <strong>menos formulários — mas de empresas de verdade</strong>. Trocamos volume por qualidade de propósito. E o resultado apareceu no pipeline (topo desta pauta).</div></div>
+  </div>
+
+  <div class="sec"><span>02</span> A leitura dos ~36 leads de agosto</div>
+  <p class="intro">Olhando o CRM do mês, o padrão mudou pra melhor: <strong>vários leads de alto volume (acima de R$100 mil)</strong> — coisa que quase não aparecia antes.</p>
+  <div class="mg mg-3">
+    <div class="mcard g"><div class="mlbl">Leads de alto volume</div><div class="mval">8+</div><div class="msub">acima de R$100 mil/mês de frete</div></div>
+    <div class="mcard g"><div class="mlbl">Reuniões / em agenda</div><div class="mval">5</div><div class="msub">JBS, APTK, Globalplastic, Ondacom, Imagine Decor</div></div>
+    <div class="mcard a"><div class="mlbl">Ainda fora do perfil</div><div class="mval">✕</div><div class="msub">carriers e pequenos ainda aparecem — seguimos refinando</div></div>
+  </div>
+  <div class="alert amber" style="margin-top:6px">
+    <div class="alert-icon">🎯</div>
+    <div><div class="alert-title">O que ainda vaza (e vamos cortar)</div>
+    <div class="alert-text">Ainda entram algumas <strong>transportadoras buscando parceria</strong> (iMile, J&amp;T Cargo, eveque) e alguns <strong>leads B2C / pequeno porte</strong>. É a próxima camada de negativas a refinar — mas em volume muito menor que antes.</div></div>
+  </div>
+
+  <div class="sec hot"><span>03</span> ⚠️ Pontos de atenção</div>
+  <div class="alert red">
+    <div class="alert-icon">🔔</div>
+    <div><div class="alert-title">A conta acusou "conflito de palavras-chave negativas"</div>
+    <div class="alert-text">O Google avisou que <strong>uma negativa pode estar bloqueando uma palavra-chave boa</strong>. Vamos revisar a lista pra garantir que nenhuma negativa esteja cortando tráfego qualificado por engano. (É rápido de resolver — só exige atenção.)</div></div>
+  </div>
+  <div class="alert amber">
+    <div class="alert-icon">📞</div>
+    <div><div class="alert-title">Velocidade de retorno segue sendo o elo-chave</div>
+    <div class="alert-text">Vários leads bons ainda aparecem como "ligação não atendida" ou "áudio no whats aguardando retorno" (Marelli, por ex., não respondeu). Os leads certos estão chegando — <strong>quanto mais rápido o contato, mais viram reunião</strong>, como aconteceu com JBS e APTK.</div></div>
+  </div>
+
+  <div class="sec"><span>04</span> O que fizemos + próximos passos</div>
+  <div class="card">
+    <ul>
+      <li><strong>Limpamos o tráfego</strong> — negativas de transportadoras, concorrentes, linha branca, medicamentos e B2C.</li>
+      <li><strong>Corrigimos a região</strong> — anúncio só para quem está em SP (antes vazava para outros estados).</li>
+      <li><strong>Blindamos o formulário</strong> — agora só aceita <strong>CNPJ válido</strong> (bloqueia CPF e números inválidos), melhorando a qualidade do lead que chega.</li>
+      <li><strong>Próximo:</strong> revisar o conflito de negativas + refinar as últimas negativas (carrier/B2C) + apoiar a velocidade de retorno do comercial.</li>
+    </ul>
+  </div>
+
+  <div class="highlight">
+    <p>A mensagem da reunião</p>
+    <div class="htext">Agosto não foi sobre <em>mais leads</em> — foi sobre os leads <em>certos</em>.<br/>E eles chegaram: uma JBS Friboi negociando tabela diz tudo. 🚀</div>
+  </div>
+
+  <p class="note">Fontes: Google Ads (01–31/08) e planilha de leads da LP DFT v2 (~36 leads no mês). Classificação de ICP: volume ≥ R$30 mil, embarcador (não transportadora), operação B2B recorrente. Contagem de leads de alto volume e reuniões conforme observações registradas no CRM até 31/08.</p>
+
+</main>
+</body>
+</html>
