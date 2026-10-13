@@ -224,6 +224,8 @@ form{background:linear-gradient(160deg,var(--panel),var(--bg2));border:1px solid
 .f-submit{width:100%;padding:14px;background:linear-gradient(120deg,var(--cyan),var(--cyan2));color:#04121f;border:none;border-radius:9px;font-weight:700;cursor:pointer;font-family:inherit;margin-top:6px}
 .f-submit:hover{transform:translateY(-1px)}
 .f-note{font-size:.68rem;color:var(--muted2);text-align:center;margin-top:10px}
+.f-warn{display:none;background:rgba(245,158,11,.1);border:1px solid rgba(245,158,11,.45);color:#fcd34d;font-size:.76rem;line-height:1.5;padding:10px 12px;border-radius:9px;margin:2px 0 8px}
+.f-warn.show{display:block}
 .f-ok{display:none;text-align:center;padding:18px 6px}.f-ok.show{display:block}
 .f-ok .ck{width:54px;height:54px;border-radius:50%;background:rgba(52,211,153,.15);color:var(--ok);display:grid;place-items:center;margin:0 auto 14px;font-size:1.4rem}.f-ok h4{color:#fff;margin-bottom:8px}.f-ok p{color:var(--muted);font-size:.82rem}
 
@@ -299,8 +301,11 @@ footer img{height:42px}
         <div class="f-title">Falar com especialista</div><div class="f-sub">Resposta em até 1 dia útil</div>
         <div class="f-field"><label>Seu nome</label><input name="nome" placeholder="João Silva" required/></div>
         <div class="f-field"><label>Empresa</label><input name="empresa" placeholder="Nome da empresa" required/></div>
+        <div class="f-field"><label>E-mail corporativo</label><input name="email" type="email" placeholder="voce@empresa.com.br" required/></div>
         <div class="f-row"><div class="f-field"><label>CNPJ</label><input name="cnpj" placeholder="00.000.000/0000-00" inputmode="numeric" maxlength="18" required/></div><div class="f-field"><label>WhatsApp</label><input name="whatsapp" placeholder="(11) 9 0000-0000" required/></div></div>
         <div class="f-field"><label>Faturamento mensal de frete</label><select name="volume" required><option value="">Selecione</option><option>Até R$ 10 mil</option><option>R$ 10–30 mil</option><option>R$ 30–100 mil</option><option>Acima de R$ 100 mil</option></select></div>
+        <div class="f-field"><label>Tipo de operação</label><select name="tipo_operacao" required><option value="">Selecione</option><option>Recorrente / frequente</option><option>Pontual / avulsa</option><option>Mudança / residencial</option></select></div>
+        <div class="f-warn">A DFT é especializada em <b>operações recorrentes e dedicadas</b> de carga para indústrias. Para fretes pontuais ou mudanças talvez não sejamos o parceiro ideal — mas se quiser, pode enviar que avaliamos.</div>
         <button type="submit" class="f-submit">Quero falar com especialista →</button>
         <div class="f-note">🔒 Atendimento consultivo para operações dedicadas e recorrentes.</div>
       </div>
@@ -432,8 +437,11 @@ footer img{height:42px}
         <div class="f-title">Falar com especialista</div><div class="f-sub">Resposta em até 1 dia útil</div>
         <div class="f-field"><label>Seu nome</label><input name="nome" placeholder="João Silva" required/></div>
         <div class="f-field"><label>Empresa</label><input name="empresa" placeholder="Nome da empresa" required/></div>
+        <div class="f-field"><label>E-mail corporativo</label><input name="email" type="email" placeholder="voce@empresa.com.br" required/></div>
         <div class="f-row"><div class="f-field"><label>CNPJ</label><input name="cnpj" placeholder="00.000.000/0000-00" inputmode="numeric" maxlength="18" required/></div><div class="f-field"><label>WhatsApp</label><input name="whatsapp" placeholder="(11) 9 0000-0000" required/></div></div>
         <div class="f-field"><label>Faturamento mensal de frete</label><select name="volume" required><option value="">Selecione</option><option>Até R$ 10 mil</option><option>R$ 10–30 mil</option><option>R$ 30–100 mil</option><option>Acima de R$ 100 mil</option></select></div>
+        <div class="f-field"><label>Tipo de operação</label><select name="tipo_operacao" required><option value="">Selecione</option><option>Recorrente / frequente</option><option>Pontual / avulsa</option><option>Mudança / residencial</option></select></div>
+        <div class="f-warn">A DFT é especializada em <b>operações recorrentes e dedicadas</b> de carga para indústrias. Para fretes pontuais ou mudanças talvez não sejamos o parceiro ideal — mas se quiser, pode enviar que avaliamos.</div>
         <button type="submit" class="f-submit">Quero falar com especialista →</button>
         <div class="f-note">🔒 Atendimento consultivo para operações dedicadas e recorrentes.</div>
       </div>
@@ -484,6 +492,20 @@ document.querySelectorAll('input[name="cnpj"]').forEach(function(inp){
   });
 });
 
+// Aviso de perfil: mostra quando a operacao e avulsa/mudanca ou faturamento baixo
+document.querySelectorAll('form.lead-form').forEach(function(f){
+  var warn = f.querySelector('.f-warn');
+  function _checkPerfil(){
+    if (!warn) return;
+    var tipo = (f.querySelector('[name="tipo_operacao"]')||{}).value || '';
+    var vol  = (f.querySelector('[name="volume"]')||{}).value || '';
+    var repele = /avulsa|Mudan/i.test(tipo) || /Até R\$ 10 mil/.test(vol);
+    warn.classList.toggle('show', !!repele);
+  }
+  var sel = f.querySelectorAll('[name="tipo_operacao"],[name="volume"]');
+  sel.forEach(function(s){ s.addEventListener('change', _checkPerfil); });
+});
+
 document.querySelectorAll('form.lead-form').forEach(function(f){
   f.addEventListener('submit', function(e){
     e.preventDefault();
@@ -507,9 +529,11 @@ document.querySelectorAll('form.lead-form').forEach(function(f){
     var data = {
       nome:         form.querySelector('[name="nome"]').value,
       empresa:      form.querySelector('[name="empresa"]').value,
+      email:        form.querySelector('[name="email"]').value,
       cnpj:         form.querySelector('[name="cnpj"]').value,
       whatsapp:     form.querySelector('[name="whatsapp"]').value,
       volume:       form.querySelector('[name="volume"]').value,
+      tipo_operacao: form.querySelector('[name="tipo_operacao"]').value,
       origem:       'LP DFT v2',
       utm_source:   utms.get('utm_source')   || '',
       utm_medium:   utms.get('utm_medium')   || '',
