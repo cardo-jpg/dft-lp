@@ -265,6 +265,58 @@ footer .wrap{display:flex;align-items:center;justify-content:space-between;flex-
 footer img{height:42px}
 .foot-info{font-size:.78rem;color:#9fb3c9}.foot-contact{font-size:.8rem;color:#cfe0f3;text-align:right}
 
+/* client logos trust strip */
+.trust{background:#fff;border-bottom:1px solid var(--line);padding:26px 0}
+.trust-in{display:flex;align-items:center;gap:18px 40px;flex-wrap:wrap;justify-content:center}
+.trust-lbl{font-size:.7rem;font-weight:800;letter-spacing:.13em;text-transform:uppercase;color:var(--muted2);white-space:nowrap}
+.trust img{height:27px;width:auto;object-fit:contain;opacity:.5;filter:grayscale(1);transition:.25s var(--ease)}
+.trust img:hover{opacity:1;filter:none}
+.svc-ico svg,.why .wi svg{width:24px;height:24px}
+/* supplier chips */
+.sup{margin-top:40px;text-align:center}
+.sup-lbl{display:block;font-size:.7rem;font-weight:800;letter-spacing:.13em;text-transform:uppercase;color:var(--muted2);margin-bottom:16px}
+.sup-row{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
+.sup-chip{background:#fff;border:1px solid var(--line);border-radius:12px;height:58px;padding:8px 22px;display:flex;align-items:center}
+.sup-chip img{max-height:30px;max-width:112px;object-fit:contain;filter:grayscale(1);opacity:.66;transition:.25s}
+.sup-chip:hover img{filter:none;opacity:1}
+/* quem somos */
+.about .grid{display:grid;grid-template-columns:1.08fr .92fr;gap:54px;align-items:center}
+.about h2{font-size:2.3rem;font-weight:900;color:var(--ink);margin-bottom:16px}
+.about h2 b{color:var(--blue)}
+.about p{color:var(--ink2);font-size:1.03rem;margin-bottom:14px;max-width:560px}
+.about .ab-img{position:relative}
+.about .ab-img img{width:100%;border-radius:20px;border:1px solid var(--line);box-shadow:0 30px 60px -34px rgba(11,34,56,.55)}
+.about .ab-badge{position:absolute;left:-14px;bottom:-16px;background:#fff;border:1px solid var(--line);border-radius:16px;padding:16px 22px;box-shadow:0 22px 46px -24px rgba(11,34,56,.5)}
+.about .ab-badge b{font-size:1.7rem;font-weight:900;color:var(--blue);display:block;line-height:1}
+.about .ab-badge span{font-size:.76rem;color:var(--muted);font-weight:600}
+/* reviews carousel (estilo Google / NF) */
+.rev{background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.rev .head{margin-bottom:10px}
+.gbadge{display:inline-flex;align-items:center;gap:9px;background:var(--blue-soft);border:1px solid #cfe0f3;border-radius:999px;padding:8px 16px;font-weight:700;color:var(--blue-d);font-size:.88rem;margin-bottom:16px}
+.gbadge svg{width:17px;height:17px}
+.gbadge .st{color:var(--gold);letter-spacing:1px}
+.tc{width:100%;max-width:62rem;margin:30px auto 0;padding:0 8px}
+.tc-grid{display:grid;gap:3rem;align-items:center}
+@media(min-width:860px){.tc-grid{grid-template-columns:1fr 1.05fr}}
+.tc-images{position:relative;width:100%;height:21rem;perspective:1200px}
+.tc-images img{position:absolute;width:100%;height:100%;object-fit:cover;border-radius:1.3rem;box-shadow:0 26px 54px -22px rgba(11,34,56,.5)}
+.tc-content{display:flex;flex-direction:column;justify-content:center}
+.tc-stars{color:var(--gold);letter-spacing:3px;font-size:1.15rem;margin-bottom:14px}
+.tc-quote{font-size:1.26rem;line-height:1.5;font-weight:500;color:var(--ink);min-height:7.5rem}
+.tc-quote .w{display:inline-block;filter:blur(9px);opacity:0;transform:translateY(6px);animation:win .55s var(--ease) forwards}
+@keyframes win{to{filter:blur(0);opacity:1;transform:none}}
+.tc-name{font-weight:800;font-size:1.05rem;margin-top:22px;color:var(--ink)}
+.tc-role{font-size:.85rem;color:var(--muted);margin-top:2px}
+.tc-src{color:var(--muted);font-size:.86rem;display:flex;align-items:center;gap:7px;margin-top:8px}
+.tc-src svg{width:15px;height:15px}
+.tc-arrows{display:flex;gap:1rem;margin-top:28px}
+.tc-btn{width:3rem;height:3rem;border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;border:1.5px solid var(--line);background:#fff;transition:.3s var(--ease)}
+.tc-btn:hover{background:var(--blue);border-color:var(--blue)}
+.tc-btn svg{width:22px;height:22px;stroke:var(--ink);fill:none;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.tc-btn:hover svg{stroke:#fff}
+@media(max-width:860px){.about .grid{grid-template-columns:1fr;gap:36px}.about .ab-img{order:-1;max-width:460px}.about h2{font-size:1.85rem}}
+@media(max-width:560px){.tc-images{height:17rem}.tc-quote{min-height:10rem;font-size:1.12rem}}
+
 @media(max-width:960px){
   .wrap{padding:0 20px}
   .nav-links a:not(.nav-cta){display:none}
@@ -347,6 +399,18 @@ footer img{height:42px}
   </div>
 </section>
 
+<!-- TRUST LOGOS -->
+<div class="trust"><div class="wrap"><div class="trust-in rv">
+  <span class="trust-lbl">A confiança de quem move São Paulo</span>
+  <img src="assets/clientes/levis.png" alt="Levi's" loading="lazy"/>
+  <img src="assets/clientes/cadiveu.png" alt="Cadiveu" loading="lazy"/>
+  <img src="assets/clientes/millen.png" alt="New Millen" loading="lazy"/>
+  <img src="assets/clientes/riclan.png" alt="Riclan" loading="lazy"/>
+  <img src="assets/clientes/agraria.png" alt="Agrária" loading="lazy"/>
+  <img src="assets/clientes/daus.png" alt="Daus" loading="lazy"/>
+  <img src="assets/clientes/ceva.png" alt="Ceva" loading="lazy"/>
+</div></div></div>
+
 <!-- COBERTURA -->
 <section class="cov" id="cobertura">
   <div class="wrap">
@@ -376,10 +440,10 @@ footer img{height:42px}
   <div class="wrap">
     <div class="head center"><span class="tag rv">Mais do que transporte</span><h2 class="htitle rv d1">Uma solução logística <span class="blue">completa</span></h2><p class="hsub rv d2">Da armazenagem à entrega, a DFT integra cada etapa para a sua carga fluir com eficiência e previsibilidade.</p></div>
     <div class="svc-grid">
-      <div class="svc rv"><div class="svc-ph" style="background-image:url('assets/dft/armazem.jpg')"><div class="svc-ico">▣</div></div><div class="svc-body"><h3>Armazenagem</h3><p>Estoque estratégico com gestão WMS, garantindo organização, controle e disponibilidade para a sua operação.</p></div></div>
-      <div class="svc rv d1"><div class="svc-ph" style="background-image:url('assets/dft/picking.jpg')"><div class="svc-ico">◫</div></div><div class="svc-body"><h3>Picking &amp; Packing</h3><p>Processos ágeis de separação, conferência e embalagem para expedições eficientes e seguras.</p></div></div>
-      <div class="svc rv d2"><div class="svc-ph" style="background-image:url('assets/dft/crossdocking.jpg')"><div class="svc-ico">⇄</div></div><div class="svc-body"><h3>Cross Docking</h3><p>Recebimento e expedição integrados, sem estoque parado. Mais agilidade e um fluxo logístico muito mais eficiente.</p></div></div>
-      <div class="svc rv d3"><div class="svc-ph" style="background-image:url('assets/dft/agendamento.jpg')"><div class="svc-ico">◷</div></div><div class="svc-body"><h3>Cargas agendadas ou Spot</h3><p>Soluções flexíveis para pedidos programados ou emergenciais, mantendo a sua operação sempre em movimento.</p></div></div>
+      <div class="svc rv"><div class="svc-ph" style="background-image:url('assets/dft/armazem.jpg')"><div class="svc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21V9l9-5 9 5v12"/><path d="M3 21h18"/><path d="M8 21v-6h8v6"/><path d="M8 15h8"/></svg></div></div><div class="svc-body"><h3>Armazenagem</h3><p>Estoque estratégico com gestão WMS, garantindo organização, controle e disponibilidade para a sua operação.</p></div></div>
+      <div class="svc rv d1"><div class="svc-ph" style="background-image:url('assets/dft/picking.jpg')"><div class="svc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="5" width="14" height="16" rx="2"/><path d="M9 5V4a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v1"/><path d="m9 13 2 2 4-4"/></svg></div></div><div class="svc-body"><h3>Picking &amp; Packing</h3><p>Processos ágeis de separação, conferência e embalagem para expedições eficientes e seguras.</p></div></div>
+      <div class="svc rv d2"><div class="svc-ph" style="background-image:url('assets/dft/crossdocking.jpg')"><div class="svc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h13l-3.5-3.5"/><path d="M21 16H8l3.5 3.5"/></svg></div></div><div class="svc-body"><h3>Cross Docking</h3><p>Recebimento e expedição integrados, sem estoque parado. Mais agilidade e um fluxo logístico muito mais eficiente.</p></div></div>
+      <div class="svc rv d3"><div class="svc-ph" style="background-image:url('assets/dft/agendamento.jpg')"><div class="svc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7.5V12l3 2"/></svg></div></div><div class="svc-body"><h3>Cargas agendadas ou Spot</h3><p>Soluções flexíveis para pedidos programados ou emergenciais, mantendo a sua operação sempre em movimento.</p></div></div>
     </div>
   </div>
 </section>
@@ -400,10 +464,19 @@ footer img{height:42px}
   <div class="wrap">
     <div class="head center"><span class="tag rv">Logística inteligente</span><h2 class="htitle rv d1">Tecnologia que protege a carga e <span class="blue">otimiza o frete</span></h2></div>
     <div class="why-grid">
-      <div class="why rv"><div class="wi">◉</div><h3>Roteirização estratégica</h3><p>Planejamento de rotas para reduzir custo e entregar mais rápido, dentro do prazo acordado.</p></div>
-      <div class="why rv d1"><div class="wi">◈</div><h3>Rastreamento em tempo real</h3><p>Acompanhamento de cada etapa da entrega, com mais controle, transparência e segurança.</p></div>
-      <div class="why rv d2"><div class="wi">▤</div><h3>Sistema TMS</h3><p>Gestão de transporte que integra e automatiza o processo, do planejamento à entrega.</p></div>
-      <div class="why rv d3"><div class="wi">⛨</div><h3>Seguro de carga</h3><p>Proteção das mercadorias do início ao fim da operação, para total tranquilidade.</p></div>
+      <div class="why rv"><div class="wi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="19" r="2.2"/><circle cx="18" cy="5" r="2.2"/><path d="M8.2 19H14a3.5 3.5 0 0 0 0-7h-4a3.5 3.5 0 0 1 0-7h5.8"/></svg></div><h3>Roteirização estratégica</h3><p>Planejamento de rotas para reduzir custo e entregar mais rápido, dentro do prazo acordado.</p></div>
+      <div class="why rv d1"><div class="wi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-5.2 7-11a7 7 0 1 0-14 0c0 5.8 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></div><h3>Rastreamento em tempo real</h3><p>Acompanhamento de cada etapa da entrega, com mais controle, transparência e segurança.</p></div>
+      <div class="why rv d2"><div class="wi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M7 12.5l3-3 2 2 4-4.5"/><path d="M9 21h6"/></svg></div><h3>Sistema TMS</h3><p>Gestão de transporte que integra e automatiza o processo, do planejamento à entrega.</p></div>
+      <div class="why rv d3"><div class="wi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5.5c0 4.3-3 7.6-7 8.5-4-.9-7-4.2-7-8.5V6l7-3z"/><path d="m9 12 2 2 4-4"/></svg></div><h3>Seguro de carga</h3><p>Proteção das mercadorias do início ao fim da operação, para total tranquilidade.</p></div>
+    </div>
+    <div class="sup rv">
+      <span class="sup-lbl">Parceiros de tecnologia e segurança</span>
+      <div class="sup-row">
+        <div class="sup-chip"><img src="assets/fornecedores/sompo.png" alt="Sompo Seguros" loading="lazy"/></div>
+        <div class="sup-chip"><img src="assets/fornecedores/omnilink.png" alt="Omnilink" loading="lazy"/></div>
+        <div class="sup-chip"><img src="assets/fornecedores/onixsat.png" alt="Onixsat" loading="lazy"/></div>
+        <div class="sup-chip"><img src="assets/fornecedores/sascar.png" alt="Sascar" loading="lazy"/></div>
+      </div>
     </div>
   </div>
 </section>
@@ -441,14 +514,47 @@ footer img{height:42px}
   </div>
 </section>
 
-<!-- TESTIMONIALS -->
-<section style="background:var(--cream);border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
+<!-- QUEM SOMOS -->
+<section class="about" id="quem-somos">
   <div class="wrap">
-    <div class="head center"><span class="tag rv">O que dizem nossos clientes</span><h2 class="htitle rv d1">Quem confia na DFT <span class="blue">comprova resultados</span></h2></div>
-    <div class="tgrid">
-      <div class="tcard rv"><div class="stars">★★★★★</div><p>"Empresa referência nacional no segmento de transportes, frota própria, equipe treinada e atendimento nota mil."</p><div class="who">Maycon Rodrigues</div><div class="role">JM Agro Distribuidora</div></div>
-      <div class="tcard rv d1"><div class="stars">★★★★★</div><p>"Parceira de longa data, cuida do estoque, da separação e da entrega. Conhece nossas necessidades e garante agilidade com qualidade. Bora DFT!"</p><div class="who">Adriana Puerta</div><div class="role">CEO da Jomer Aramados</div></div>
-      <div class="tcard rv d2"><div class="stars">★★★★★</div><p>"Uso os serviços da DFT e sempre dá tudo certo. Muito rápido e eficiente. Sempre sou muito bem atendido pela equipe."</p><div class="who">Mário Duarte</div><div class="role">All Horse</div></div>
+    <div class="grid">
+      <div>
+        <span class="tag rv">Quem somos</span>
+        <h2 class="rv d1">Há mais de 10 anos movendo o <b>fracionado de São Paulo</b></h2>
+        <p class="rv d2">A DFT nasceu de um sonho, cresceu com planejamento e hoje é uma transportadora guiada por disciplina, credibilidade e respeito. Operação e frota próprias, estrutura moderna e tecnologia de ponta para entregar com rastreabilidade e precisão.</p>
+        <p class="rv d2">Nossas bases estrategicamente distribuídas em São Paulo nos posicionam para atender com agilidade — em até 24h na capital e de 48h a 72h no interior — enquanto você foca no crescimento do seu negócio.</p>
+      </div>
+      <div class="ab-img rv d2">
+        <img src="assets/dft/frota-rodovia.jpg" alt="Frota própria da DFT Logística em operação nas rodovias de São Paulo" loading="lazy"/>
+        <div class="ab-badge"><b>100%</b><span>frota própria</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS (Google) -->
+<section class="rev" id="depoimentos">
+  <div class="wrap">
+    <div class="head center rv">
+      <span class="gbadge"><svg viewBox="0 0 48 48"><path fill="#4285F4" d="M45.1 24.5c0-1.6-.1-3.1-.4-4.5H24v8.5h11.8c-.5 2.8-2.1 5.1-4.4 6.6v5.5h7.1c4.2-3.8 6.6-9.5 6.6-16.1z"/><path fill="#34A853" d="M24 46c5.9 0 10.9-2 14.6-5.3l-7.1-5.5c-2 1.3-4.5 2.1-7.5 2.1-5.7 0-10.6-3.9-12.3-9.1H4.3v5.7C8 41.1 15.4 46 24 46z"/><path fill="#FBBC05" d="M11.7 28.2c-.4-1.3-.7-2.7-.7-4.2s.3-2.9.7-4.2v-5.7H4.3C2.9 17.1 2 20.5 2 24s.9 6.9 2.3 9.9l7.4-5.7z"/><path fill="#EA4335" d="M24 10.8c3.2 0 6.1 1.1 8.4 3.3l6.3-6.3C34.9 4.2 29.9 2 24 2 15.4 2 8 6.9 4.3 14.1l7.4 5.7c1.7-5.2 6.6-9 12.3-9z"/></svg><span class="st">★★★★★</span> Avaliações no Google</span>
+      <h2 class="htitle">Quem roda com a DFT <span class="blue">recomenda</span></h2>
+      <p class="hsub">Clientes reais que confiam a operação deles para a nossa frota.</p>
+    </div>
+    <div class="tc rv d1">
+      <div class="tc-grid">
+        <div class="tc-images" id="tcImages"></div>
+        <div class="tc-content">
+          <div class="tc-stars">★★★★★</div>
+          <p class="tc-quote" id="tcQuote"></p>
+          <div class="tc-name" id="tcName"></div>
+          <div class="tc-role" id="tcRole"></div>
+          <div class="tc-src" id="tcSrc"></div>
+          <div class="tc-arrows">
+            <button class="tc-btn" id="tcPrev" aria-label="Avaliação anterior"><svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg></button>
+            <button class="tc-btn" id="tcNext" aria-label="Próxima avaliação"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></button>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -555,6 +661,30 @@ document.querySelectorAll('form.lead-form').forEach(function(f){
     setTimeout(function(){ try{document.body.removeChild(hf);}catch(e){} },5000);
   });
 });
+
+// ---- reviews carousel (3D, Google) ----
+(function(){
+  var wrap=document.getElementById('tcImages'); if(!wrap)return;
+  var G='<svg viewBox="0 0 48 48"><path fill="#4285F4" d="M45.1 24.5c0-1.6-.1-3.1-.4-4.5H24v8.5h11.8c-.5 2.8-2.1 5.1-4.4 6.6v5.5h7.1c4.2-3.8 6.6-9.5 6.6-16.1z"/><path fill="#34A853" d="M24 46c5.9 0 10.9-2 14.6-5.3l-7.1-5.5c-2 1.3-4.5 2.1-7.5 2.1-5.7 0-10.6-3.9-12.3-9.1H4.3v5.7C8 41.1 15.4 46 24 46z"/><path fill="#FBBC05" d="M11.7 28.2c-.4-1.3-.7-2.7-.7-4.2s.3-2.9.7-4.2v-5.7H4.3C2.9 17.1 2 20.5 2 24s.9 6.9 2.3 9.9l7.4-5.7z"/><path fill="#EA4335" d="M24 10.8c3.2 0 6.1 1.1 8.4 3.3l6.3-6.3C34.9 4.2 29.9 2 24 2 15.4 2 8 6.9 4.3 14.1l7.4 5.7c1.7-5.2 6.6-9 12.3-9z"/></svg>';
+  var R=[
+    {q:"Empresa referência nacional no segmento de transportes, frota própria, equipe treinada e atendimento nota mil.",n:"Maycon Rodrigues",r:"JM Agro Distribuidora",img:"assets/dft/frota-rodovia.jpg"},
+    {q:"Parceira de longa data, cuida do estoque, da separação e da entrega. Conhece nossas necessidades e garante agilidade com qualidade. Bora DFT!",n:"Adriana Puerta",r:"CEO da Jomer Aramados",img:"assets/dft/movimentacao-e-expedicao.jpg"},
+    {q:"Uso os serviços da DFT e sempre dá tudo certo. Muito rápido e eficiente. Sempre sou muito bem atendido pela equipe.",n:"Mário Duarte",r:"All Horse",img:"assets/dft/otd.jpg"}
+  ];
+  var a=0,len=R.length,cw=1000,timer=null,
+    qEl=document.getElementById('tcQuote'),nEl=document.getElementById('tcName'),roEl=document.getElementById('tcRole'),sEl=document.getElementById('tcSrc');
+  R.forEach(function(r){var im=document.createElement('img');im.src=r.img;im.alt='Operação DFT — '+r.n;im.loading='lazy';wrap.appendChild(im);});
+  var imgs=wrap.querySelectorAll('img');
+  function gap(w){var A=1024,B=1456,mn=56,mx=80;if(w<=A)return mn;if(w>=B)return mx;return mn+(mx-mn)*((w-A)/(B-A));}
+  function pos(){var g=gap(cw),su=g*.7;imgs.forEach(function(im,i){var AC=i===a,L=(a-1+len)%len===i,Rr=(a+1)%len===i;im.style.transition='all .85s cubic-bezier(.4,2,.3,1)';if(AC){im.style.zIndex=3;im.style.opacity=1;im.style.transform='translateX(0) translateY(0) scale(1) rotateY(0)';}else if(L){im.style.zIndex=2;im.style.opacity=.45;im.style.transform='translateX(-'+g+'px) translateY(-'+su+'px) scale(.9) rotateY(13deg)';}else if(Rr){im.style.zIndex=2;im.style.opacity=.45;im.style.transform='translateX('+g+'px) translateY(-'+su+'px) scale(.9) rotateY(-13deg)';}else{im.style.zIndex=1;im.style.opacity=0;}});}
+  function txt(){var r=R[a];nEl.textContent=r.n;if(roEl)roEl.textContent=r.r;sEl.innerHTML=G+'Avaliação no Google';qEl.innerHTML='';r.q.split(' ').forEach(function(w,i){var sp=document.createElement('span');sp.className='w';sp.textContent=w;sp.style.animationDelay=(.02*i)+'s';qEl.appendChild(sp);qEl.appendChild(document.createTextNode(' '));});}
+  function up(){pos();txt();}
+  function nx(){a=(a+1)%len;up();rs();}function pv(){a=(a-1+len)%len;up();rs();}
+  function rs(){if(timer){clearInterval(timer);st();}}function st(){timer=setInterval(function(){a=(a+1)%len;up();},6000);}
+  function ms(){cw=wrap.offsetWidth||1000;pos();}
+  addEventListener('resize',ms);document.getElementById('tcPrev').onclick=pv;document.getElementById('tcNext').onclick=nx;
+  ms();up();st();
+})();
 </script>
 </body>
 </html>
