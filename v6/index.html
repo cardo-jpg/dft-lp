@@ -265,12 +265,15 @@ footer .wrap{display:flex;align-items:center;justify-content:space-between;flex-
 footer img{height:42px}
 .foot-info{font-size:.78rem;color:#9fb3c9}.foot-contact{font-size:.8rem;color:#cfe0f3;text-align:right}
 
-/* client logos trust strip */
-.trust{background:#fff;border-bottom:1px solid var(--line);padding:26px 0}
-.trust-in{display:flex;align-items:center;gap:18px 40px;flex-wrap:wrap;justify-content:center}
-.trust-lbl{font-size:.7rem;font-weight:800;letter-spacing:.13em;text-transform:uppercase;color:var(--muted2);white-space:nowrap}
-.trust img{height:27px;width:auto;object-fit:contain;opacity:.5;filter:grayscale(1);transition:.25s var(--ease)}
-.trust img:hover{opacity:1;filter:none}
+/* photo band */
+.photoband{position:relative;height:320px;overflow:hidden;display:flex;align-items:center;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.photoband>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 42%}
+.photoband::after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,rgba(9,36,72,.92),rgba(9,36,72,.66) 52%,rgba(9,36,72,.32))}
+.photoband .wrap{position:relative;z-index:1;color:#fff}
+.photoband .pb-tag{display:inline-flex;align-items:center;gap:10px;font-size:.72rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:#bcd9f6;margin-bottom:14px}
+.photoband .pb-tag::before{content:'';width:30px;height:2px;background:#fff}
+.photoband h2{font-size:2rem;font-weight:900;max-width:18ch;line-height:1.12;color:#fff}
+.photoband p{color:#dbe9f8;margin-top:12px;max-width:48ch;font-size:1.02rem}
 .svc-ico svg,.why .wi svg{width:24px;height:24px}
 /* supplier chips */
 .sup{margin-top:40px;text-align:center}
@@ -285,7 +288,7 @@ footer img{height:42px}
 .about h2 b{color:var(--blue)}
 .about p{color:var(--ink2);font-size:1.03rem;margin-bottom:14px;max-width:560px}
 .about .ab-img{position:relative}
-.about .ab-img img{width:100%;border-radius:20px;border:1px solid var(--line);box-shadow:0 30px 60px -34px rgba(11,34,56,.55)}
+.about .ab-img img{width:100%;height:440px;object-fit:cover;object-position:center;border-radius:20px;border:1px solid var(--line);box-shadow:0 30px 60px -34px rgba(11,34,56,.55)}
 .about .ab-badge{position:absolute;left:-14px;bottom:-16px;background:#fff;border:1px solid var(--line);border-radius:16px;padding:16px 22px;box-shadow:0 22px 46px -24px rgba(11,34,56,.5)}
 .about .ab-badge b{font-size:1.7rem;font-weight:900;color:var(--blue);display:block;line-height:1}
 .about .ab-badge span{font-size:.76rem;color:var(--muted);font-weight:600}
@@ -314,7 +317,7 @@ footer img{height:42px}
 .tc-btn:hover{background:var(--blue);border-color:var(--blue)}
 .tc-btn svg{width:22px;height:22px;stroke:var(--ink);fill:none;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
 .tc-btn:hover svg{stroke:#fff}
-@media(max-width:860px){.about .grid{grid-template-columns:1fr;gap:36px}.about .ab-img{order:-1;max-width:460px}.about h2{font-size:1.85rem}}
+@media(max-width:860px){.about .grid{grid-template-columns:1fr;gap:36px}.about .ab-img{order:-1;max-width:480px}.about .ab-img img{height:300px}.about h2{font-size:1.85rem}.photoband{height:260px}.photoband h2{font-size:1.5rem}.photoband p{font-size:.94rem}}
 @media(max-width:560px){.tc-images{height:17rem}.tc-quote{min-height:10rem;font-size:1.12rem}}
 
 @media(max-width:960px){
@@ -399,17 +402,15 @@ footer img{height:42px}
   </div>
 </section>
 
-<!-- TRUST LOGOS -->
-<div class="trust"><div class="wrap"><div class="trust-in rv">
-  <span class="trust-lbl">A confiança de quem move São Paulo</span>
-  <img src="assets/clientes/levis.png" alt="Levi's" loading="lazy"/>
-  <img src="assets/clientes/cadiveu.png" alt="Cadiveu" loading="lazy"/>
-  <img src="assets/clientes/millen.png" alt="New Millen" loading="lazy"/>
-  <img src="assets/clientes/riclan.png" alt="Riclan" loading="lazy"/>
-  <img src="assets/clientes/agraria.png" alt="Agrária" loading="lazy"/>
-  <img src="assets/clientes/daus.png" alt="Daus" loading="lazy"/>
-  <img src="assets/clientes/ceva.png" alt="Ceva" loading="lazy"/>
-</div></div></div>
+<!-- PHOTO BAND -->
+<div class="photoband">
+  <img src="assets/dft/frota-rodovia.jpg" alt="Frota própria da DFT Logística nas rodovias de São Paulo"/>
+  <div class="wrap">
+    <span class="pb-tag rv">Operação e frota próprias</span>
+    <h2 class="rv d1">A sua carga roda com quem é dono da operação</h2>
+    <p class="rv d2">Frota própria, equipe própria e 15 bases de apoio em São Paulo — da coleta à entrega, sem terceirizar o que importa.</p>
+  </div>
+</div>
 
 <!-- COBERTURA -->
 <section class="cov" id="cobertura">
@@ -525,7 +526,7 @@ footer img{height:42px}
         <p class="rv d2">Nossas bases estrategicamente distribuídas em São Paulo nos posicionam para atender com agilidade — em até 24h na capital e de 48h a 72h no interior — enquanto você foca no crescimento do seu negócio.</p>
       </div>
       <div class="ab-img rv d2">
-        <img src="assets/dft/frota-rodovia.jpg" alt="Frota própria da DFT Logística em operação nas rodovias de São Paulo" loading="lazy"/>
+        <img src="assets/dft/lotacao.jpg" alt="Operação de carregamento da frota própria da DFT Logística" loading="lazy"/>
         <div class="ab-badge"><b>100%</b><span>frota própria</span></div>
       </div>
     </div>
@@ -667,7 +668,7 @@ document.querySelectorAll('form.lead-form').forEach(function(f){
   var wrap=document.getElementById('tcImages'); if(!wrap)return;
   var G='<svg viewBox="0 0 48 48"><path fill="#4285F4" d="M45.1 24.5c0-1.6-.1-3.1-.4-4.5H24v8.5h11.8c-.5 2.8-2.1 5.1-4.4 6.6v5.5h7.1c4.2-3.8 6.6-9.5 6.6-16.1z"/><path fill="#34A853" d="M24 46c5.9 0 10.9-2 14.6-5.3l-7.1-5.5c-2 1.3-4.5 2.1-7.5 2.1-5.7 0-10.6-3.9-12.3-9.1H4.3v5.7C8 41.1 15.4 46 24 46z"/><path fill="#FBBC05" d="M11.7 28.2c-.4-1.3-.7-2.7-.7-4.2s.3-2.9.7-4.2v-5.7H4.3C2.9 17.1 2 20.5 2 24s.9 6.9 2.3 9.9l7.4-5.7z"/><path fill="#EA4335" d="M24 10.8c3.2 0 6.1 1.1 8.4 3.3l6.3-6.3C34.9 4.2 29.9 2 24 2 15.4 2 8 6.9 4.3 14.1l7.4 5.7c1.7-5.2 6.6-9 12.3-9z"/></svg>';
   var R=[
-    {q:"Empresa referência nacional no segmento de transportes, frota própria, equipe treinada e atendimento nota mil.",n:"Maycon Rodrigues",r:"JM Agro Distribuidora",img:"assets/dft/frota-rodovia.jpg"},
+    {q:"Empresa referência nacional no segmento de transportes, frota própria, equipe treinada e atendimento nota mil.",n:"Maycon Rodrigues",r:"JM Agro Distribuidora",img:"assets/dft/crossdocking.jpg"},
     {q:"Parceira de longa data, cuida do estoque, da separação e da entrega. Conhece nossas necessidades e garante agilidade com qualidade. Bora DFT!",n:"Adriana Puerta",r:"CEO da Jomer Aramados",img:"assets/dft/movimentacao-e-expedicao.jpg"},
     {q:"Uso os serviços da DFT e sempre dá tudo certo. Muito rápido e eficiente. Sempre sou muito bem atendido pela equipe.",n:"Mário Duarte",r:"All Horse",img:"assets/dft/otd.jpg"}
   ];
