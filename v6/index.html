@@ -130,10 +130,13 @@ nav.scrolled .nav-logo img{height:38px}
 .pb .pbv i{font-style:normal;color:var(--blue)}
 .hero p.lead{font-size:1.14rem;color:var(--ink2);max-width:540px;margin-bottom:30px;font-weight:500}
 .hero-cta{display:flex;gap:13px;flex-wrap:wrap;align-items:center}
-.hero-trust{display:grid;grid-template-columns:repeat(2,minmax(0,max-content));gap:24px 46px;margin-top:38px}
-.ht b{font-weight:900;font-size:1.7rem;color:var(--ink);display:block}
+.hero-trust{display:grid;grid-template-columns:1fr 1fr;margin-top:40px;border:1px solid var(--line);border-radius:18px;overflow:hidden;background:#fff;box-shadow:0 22px 46px -30px rgba(10,43,87,.42)}
+.ht{padding:20px 24px;border-top:1px solid var(--line);border-left:1px solid var(--line)}
+.ht:nth-child(-n+2){border-top:none}
+.ht:nth-child(odd){border-left:none}
+.ht b{font-weight:900;font-size:1.78rem;color:var(--ink);display:block;letter-spacing:-.02em;line-height:1.05}
 .ht b i{font-style:normal;color:var(--blue)}
-.ht span{display:block;font-size:.76rem;color:var(--muted);margin-top:3px;max-width:150px}
+.ht span{display:block;font-size:.76rem;color:var(--muted);margin-top:5px;max-width:160px}
 
 /* HERO MAP */
 .hero-map{position:relative}
@@ -235,7 +238,8 @@ section{padding:86px 0}
 .faq-item .ans{padding:0 24px 20px;color:var(--muted);font-size:.93rem;line-height:1.65}
 
 /* CTA FORM */
-.cta{background:linear-gradient(120deg,var(--blue-deep),var(--blue) 58%,var(--blue2));color:#fff;padding:86px 0;position:relative;overflow:hidden}
+.cta{background:url('assets/dft/lotacao.jpg') center/cover;color:#fff;padding:86px 0;position:relative;overflow:hidden}
+.cta::before{content:'';position:absolute;inset:0;background:linear-gradient(118deg,rgba(10,43,87,.96),rgba(13,63,120,.9) 52%,rgba(30,111,192,.82))}
 .cta::after{content:'';position:absolute;inset:0;background:radial-gradient(620px 360px at 20% 20%,rgba(255,255,255,.1),transparent 60%)}
 .cta .grid{display:grid;grid-template-columns:1fr 440px;gap:50px;align-items:center;position:relative;z-index:1}
 .cta .tag{color:#bcd9f6}
@@ -335,7 +339,7 @@ footer img{height:42px}
   .res .rnum{font-size:2.3rem}
   .cta .grid{grid-template-columns:1fr;gap:30px}.cta h2{font-size:1.9rem}
 }
-@media(max-width:560px){.svc-grid,.why-grid,.seg-grid,.cov-stats{grid-template-columns:1fr}.prazo-badges .pb{flex:1}.hero-trust{gap:22px}}
+@media(max-width:560px){.svc-grid,.why-grid,.seg-grid,.cov-stats{grid-template-columns:1fr}.prazo-badges .pb{flex:1}.ht{padding:15px 16px}.ht b{font-size:1.5rem}}
 </style>
 </head>
 <body>
