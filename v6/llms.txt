@@ -1,6 +1,6 @@
 # DFT Logística
 
-> Transportadora de cargas fracionadas B2B em todo o estado de São Paulo. Operação e frota 100% próprias, base central em Vargem Grande Paulista (raio de atendimento de aproximadamente 300 km) e 15 bases de apoio no estado. Prazo de referência de 24h para a capital e a Grande São Paulo e de 48h a 72h para o interior. OTD (entregas no prazo) de 97% a 98%. Mais de 11 anos de mercado.
+> Transportadora de cargas fracionadas B2B em todo o estado de São Paulo. Operação e frota 100% próprias, base central em Vargem Grande Paulista e 15 bases de apoio no estado. Prazo de referência de 24h para a capital e a Grande São Paulo e de 48h a 72h para o interior. OTD (entregas no prazo) de 97% a 98%. Mais de 11 anos de mercado.
 
 ## O que a DFT faz
 - Transporte de cargas fracionadas B2B: a carga compartilha a estrutura de transporte com outros embarques, sem veículo exclusivo, reduzindo custo e otimizando tempo.
@@ -10,7 +10,7 @@
 
 ## Cobertura
 - Todo o estado de São Paulo, com operação 100% própria e frota própria.
-- Base central: Vargem Grande Paulista (SP), raio de aproximadamente 300 km, 15 bases de apoio (3 com armazém).
+- Base central: Vargem Grande Paulista (SP), 15 bases de apoio (3 com armazém).
 - Nos demais estados do Sudeste, parceiros sob gerenciamento da DFT.
 - Prazos: capital e Grande SP em até 24h; interior de 48h a 72h (máximo de 72h no estado), confirmados conforme cobertura e coleta.
 

@@ -217,7 +217,7 @@ section{padding:86px 0}
 .fit ul{list-style:none;display:flex;flex-direction:column;gap:14px}
 .fit li{position:relative;padding-left:30px;color:var(--ink2);font-size:.98rem;line-height:1.5}
 .fit li .mk{position:absolute;left:0;top:0;color:var(--blue);font-weight:900}
-.fit .ex{margin-top:22px;border:1px dashed #cfe0f3;background:#fff;border-radius:12px;padding:16px 20px;color:var(--muted);font-size:.9rem}
+.fit .ex{margin-top:22px;border:1px dashed #e7b4b4;background:#fdf3f3;border-radius:12px;padding:16px 20px;color:#c0271d;font-weight:600;font-size:.9rem}
 
 /* TESTIMONIALS */
 .tgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
@@ -312,7 +312,9 @@ footer img{height:42px}
 .tc-quote{font-size:1.26rem;line-height:1.5;font-weight:500;color:var(--ink);min-height:7.5rem}
 .tc-quote .w{display:inline-block;filter:blur(9px);opacity:0;transform:translateY(6px);animation:win .55s var(--ease) forwards}
 @keyframes win{to{filter:blur(0);opacity:1;transform:none}}
-.tc-name{font-weight:800;font-size:1.05rem;margin-top:22px;color:var(--ink)}
+.tc-id{display:flex;align-items:center;gap:14px;margin-top:22px}
+.tc-logo{width:54px;height:54px;object-fit:contain;border-radius:12px;border:1px solid var(--line);background:#fff;padding:5px;flex-shrink:0}
+.tc-name{font-weight:800;font-size:1.05rem;color:var(--ink)}
 .tc-role{font-size:.85rem;color:var(--muted);margin-top:2px}
 .tc-src{color:var(--muted);font-size:.86rem;display:flex;align-items:center;gap:7px;margin-top:8px}
 .tc-src svg{width:15px;height:15px}
@@ -370,7 +372,7 @@ footer img{height:42px}
           <div class="ht"><b class="num" data-to="11">0</b><span>Anos no fracionado</span></div>
           <div class="ht"><b>97<i>–</i>98<i>%</i></b><span>OTD · entregas no prazo</span></div>
           <div class="ht"><b class="num" data-to="15">0</b><span>Bases de apoio em SP</span></div>
-          <div class="ht"><b><i>~</i>300<i>&nbsp;km</i></b><span>Raio da base central</span></div>
+          <div class="ht"><b class="num" data-to="100" data-suffix="%">0</b><span>Operação e frota próprias</span></div>
         </div>
       </div>
       <div class="hero-map rv d2">
@@ -411,7 +413,7 @@ footer img{height:42px}
   <img src="assets/dft/frota-rodovia.jpg" alt="Frota própria da DFT Logística nas rodovias de São Paulo"/>
   <div class="wrap">
     <span class="pb-tag rv">Operação e frota próprias</span>
-    <h2 class="rv d1">A sua carga roda com quem é dono da operação</h2>
+    <h2 class="rv d1">Sua carga nas mãos de quem tem o controle da operação</h2>
     <p class="rv d2">Frota própria, equipe própria e 15 bases de apoio em São Paulo — da coleta à entrega, sem terceirizar o que importa.</p>
   </div>
 </div>
@@ -423,10 +425,10 @@ footer img{height:42px}
       <div>
         <span class="tag rv">Cobertura em São Paulo</span>
         <h2 class="rv d1">Entregas de <b>24h a 72h</b> em todo o estado</h2>
-        <p class="rv d2">Com <b>15 bases estrategicamente distribuídas</b>, sua carga fracionada chega a todo o estado de São Paulo. A base central fica em <b>Vargem Grande Paulista</b>, com raio de atendimento de aproximadamente <b>300&nbsp;km</b>.</p>
+        <p class="rv d2">Com <b>15 bases estrategicamente distribuídas</b>, sua carga fracionada chega a todo o estado de São Paulo. A base central fica em <b>Vargem Grande Paulista</b>.</p>
         <p class="rv d2">Operação <b>100% própria</b> em SP, com <b>frota própria</b>. Nos demais estados do Sudeste, parceiros sob gerenciamento da DFT.</p>
         <div class="chips rv d3">
-          <span class="chip">Capital</span><span class="chip">Grande SP</span><span class="chip">Campinas</span><span class="chip">Sorocaba</span><span class="chip">Baixada Santista</span><span class="chip">Vale do Paraíba</span><span class="chip">Ribeirão Preto</span><span class="chip">Bauru</span><span class="chip">S.J. Rio Preto</span><span class="chip">Pres. Prudente</span>
+          <span class="chip">Capital</span><span class="chip">Grande SP</span><span class="chip">Campinas</span><span class="chip">Sorocaba</span><span class="chip">Baixada Santista</span><span class="chip">Vale do Paraíba</span>
         </div>
         <p class="note rv d3">Prazos de referência · máximo de 72h no estado de São Paulo, confirmados conforme cobertura e coleta.</p>
       </div>
@@ -434,7 +436,7 @@ footer img{height:42px}
         <div class="cov-stat"><b class="num" data-to="24" data-suffix="h">0</b><span>Capital e Grande SP</span></div>
         <div class="cov-stat"><b>48–72<span style="font-size:1.1rem">h</span></b><span>Interior do estado</span></div>
         <div class="cov-stat"><b class="num" data-to="15">0</b><span>Bases de apoio</span></div>
-        <div class="cov-stat"><b class="num" data-to="300" data-prefix="~" data-suffix=" km">0</b><span>Raio da base central</span></div>
+        <div class="cov-stat"><b class="num" data-to="100" data-suffix="%">0</b><span>Operação própria</span></div>
       </div>
     </div>
   </div>
@@ -495,7 +497,6 @@ footer img{height:42px}
       <div class="seg rv d1"><div class="seg-ph" style="background-image:url('assets/nicho-autopecas.jpg')"></div><div class="seg-b"><div class="sn">Autopeças</div><div class="sk">Reposição e indústria</div></div></div>
       <div class="seg rv d2"><div class="seg-ph" style="background-image:url('assets/nicho-alimentos.jpg')"></div><div class="seg-b"><div class="sn">Alimentos e bebidas</div><div class="sk">Distribuição recorrente</div></div></div>
       <div class="seg rv d3"><div class="seg-ph" style="background-image:url('assets/nicho-correlatos.jpg')"></div><div class="seg-b"><div class="sn">Cosméticos e correlatos</div><div class="sk">Cuidado no manuseio</div></div></div>
-      <div class="seg rv"><div class="seg-ph" style="background-image:url('assets/nicho-saneantes.jpg')"></div><div class="seg-b"><div class="sn">Saneantes</div><div class="sk">Indústria e distribuição</div></div></div>
       <div class="seg rv d1"><div class="seg-ph" style="background-image:url('assets/nicho-vestuario.jpg')"></div><div class="seg-b"><div class="sn">Vestuário e têxtil</div><div class="sk">Volume e giro</div></div></div>
       <div class="seg rv d2"><div class="seg-ph" style="background-image:url('assets/nicho-agro.jpg')"></div><div class="seg-b"><div class="sn">Agronegócio</div><div class="sk">Insumos e distribuição</div></div></div>
       <div class="seg outros rv d3"><div class="sn">Outros segmentos</div><div class="sk">Atendemos outras cargas B2B conforme o perfil da operação.</div><a href="#form">Consultar o comercial →</a></div>
@@ -551,8 +552,7 @@ footer img{height:42px}
         <div class="tc-content">
           <div class="tc-stars">★★★★★</div>
           <p class="tc-quote" id="tcQuote"></p>
-          <div class="tc-name" id="tcName"></div>
-          <div class="tc-role" id="tcRole"></div>
+          <div class="tc-id"><img class="tc-logo" id="tcLogo" alt=""/><div><div class="tc-name" id="tcName"></div><div class="tc-role" id="tcRole"></div></div></div>
           <div class="tc-src" id="tcSrc"></div>
           <div class="tc-arrows">
             <button class="tc-btn" id="tcPrev" aria-label="Avaliação anterior"><svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg></button>
@@ -570,11 +570,11 @@ footer img{height:42px}
     <div class="head center"><span class="tag rv">Perguntas frequentes</span><h2 class="htitle rv d1">Tudo sobre o fracionado da <span class="blue">DFT</span></h2></div>
     <div class="faq-wrap">
       <details class="faq-item rv"><summary>O que é o transporte fracionado da DFT?<span class="pls">+</span></summary><div class="ans">É a distribuição B2B em que a sua carga compartilha a estrutura de transporte com outros embarques, sem veículo exclusivo, reduzindo custo e otimizando tempo. A proposta é construída conforme o perfil da sua distribuição: origem, destinos, frequência, peso, volume e tipo de mercadoria.</div></details>
-      <details class="faq-item rv"><summary>Qual é a cobertura da DFT em São Paulo?<span class="pls">+</span></summary><div class="ans">Todo o estado de São Paulo, com operação 100% própria e frota própria. Base central em Vargem Grande Paulista, raio de aproximadamente 300 km e 15 bases de apoio no estado (3 com operação de armazém). Nos demais estados do Sudeste, parceiros sob gerenciamento da DFT.</div></details>
+      <details class="faq-item rv"><summary>Qual é a cobertura da DFT em São Paulo?<span class="pls">+</span></summary><div class="ans">Todo o estado de São Paulo, com operação 100% própria e frota própria. Base central em Vargem Grande Paulista e 15 bases de apoio no estado (3 com operação de armazém). Nos demais estados do Sudeste, parceiros sob gerenciamento da DFT.</div></details>
       <details class="faq-item rv"><summary>Quais são os prazos de entrega em São Paulo?<span class="pls">+</span></summary><div class="ans">Prazo de referência de 24 horas para a capital e a Grande São Paulo e de 48 a 72 horas para o interior (máximo de 72 horas no estado). Os prazos são confirmados conforme cobertura, coleta e condições comerciais acordadas.</div></details>
       <details class="faq-item rv"><summary>Quem a DFT atende?<span class="pls">+</span></summary><div class="ans">Exclusivamente empresas (B2B): indústrias, distribuidores e embarcadores com distribuição recorrente, em especial cargas de maior valor agregado.</div></details>
       <details class="faq-item rv"><summary>Qual é o índice de entregas no prazo (OTD)?<span class="pls">+</span></summary><div class="ans">Entre 97% e 98%, conforme o período e o recorte operacional analisados.</div></details>
-      <details class="faq-item rv"><summary>Como solicitar uma proposta?<span class="pls">+</span></summary><div class="ans">Pelo formulário do site, pelo WhatsApp (11) 91585-5163, pelo telefone (11) 4159-3558 ou pelo e-mail comercial3@dftlogistica.com.br, de segunda a sexta, das 7h às 18h.</div></details>
+      <details class="faq-item rv"><summary>Como solicitar uma proposta?<span class="pls">+</span></summary><div class="ans">Preencha o formulário disponível logo abaixo. Se precisar de ajuda ou encontrar alguma dificuldade no envio, entre em contato pelo WhatsApp: (11) 91585-5163.</div></details>
     </div>
   </div>
 </section>
@@ -672,9 +672,9 @@ document.querySelectorAll('form.lead-form').forEach(function(f){
   var wrap=document.getElementById('tcImages'); if(!wrap)return;
   var G='<svg viewBox="0 0 48 48"><path fill="#4285F4" d="M45.1 24.5c0-1.6-.1-3.1-.4-4.5H24v8.5h11.8c-.5 2.8-2.1 5.1-4.4 6.6v5.5h7.1c4.2-3.8 6.6-9.5 6.6-16.1z"/><path fill="#34A853" d="M24 46c5.9 0 10.9-2 14.6-5.3l-7.1-5.5c-2 1.3-4.5 2.1-7.5 2.1-5.7 0-10.6-3.9-12.3-9.1H4.3v5.7C8 41.1 15.4 46 24 46z"/><path fill="#FBBC05" d="M11.7 28.2c-.4-1.3-.7-2.7-.7-4.2s.3-2.9.7-4.2v-5.7H4.3C2.9 17.1 2 20.5 2 24s.9 6.9 2.3 9.9l7.4-5.7z"/><path fill="#EA4335" d="M24 10.8c3.2 0 6.1 1.1 8.4 3.3l6.3-6.3C34.9 4.2 29.9 2 24 2 15.4 2 8 6.9 4.3 14.1l7.4 5.7c1.7-5.2 6.6-9 12.3-9z"/></svg>';
   var R=[
-    {q:"Empresa referência nacional no segmento de transportes, frota própria, equipe treinada e atendimento nota mil.",n:"Maycon Rodrigues",r:"JM Agro Distribuidora",img:"assets/dft/crossdocking.jpg"},
-    {q:"Parceira de longa data, cuida do estoque, da separação e da entrega. Conhece nossas necessidades e garante agilidade com qualidade. Bora DFT!",n:"Adriana Puerta",r:"CEO da Jomer Aramados",img:"assets/dft/movimentacao-e-expedicao.jpg"},
-    {q:"Uso os serviços da DFT e sempre dá tudo certo. Muito rápido e eficiente. Sempre sou muito bem atendido pela equipe.",n:"Mário Duarte",r:"All Horse",img:"assets/dft/otd.jpg"}
+    {q:"Empresa referência nacional no segmento de transportes, frota própria, equipe treinada e atendimento nota mil.",n:"Maycon Rodrigues",r:"JM Agro Distribuidora",img:"assets/dft/crossdocking.jpg",logo:"assets/clientes/jm-agro.jpg"},
+    {q:"Parceira de longa data, cuida do estoque, da separação e da entrega. Conhece nossas necessidades e garante agilidade com qualidade. Bora DFT!",n:"Adriana Puerta",r:"CEO da Jomer Aramados",img:"assets/dft/movimentacao-e-expedicao.jpg",logo:"assets/clientes/jomer.jpg"},
+    {q:"Uso os serviços da DFT e sempre dá tudo certo. Muito rápido e eficiente. Sempre sou muito bem atendido pela equipe.",n:"Mário Duarte",r:"All Horse",img:"assets/dft/otd.jpg",logo:"assets/clientes/all-horses.jpg"}
   ];
   var a=0,len=R.length,cw=1000,timer=null,
     qEl=document.getElementById('tcQuote'),nEl=document.getElementById('tcName'),roEl=document.getElementById('tcRole'),sEl=document.getElementById('tcSrc');
@@ -682,7 +682,8 @@ document.querySelectorAll('form.lead-form').forEach(function(f){
   var imgs=wrap.querySelectorAll('img');
   function gap(w){var A=1024,B=1456,mn=56,mx=80;if(w<=A)return mn;if(w>=B)return mx;return mn+(mx-mn)*((w-A)/(B-A));}
   function pos(){var g=gap(cw),su=g*.7;imgs.forEach(function(im,i){var AC=i===a,L=(a-1+len)%len===i,Rr=(a+1)%len===i;im.style.transition='all .85s cubic-bezier(.4,2,.3,1)';if(AC){im.style.zIndex=3;im.style.opacity=1;im.style.transform='translateX(0) translateY(0) scale(1) rotateY(0)';}else if(L){im.style.zIndex=2;im.style.opacity=.45;im.style.transform='translateX(-'+g+'px) translateY(-'+su+'px) scale(.9) rotateY(13deg)';}else if(Rr){im.style.zIndex=2;im.style.opacity=.45;im.style.transform='translateX('+g+'px) translateY(-'+su+'px) scale(.9) rotateY(-13deg)';}else{im.style.zIndex=1;im.style.opacity=0;}});}
-  function txt(){var r=R[a];nEl.textContent=r.n;if(roEl)roEl.textContent=r.r;sEl.innerHTML=G+'Avaliação no Google';qEl.innerHTML='';r.q.split(' ').forEach(function(w,i){var sp=document.createElement('span');sp.className='w';sp.textContent=w;sp.style.animationDelay=(.02*i)+'s';qEl.appendChild(sp);qEl.appendChild(document.createTextNode(' '));});}
+  var loEl=document.getElementById('tcLogo');
+  function txt(){var r=R[a];nEl.textContent=r.n;if(roEl)roEl.textContent=r.r;if(loEl){if(r.logo){loEl.src=r.logo;loEl.alt=r.r;loEl.style.display='';}else{loEl.style.display='none';}}sEl.innerHTML=G+'Avaliação no Google';qEl.innerHTML='';r.q.split(' ').forEach(function(w,i){var sp=document.createElement('span');sp.className='w';sp.textContent=w;sp.style.animationDelay=(.02*i)+'s';qEl.appendChild(sp);qEl.appendChild(document.createTextNode(' '));});}
   function up(){pos();txt();}
   function nx(){a=(a+1)%len;up();rs();}function pv(){a=(a-1+len)%len;up();rs();}
   function rs(){if(timer){clearInterval(timer);st();}}function st(){timer=setInterval(function(){a=(a+1)%len;up();},6000);}
