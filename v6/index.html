@@ -306,15 +306,13 @@ footer img{height:42px}
 .tc-grid{display:grid;gap:3rem;align-items:center}
 @media(min-width:860px){.tc-grid{grid-template-columns:1fr 1.05fr}}
 .tc-images{position:relative;width:100%;height:21rem;perspective:1200px}
-.tc-images img{position:absolute;width:100%;height:100%;object-fit:cover;border-radius:1.3rem;box-shadow:0 26px 54px -22px rgba(11,34,56,.5)}
+.tc-images img{position:absolute;width:100%;height:100%;object-fit:contain;background:#fff;padding:2.4rem;border:1px solid var(--line);border-radius:1.3rem;box-shadow:0 26px 54px -22px rgba(11,34,56,.5)}
 .tc-content{display:flex;flex-direction:column;justify-content:center}
 .tc-stars{color:var(--gold);letter-spacing:3px;font-size:1.15rem;margin-bottom:14px}
 .tc-quote{font-size:1.26rem;line-height:1.5;font-weight:500;color:var(--ink);min-height:7.5rem}
 .tc-quote .w{display:inline-block;filter:blur(9px);opacity:0;transform:translateY(6px);animation:win .55s var(--ease) forwards}
 @keyframes win{to{filter:blur(0);opacity:1;transform:none}}
-.tc-id{display:flex;align-items:center;gap:14px;margin-top:22px}
-.tc-logo{width:54px;height:54px;object-fit:contain;border-radius:12px;border:1px solid var(--line);background:#fff;padding:5px;flex-shrink:0}
-.tc-name{font-weight:800;font-size:1.05rem;color:var(--ink)}
+.tc-name{font-weight:800;font-size:1.05rem;margin-top:22px;color:var(--ink)}
 .tc-role{font-size:.85rem;color:var(--muted);margin-top:2px}
 .tc-src{color:var(--muted);font-size:.86rem;display:flex;align-items:center;gap:7px;margin-top:8px}
 .tc-src svg{width:15px;height:15px}
@@ -552,7 +550,8 @@ footer img{height:42px}
         <div class="tc-content">
           <div class="tc-stars">★★★★★</div>
           <p class="tc-quote" id="tcQuote"></p>
-          <div class="tc-id"><img class="tc-logo" id="tcLogo" alt=""/><div><div class="tc-name" id="tcName"></div><div class="tc-role" id="tcRole"></div></div></div>
+          <div class="tc-name" id="tcName"></div>
+          <div class="tc-role" id="tcRole"></div>
           <div class="tc-src" id="tcSrc"></div>
           <div class="tc-arrows">
             <button class="tc-btn" id="tcPrev" aria-label="Avaliação anterior"><svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg></button>
@@ -672,9 +671,9 @@ document.querySelectorAll('form.lead-form').forEach(function(f){
   var wrap=document.getElementById('tcImages'); if(!wrap)return;
   var G='<svg viewBox="0 0 48 48"><path fill="#4285F4" d="M45.1 24.5c0-1.6-.1-3.1-.4-4.5H24v8.5h11.8c-.5 2.8-2.1 5.1-4.4 6.6v5.5h7.1c4.2-3.8 6.6-9.5 6.6-16.1z"/><path fill="#34A853" d="M24 46c5.9 0 10.9-2 14.6-5.3l-7.1-5.5c-2 1.3-4.5 2.1-7.5 2.1-5.7 0-10.6-3.9-12.3-9.1H4.3v5.7C8 41.1 15.4 46 24 46z"/><path fill="#FBBC05" d="M11.7 28.2c-.4-1.3-.7-2.7-.7-4.2s.3-2.9.7-4.2v-5.7H4.3C2.9 17.1 2 20.5 2 24s.9 6.9 2.3 9.9l7.4-5.7z"/><path fill="#EA4335" d="M24 10.8c3.2 0 6.1 1.1 8.4 3.3l6.3-6.3C34.9 4.2 29.9 2 24 2 15.4 2 8 6.9 4.3 14.1l7.4 5.7c1.7-5.2 6.6-9 12.3-9z"/></svg>';
   var R=[
-    {q:"Empresa referência nacional no segmento de transportes, frota própria, equipe treinada e atendimento nota mil.",n:"Maycon Rodrigues",r:"JM Agro Distribuidora",img:"assets/dft/crossdocking.jpg",logo:"assets/clientes/jm-agro.jpg"},
-    {q:"Parceira de longa data, cuida do estoque, da separação e da entrega. Conhece nossas necessidades e garante agilidade com qualidade. Bora DFT!",n:"Adriana Puerta",r:"CEO da Jomer Aramados",img:"assets/dft/movimentacao-e-expedicao.jpg",logo:"assets/clientes/jomer.jpg"},
-    {q:"Uso os serviços da DFT e sempre dá tudo certo. Muito rápido e eficiente. Sempre sou muito bem atendido pela equipe.",n:"Mário Duarte",r:"All Horse",img:"assets/dft/otd.jpg",logo:"assets/clientes/all-horses.jpg"}
+    {q:"Empresa referência nacional no segmento de transportes, frota própria, equipe treinada e atendimento nota mil.",n:"Maycon Rodrigues",r:"JM Agro Distribuidora",img:"assets/clientes/jm-agro.jpg"},
+    {q:"Parceira de longa data, cuida do estoque, da separação e da entrega. Conhece nossas necessidades e garante agilidade com qualidade. Bora DFT!",n:"Adriana Puerta",r:"CEO da Jomer Aramados",img:"assets/clientes/jomer.jpg"},
+    {q:"Uso os serviços da DFT e sempre dá tudo certo. Muito rápido e eficiente. Sempre sou muito bem atendido pela equipe.",n:"Mário Duarte",r:"All Horse",img:"assets/clientes/all-horses.jpg"}
   ];
   var a=0,len=R.length,cw=1000,timer=null,
     qEl=document.getElementById('tcQuote'),nEl=document.getElementById('tcName'),roEl=document.getElementById('tcRole'),sEl=document.getElementById('tcSrc');
@@ -682,8 +681,7 @@ document.querySelectorAll('form.lead-form').forEach(function(f){
   var imgs=wrap.querySelectorAll('img');
   function gap(w){var A=1024,B=1456,mn=56,mx=80;if(w<=A)return mn;if(w>=B)return mx;return mn+(mx-mn)*((w-A)/(B-A));}
   function pos(){var g=gap(cw),su=g*.7;imgs.forEach(function(im,i){var AC=i===a,L=(a-1+len)%len===i,Rr=(a+1)%len===i;im.style.transition='all .85s cubic-bezier(.4,2,.3,1)';if(AC){im.style.zIndex=3;im.style.opacity=1;im.style.transform='translateX(0) translateY(0) scale(1) rotateY(0)';}else if(L){im.style.zIndex=2;im.style.opacity=.45;im.style.transform='translateX(-'+g+'px) translateY(-'+su+'px) scale(.9) rotateY(13deg)';}else if(Rr){im.style.zIndex=2;im.style.opacity=.45;im.style.transform='translateX('+g+'px) translateY(-'+su+'px) scale(.9) rotateY(-13deg)';}else{im.style.zIndex=1;im.style.opacity=0;}});}
-  var loEl=document.getElementById('tcLogo');
-  function txt(){var r=R[a];nEl.textContent=r.n;if(roEl)roEl.textContent=r.r;if(loEl){if(r.logo){loEl.src=r.logo;loEl.alt=r.r;loEl.style.display='';}else{loEl.style.display='none';}}sEl.innerHTML=G+'Avaliação no Google';qEl.innerHTML='';r.q.split(' ').forEach(function(w,i){var sp=document.createElement('span');sp.className='w';sp.textContent=w;sp.style.animationDelay=(.02*i)+'s';qEl.appendChild(sp);qEl.appendChild(document.createTextNode(' '));});}
+  function txt(){var r=R[a];nEl.textContent=r.n;if(roEl)roEl.textContent=r.r;sEl.innerHTML=G+'Avaliação no Google';qEl.innerHTML='';r.q.split(' ').forEach(function(w,i){var sp=document.createElement('span');sp.className='w';sp.textContent=w;sp.style.animationDelay=(.02*i)+'s';qEl.appendChild(sp);qEl.appendChild(document.createTextNode(' '));});}
   function up(){pos();txt();}
   function nx(){a=(a+1)%len;up();rs();}function pv(){a=(a-1+len)%len;up();rs();}
   function rs(){if(timer){clearInterval(timer);st();}}function st(){timer=setInterval(function(){a=(a+1)%len;up();},6000);}
