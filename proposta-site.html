@@ -100,112 +100,102 @@ footer{padding:40px 24px;text-align:center;color:var(--texto3);font-size:.85rem}
 
 <!-- 1. CAPA -->
 <section id="capa">
-  <svg class="mapa" viewBox="0 0 600 600" aria-hidden="true">
-    <path id="r1" class="rota" d="M150 380 C 230 300, 330 260, 430 170"/>
-    <path id="r2" class="rota" d="M150 380 C 260 400, 360 420, 470 360"/>
-    <path id="r3" class="rota" d="M150 380 C 200 460, 260 520, 330 540"/>
-    <path id="r4" class="rota" d="M150 380 C 120 300, 160 200, 240 110"/>
-    <circle class="pulso" cx="150" cy="380" r="10"/>
-    <circle class="no" cx="150" cy="380" r="8"/>
-    <circle class="no" cx="430" cy="170" r="5"/><circle class="no" cx="470" cy="360" r="5"/>
-    <circle class="no" cx="330" cy="540" r="5"/><circle class="no" cx="240" cy="110" r="5"/>
-    <circle class="caminhao" r="4"><animateMotion dur="5s" repeatCount="indefinite"><mpath href="#r1"/></animateMotion></circle>
-    <circle class="caminhao" r="4"><animateMotion dur="6.5s" begin="1s" repeatCount="indefinite"><mpath href="#r2"/></animateMotion></circle>
-    <circle class="caminhao" r="4"><animateMotion dur="4.5s" begin=".5s" repeatCount="indefinite"><mpath href="#r3"/></animateMotion></circle>
-    <circle class="caminhao" r="4"><animateMotion dur="5.5s" begin="2s" repeatCount="indefinite"><mpath href="#r4"/></animateMotion></circle>
-  </svg>
   <div class="w" style="position:relative">
     <div class="tag">Proposta · Novembro 2026</div>
     <h1>O novo site da<br/><em>DFT Logística</em></h1>
-    <p class="lead" style="margin-top:22px">Rápido, tecnológico e pronto para ser encontrado — no Google e nas inteligências artificiais.</p>
+    <p class="lead" style="margin-top:22px">Rápido, moderno e pronto para ser encontrado — no Google e nas inteligências artificiais.</p>
     <div class="pill">Cardô Marketing × DFT Logística</div>
   </div>
 </section>
 
-<!-- 2. O QUE JÁ CONSTRUÍMOS -->
+<!-- 2. POR QUE AGORA -->
 <section>
   <div class="w">
-    <div class="tag"><b>01</b> O que já construímos juntos</div>
-    <h2>A LP já mostrou o caminho.<br/><em>Agora é a vez do site.</em></h2>
-    <div class="grid g3">
-      <div class="card rv"><h3>Desde abril/2026</h3><p>Gestão de Google Ads e Meta Ads, com estudo de ICP e persona do decisor de logística.</p></div>
-      <div class="card rv"><h3>LP dedicada</h3><p>lp.dftlogistica.com.br — "Operador logístico dedicado para indústrias", lapidada semana a semana.</p></div>
-      <div class="card rv"><h3>Leads no comercial</h3><p>Campanha performando, com acompanhamento de qualidade de lead junto ao time comercial.</p></div>
+    <div class="tag"><b>01</b> Por que atualizar o site agora?</div>
+    <h2>Antes de fechar, o decisor <em>pesquisa a DFT.</em></h2>
+    <p class="lead">O site é onde ele confirma se a empresa é sólida e confiável. Hoje o site atual perde pontos em duas frentes:</p>
+    <div class="grid g2">
+      <div class="card hl rv"><div class="big o">1</div><h3>O que não se vê</h3><p>Velocidade de carregamento e a capacidade de ser encontrado pelo Google e pelas IAs.</p></div>
+      <div class="card hl rv"><div class="big o">2</div><h3>O que se vê</h3><p>Visual, textos e experiência de quem navega — a primeira impressão da DFT.</p></div>
     </div>
-    <div class="card hl rv" style="margin-top:16px"><h3>Por que o site importa agora</h3><p>Antes de fechar um contrato dedicado, o diretor de logística pesquisa a empresa. É no <strong style="color:var(--texto)">site principal</strong> que ele decide se a DFT passa confiança — e hoje ele não está no mesmo nível da LP.</p></div>
   </div>
 </section>
 
-<!-- 3. DIAGNÓSTICO -->
+<!-- 3. PARTE 1A: VELOCIDADE -->
 <section>
   <div class="w">
-    <div class="tag"><b>02</b> Diagnóstico do site atual</div>
-    <h2>O site atual está <em>travando</em> a DFT</h2>
+    <div class="tag"><b>02</b> Diagnóstico · Parte 1 — O que não se vê</div>
+    <h2>Um site <em>pesado e lento</em></h2>
     <div class="grid g4">
       <div class="card rv"><div class="big r">5 MB+</div><p>peso da home — o ideal é abaixo de 1,5 MB</p></div>
       <div class="card rv"><div class="big r">3,9 MB</div><p>só os 2 banners do topo, sem otimização</p></div>
       <div class="card rv"><div class="big r">0,68s</div><p>só para o servidor começar a responder</p></div>
-      <div class="card rv"><div class="big r">3</div><p>números de WhatsApp diferentes no site</p></div>
+      <div class="card rv"><div class="big r">5s+</div><p>tempo provável de carregamento no 4G</p></div>
     </div>
     <div class="grid g2">
-      <div class="card rv"><h3>Conteúdo</h3><ul class="lst x">
-        <li>Textos genéricos ("soluções sob medida", "humanizado")</li>
-        <li>Nenhum número: frota, m² de armazém, cargas entregues, anos de operação</li>
-        <li>Segmentos atendidos diferentes em cada página</li>
-        <li>Erros visíveis: "RASTEAR ENTREGA", "farmáceutica"</li>
-      </ul></div>
-      <div class="card rv"><h3>Técnico</h3><ul class="lst x">
-        <li>Bibliotecas antigas e pesadas (Bootstrap, jQuery, ícones)</li>
-        <li>Imagens embutidas no código e reaproveitadas entre seções</li>
-        <li>Textos alternativos repetidos — ruim para Google e acessibilidade</li>
-        <li>Prova social limitada a logos: sem cases nem dados</li>
-      </ul></div>
-    </div>
-  </div>
-</section>
-
-<!-- 4. CUSTO DA LENTIDÃO -->
-<section>
-  <div class="w">
-    <div class="tag"><b>03</b> O custo da lentidão</div>
-    <h2>Cada segundo a mais é <em>verba de mídia jogada fora</em></h2>
-    <p class="lead">Todo visitante vem de um anúncio pago. Se a página não carrega, ele volta para o Google — e clica no concorrente.</p>
-    <div class="grid g2" style="margin-top:30px">
       <div class="card rv">
-        <h3>Probabilidade de abandono</h3>
-        <p style="margin-top:14px">De 1s para 3s de carregamento</p>
+        <h3>Quanto a lentidão custa</h3>
+        <p style="margin-top:14px">Carregamento de 1s → 3s: chance de abandono</p>
         <div class="speed"><i style="--w:32%;background:#f59e0b"></i></div>
         <p><strong style="color:#f59e0b">+32%</strong></p>
-        <p style="margin-top:14px">De 1s para 5s de carregamento</p>
+        <p style="margin-top:14px">Carregamento de 1s → 5s: chance de abandono</p>
         <div class="speed"><i style="--w:90%;background:var(--verm)"></i></div>
         <p><strong style="color:var(--verm)">+90%</strong></p>
       </div>
-      <div class="card rv"><h3>Site rápido significa</h3><ul class="lst ok">
-        <li><strong>Mais conversão</strong> com a mesma verba</li>
-        <li><strong>CPC menor</strong> — a experiência da página entra no Índice de Qualidade do Google Ads</li>
-        <li><strong>Melhor posição orgânica</strong> — velocidade é fator de ranqueamento</li>
-        <li>No 4G, uma página de 5 MB passa fácil de <strong>5 segundos</strong></li>
+      <div class="card rv"><h3>Na prática</h3><ul class="lst x">
+        <li>Visitante vindo de <strong>anúncio pago</strong> desiste antes de ver a DFT — verba perdida</li>
+        <li>Página lenta piora o Índice de Qualidade do Google Ads → <strong>clique mais caro</strong></li>
+        <li>Velocidade é fator de ranqueamento → <strong>menos visibilidade orgânica</strong></li>
+        <li>Bibliotecas antigas e pesadas (Bootstrap, jQuery) e imagens embutidas no código</li>
       </ul></div>
     </div>
     <p class="src">Fonte: Google / SOASTA Research, "Think with Google", 2017. Medições do site atual feitas pela Cardô em 25/11/2026.</p>
   </div>
 </section>
 
-<!-- 5. GEO -->
+<!-- 4. PARTE 1B: ENCONTRABILIDADE -->
 <section>
   <div class="w">
-    <div class="tag"><b>04</b> GEO — otimização para IAs</div>
-    <h2>O comprador já pergunta para a IA.<br/><em>A DFT precisa estar na resposta.</em></h2>
-    <div class="chat rv"><p style="font-size:.75rem;letter-spacing:2px;text-transform:uppercase;color:var(--texto3);margin-bottom:12px">Exemplo do objetivo</p>
-      <div class="msg u">Qual transportadora faz carga dedicada para indústria saindo de São Paulo, com frota própria e rastreamento?</div>
-      <div class="msg ia">Algumas opções bem avaliadas são… <strong>a DFT Logística</strong>, com frota própria, telemetria e câmeras com IA, farmacêutico in loco…</div>
+    <div class="tag"><b>02</b> Diagnóstico · Parte 1 — O que não se vê</div>
+    <h2>Difícil de ser encontrado — <em>pelo Google e pelas IAs</em></h2>
+    <p class="lead">O comprador já pergunta ao ChatGPT, Gemini e Perplexity "qual transportadora dedicada em SP para indústria?". As IAs recomendam empresas cujos sites são claros, estruturados e com dados concretos.</p>
+    <div class="grid g2">
+      <div class="card rv"><h3>O que encontramos no site atual</h3><ul class="lst x">
+        <li><strong>Nenhum dado estruturado</strong> (schema) — o Google e as IAs não "entendem" serviços, região e empresa</li>
+        <li><strong>Sem llms.txt</strong> — o arquivo de leitura para IAs não existe</li>
+        <li><strong>5 títulos principais (H1)</strong> na home — o ideal é 1</li>
+        <li>Título "DFT Logística - Home" e descrição genérica no Google</li>
+        <li>Imagens com textos alternativos repetidos</li>
+        <li>Nenhuma página por segmento ou região</li>
+      </ul></div>
+      <div class="chat rv" style="margin-top:0;max-width:none">
+        <p style="font-size:.75rem;letter-spacing:2px;text-transform:uppercase;color:var(--texto3);margin-bottom:12px">O objetivo</p>
+        <div class="msg u">Qual transportadora faz carga dedicada para indústria saindo de São Paulo, com frota própria e rastreamento?</div>
+        <div class="msg ia">Algumas opções bem avaliadas são… <strong>a DFT Logística</strong>, com frota própria, telemetria e câmeras com IA, farmacêutico in loco…</div>
+      </div>
     </div>
-    <p class="lead" style="margin-top:24px">ChatGPT, Gemini e Perplexity recomendam empresas cujos sites são <strong style="color:var(--texto)">claros, estruturados e com dados concretos</strong>. O novo site já nasce preparado:</p>
-    <div class="grid g4">
-      <div class="card rv"><h3>Dados estruturados</h3><p>Schema de empresa, serviços, FAQ e áreas atendidas</p></div>
-      <div class="card rv"><h3>FAQ real</h3><p>As perguntas que o comprador faz, respondidas direto</p></div>
-      <div class="card rv"><h3>Segmentos e regiões</h3><p>Conteúdo específico por nicho e malha logística</p></div>
-      <div class="card rv"><h3>llms.txt</h3><p>Resumo da empresa pensado para leitura por IAs</p></div>
+  </div>
+</section>
+
+<!-- 5. PARTE 2: O QUE SE VÊ -->
+<section>
+  <div class="w">
+    <div class="tag"><b>03</b> Diagnóstico · Parte 2 — O que se vê</div>
+    <h2>A primeira impressão <em>não reflete a operação</em></h2>
+    <p class="lead">A DFT tem frota própria, telemetria, câmeras com IA e clientes como Levi's e Ceva. O site não transmite isso.</p>
+    <div class="grid g2">
+      <div class="card rv"><h3>Conteúdo</h3><ul class="lst x">
+        <li>Textos genéricos ("soluções sob medida", "humanizado") e repetidos entre páginas</li>
+        <li>Nenhum número da operação: anos de mercado, OTD, cargas entregues, toneladas</li>
+        <li>Segmentos atendidos diferentes em cada página</li>
+        <li>Erros visíveis: "RASTEAR ENTREGA", "farmáceutica"</li>
+      </ul></div>
+      <div class="card rv"><h3>Experiência</h3><ul class="lst x">
+        <li>Visual desatualizado, sem a cara de empresa de tecnologia que a DFT é</li>
+        <li>3 números de WhatsApp diferentes — o cliente não sabe com quem falar</li>
+        <li>Imagens reaproveitadas entre seções</li>
+        <li>Prova social limitada a logos: sem cases, depoimentos ou dados</li>
+      </ul></div>
     </div>
   </div>
 </section>
@@ -213,7 +203,7 @@ footer{padding:40px 24px;text-align:center;color:var(--texto3);font-size:.85rem}
 <!-- 6. LEGASSE -->
 <section>
   <div class="w">
-    <div class="tag"><b>05</b> Prova — Legasse Home</div>
+    <div class="tag"><b>04</b> Prova — Legasse Home</div>
     <h2>Um projeto recente: <em>antes e depois</em></h2>
     <span class="lbl a">Antes</span>
     <div class="antes">
@@ -230,7 +220,7 @@ footer{padding:40px 24px;text-align:center;color:var(--texto3);font-size:.85rem}
 <!-- 7. ESCOPO -->
 <section>
   <div class="w">
-    <div class="tag"><b>06</b> Escopo do projeto</div>
+    <div class="tag"><b>05</b> Escopo do projeto</div>
     <h2>Site institucional completo — <em>~12 páginas</em></h2>
     <p class="lead">Home · Sobre/História · Estrutura e Frota · Transporte · Armazenagem · Tecnologia · Segmentos · Malha Logística · Comercial/Contato · Trabalhe Aqui · Políticas · Blog</p>
     <div class="grid g3">
@@ -259,7 +249,7 @@ footer{padding:40px 24px;text-align:center;color:var(--texto3);font-size:.85rem}
 <!-- 8. CRONOGRAMA -->
 <section>
   <div class="w">
-    <div class="tag"><b>07</b> Cronograma</div>
+    <div class="tag"><b>06</b> Cronograma</div>
     <h2>No ar em <em>6 a 8 semanas</em></h2>
     <div class="tl">
       <div class="rv"><b>Semana 1</b><p>Imersão, arquitetura do site e estratégia de conteúdo</p></div>
@@ -274,7 +264,7 @@ footer{padding:40px 24px;text-align:center;color:var(--texto3);font-size:.85rem}
 <!-- 9. INVESTIMENTO -->
 <section>
   <div class="w">
-    <div class="tag"><b>08</b> Investimento</div>
+    <div class="tag"><b>07</b> Investimento</div>
     <div class="grid g2" style="align-items:stretch">
       <div class="card hl preco rv">
         <h3 style="color:var(--texto2);font-weight:600">Site institucional completo</h3>
@@ -301,7 +291,7 @@ footer{padding:40px 24px;text-align:center;color:var(--texto3);font-size:.85rem}
 <!-- 10. PRÓXIMOS PASSOS -->
 <section>
   <div class="w">
-    <div class="tag"><b>09</b> Próximos passos</div>
+    <div class="tag"><b>08</b> Próximos passos</div>
     <h2>Vamos <em>começar?</em></h2>
     <div class="grid g3">
       <div class="card rv"><div class="big o">1</div><h3>Aprovação</h3><p>Validação da proposta</p></div>
