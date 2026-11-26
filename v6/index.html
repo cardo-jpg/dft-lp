@@ -263,6 +263,30 @@ form{background:#fff;border-radius:20px;padding:30px;box-shadow:0 40px 80px -34p
 .f-warn.show{display:block}
 .f-ok{display:none;text-align:center;padding:18px 6px}.f-ok.show{display:block}
 .f-ok .ck{width:54px;height:54px;border-radius:50%;background:var(--blue-soft);color:var(--blue);display:grid;place-items:center;margin:0 auto 14px;font-size:1.4rem}.f-ok h4{color:var(--ink);margin-bottom:8px}.f-ok p{color:var(--muted);font-size:.84rem}
+/* form multi-etapas */
+.f-bar{display:flex;gap:6px;margin:0 0 20px}
+.f-bar i{height:5px;flex:1;border-radius:99px;background:var(--line);transition:background .3s}
+.f-bar i.on{background:var(--blue)}
+.f-step{display:none}
+.f-step.on{display:block;animation:fstep .3s ease both}
+@keyframes fstep{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+@media(prefers-reduced-motion:reduce){.f-step.on{animation:none}}
+.f-q{font-size:1.04rem;font-weight:800;color:var(--ink);margin:0 0 2px}
+.f-q small{display:block;font-weight:500;color:var(--muted);font-size:.82rem;margin-top:3px}
+.f-step .f-field:first-of-type,.f-step .f-row:first-of-type{margin-top:14px}
+.f-nav{display:flex;align-items:center;gap:10px;margin-top:8px}
+.f-back{flex:none;background:none;border:none;color:var(--muted);font-family:inherit;font-weight:700;font-size:.9rem;cursor:pointer;padding:15px 4px}
+.f-back:hover{color:var(--ink)}
+.f-geo{display:none;gap:10px;margin:12px 0 2px;background:#fff6e8;border:1px solid #f0c674;border-radius:10px;padding:11px 13px}
+.f-geo.show{display:flex}
+.f-geo svg{flex:none;margin-top:1px}
+.f-geo b{display:block;color:#7a4b05;font-size:.82rem;margin-bottom:2px}
+.f-geo span{color:#8a5a12;font-size:.78rem;line-height:1.45}
+.f-geo-ok{display:none;align-items:center;gap:7px;margin:12px 0 2px;color:#157a3d;font-size:.8rem;font-weight:600}
+.f-geo-ok.show{display:flex}
+.f-city-link{display:none;background:none;border:none;color:#7a4b05;font-family:inherit;font-weight:700;font-size:.78rem;cursor:pointer;text-decoration:underline;padding:8px 0 0}
+.f-city-link.show{display:inline-block}
+.f-invalid{border-color:#e0564f!important;box-shadow:0 0 0 3px rgba(224,86,79,.12)!important}
 
 footer{background:var(--navy);color:#fff;padding:40px 0}
 footer .wrap{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px}
@@ -594,14 +618,42 @@ footer img{height:42px}
     <form class="lead-form rv d2" novalidate>
       <div class="f-fields">
         <div class="f-title">Receba uma proposta</div><div class="f-sub">Resposta em até 1 hora (horário comercial)</div>
-        <div class="f-field"><label>Seu nome</label><input name="nome" placeholder="João Silva" required/></div>
-        <div class="f-field"><label>Empresa</label><input name="empresa" placeholder="Nome da empresa" required/></div>
-        <div class="f-field"><label>E-mail corporativo</label><input name="email" type="email" placeholder="voce@empresa.com.br" required/></div>
-        <div class="f-row"><div class="f-field"><label>CNPJ</label><input name="cnpj" placeholder="00.000.000/0000-00" inputmode="numeric" maxlength="18" required/></div><div class="f-field"><label>WhatsApp</label><input name="whatsapp" placeholder="(11) 9 0000-0000" required/></div></div>
-        <div class="f-field"><label>Volume de frete por mês</label><select name="volume" required><option value="">Selecione</option><option>Até R$ 10 mil</option><option>R$ 10–30 mil</option><option>R$ 30–100 mil</option><option>Acima de R$ 100 mil</option></select></div>
-        <div class="f-field"><label>Tipo de operação</label><select name="tipo_operacao" required><option value="">Selecione</option><option>Distribuição recorrente</option><option>Pontual / avulsa</option><option>Mudança / residencial</option></select></div>
-        <div class="f-warn">A DFT é especializada em <b>distribuição B2B recorrente</b>. Para fretes pontuais ou mudanças talvez não sejamos o parceiro ideal, mas se quiser pode enviar que avaliamos.</div>
-        <button type="submit" class="f-submit">Solicitar proposta <span class="ar">→</span></button>
+        <div class="f-bar" id="fBar"></div>
+
+        <div class="f-step on" data-step="0">
+          <p class="f-q">Vamos começar<small>Como podemos te chamar e qual a empresa?</small></p>
+          <div class="f-field"><label>Seu nome</label><input name="nome" placeholder="João Silva" autocomplete="name" required/></div>
+          <div class="f-field"><label>Empresa</label><input name="empresa" placeholder="Nome da empresa" autocomplete="organization" required/></div>
+        </div>
+
+        <div class="f-step" data-step="1">
+          <p class="f-q">Como falamos com você<small>É por aqui que enviamos a proposta.</small></p>
+          <div class="f-field"><label>E-mail corporativo</label><input name="email" type="email" placeholder="voce@empresa.com.br" autocomplete="email" required/></div>
+          <div class="f-row"><div class="f-field"><label>CNPJ</label><input name="cnpj" placeholder="00.000.000/0000-00" inputmode="numeric" maxlength="18" required/></div><div class="f-field"><label>WhatsApp</label><input name="whatsapp" placeholder="(11) 9 0000-0000" required/></div></div>
+        </div>
+
+        <div class="f-step" data-step="2">
+          <p class="f-q">Onde você precisa de frete<small>Nossa coleta é feita na região de São Paulo.</small></p>
+          <div class="f-row" style="grid-template-columns:90px 1fr">
+            <div class="f-field"><label>UF</label><select name="uf" id="fUf" required><option value="">—</option></select></div>
+            <div class="f-field"><label>Cidade</label><input name="cidade" id="fCidade" placeholder="Digite a cidade" list="fCidades" autocomplete="off" required/><datalist id="fCidades"></datalist></div>
+          </div>
+          <div class="f-geo-ok" id="fGeoOk"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#157a3d" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg><span id="fGeoOkT">Dentro da nossa área de atendimento.</span></div>
+          <div class="f-geo" id="fGeo"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#c07c10" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.3 3.8L1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.8a2 2 0 0 0-3.4 0z"/><path d="M12 9v4"/><path d="M12 17h.01"/></svg><div><b>Essa cidade parece estar fora do nosso raio de coleta.</b><span id="fGeoT">Você pode seguir mesmo assim — nosso time confere a viabilidade e retorna.</span></div></div>
+          <button type="button" class="f-city-link" id="fCityLink">Escolher outra cidade</button>
+        </div>
+
+        <div class="f-step" data-step="3">
+          <p class="f-q">Sobre a operação<small>Pra dimensionar a proposta certa.</small></p>
+          <div class="f-field"><label>Volume de frete por mês</label><select name="volume" required><option value="">Selecione</option><option>Até R$ 10 mil</option><option>R$ 10–30 mil</option><option>R$ 30–100 mil</option><option>Acima de R$ 100 mil</option></select></div>
+          <div class="f-field"><label>Tipo de operação</label><select name="tipo_operacao" required><option value="">Selecione</option><option>Distribuição recorrente</option><option>Pontual / avulsa</option><option>Mudança / residencial</option></select></div>
+          <div class="f-warn">A DFT é especializada em <b>distribuição B2B recorrente</b>. Para fretes pontuais ou mudanças talvez não sejamos o parceiro ideal, mas se quiser pode enviar que avaliamos.</div>
+        </div>
+
+        <div class="f-nav" id="fNav">
+          <button type="button" class="f-back" id="fBack" hidden>← Voltar</button>
+          <button type="button" class="f-submit" id="fNext">Continuar <span class="ar">→</span></button>
+        </div>
         <div class="f-note">Atendimento consultivo para distribuição B2B recorrente.</div>
       </div>
       <div class="f-ok"><div class="ck">✓</div><h4>Recebemos seu contato!</h4><p>Nosso time comercial falará com você em até 1 hora (em horário comercial).</p></div>
@@ -642,29 +694,105 @@ function _cnpjValido(v){ var c=_soDigitos(v); if(c.length!==14)return false; if(
   var calc=function(base){var soma=0,pos=base.length-7;for(var i=base.length;i>=1;i--){soma+=parseInt(base.charAt(base.length-i))*pos--;if(pos<2)pos=9;}var r=soma%11;return r<2?0:11-r;};
   var d1=calc(c.slice(0,12)); if(d1!==parseInt(c.charAt(12)))return false; var d2=calc(c.slice(0,13)); if(d2!==parseInt(c.charAt(13)))return false; return true; }
 document.querySelectorAll('input[name="cnpj"]').forEach(function(inp){ inp.addEventListener('input',function(){ this.value=_mascaraCNPJ(this.value); this.setCustomValidity(''); }); });
+// ===== base de coleta + raio (AJUSTE AQUI com os dados reais da DFT) =====
+// Hoje: Vargem Grande Paulista (base do rodapé), raio 200 km. Cidade fora de SP
+// sem coordenada na tabela também cai no aviso; cidade de SP desconhecida passa.
+var ORIGEM={nome:'Vargem Grande Paulista',lat:-23.60,lng:-47.03}, RAIO_KM=200;
+var UFS=['AC','AL','AP','AM','BA','CE','DF','ES','GO','MA','MT','MS','MG','PA','PB','PR','PE','PI','RJ','RN','RS','RO','RR','SC','SP','SE','TO'];
+var GEO={
+ 'SP|sao paulo':[-23.55,-46.63],'SP|guarulhos':[-23.46,-46.53],'SP|campinas':[-22.90,-47.06],'SP|sorocaba':[-23.50,-47.46],'SP|santos':[-23.96,-46.33],'SP|sao jose dos campos':[-23.18,-45.88],'SP|jundiai':[-23.19,-46.88],'SP|santo andre':[-23.66,-46.53],'SP|sao bernardo do campo':[-23.69,-46.56],'SP|sao caetano do sul':[-23.62,-46.56],'SP|osasco':[-23.53,-46.79],'SP|barueri':[-23.51,-46.88],'SP|mogi das cruzes':[-23.52,-46.19],'SP|piracicaba':[-22.73,-47.65],'SP|jacarei':[-23.31,-45.97],'SP|taubate':[-23.03,-45.56],'SP|itu':[-23.26,-47.30],'SP|salto':[-23.20,-47.28],'SP|indaiatuba':[-23.09,-47.21],'SP|americana':[-22.74,-47.33],'SP|limeira':[-22.56,-47.40],'SP|itupeva':[-23.15,-47.06],'SP|boituva':[-23.28,-47.67],'SP|braganca paulista':[-22.95,-46.54],'SP|atibaia':[-23.12,-46.55],'SP|cotia':[-23.60,-46.92],'SP|guaruja':[-23.99,-46.26],'SP|cubatao':[-23.89,-46.42],'SP|sao vicente':[-23.96,-46.39],'SP|praia grande':[-24.01,-46.41],'SP|suzano':[-23.54,-46.31],'SP|taboao da serra':[-23.60,-46.79],'SP|embu das artes':[-23.64,-46.85],'SP|hortolandia':[-22.86,-47.22],'SP|sumare':[-22.82,-47.27],'SP|valinhos':[-22.97,-46.99],'SP|vinhedo':[-23.03,-46.98],'SP|ferraz de vasconcelos':[-23.54,-46.37],'SP|itaquaquecetuba':[-23.48,-46.34],'SP|maua':[-23.67,-46.46],'SP|diadema':[-23.69,-46.62],'SP|carapicuiba':[-23.52,-46.84],'SP|itapevi':[-23.55,-46.93],'SP|jandira':[-23.53,-46.90],'SP|aruja':[-23.40,-46.32],'SP|sao roque':[-23.53,-47.13],'SP|votorantim':[-23.55,-47.44],'SP|vargem grande paulista':[-23.60,-47.03],'SP|ribeirao preto':[-21.17,-47.81],'SP|sao jose do rio preto':[-20.82,-49.38],'SP|bauru':[-22.31,-49.06],'SP|marilia':[-22.21,-49.95],'SP|presidente prudente':[-22.12,-51.39],'SP|aracatuba':[-21.21,-50.43],'SP|franca':[-20.54,-47.40],'SP|batatais':[-20.89,-47.59],'SP|araraquara':[-21.79,-48.18],'SP|sao carlos':[-22.02,-47.89],'SP|rio claro':[-22.41,-47.56],'SP|araras':[-22.36,-47.38],'SP|botucatu':[-22.89,-48.44],'SP|jau':[-22.30,-48.56],'SP|lins':[-21.68,-49.74],'SP|barretos':[-20.55,-48.57],'SP|catanduva':[-21.14,-48.97],'SP|ourinhos':[-22.97,-49.87],'SP|assis':[-22.66,-50.41],'SP|registro':[-24.49,-47.84],'SP|caraguatatuba':[-23.62,-45.41],'SP|ubatuba':[-23.43,-45.07],'SP|sao sebastiao':[-23.76,-45.41],'SP|pindamonhangaba':[-22.92,-45.46],'SP|guaratingueta':[-22.82,-45.19],'SP|cruzeiro':[-22.57,-44.96],
+ 'RJ|rio de janeiro':[-22.91,-43.17],'RJ|niteroi':[-22.88,-43.10],'RJ|duque de caxias':[-22.79,-43.31],'RJ|nova iguacu':[-22.76,-43.45],'RJ|campos dos goytacazes':[-21.75,-41.33],'RJ|volta redonda':[-22.52,-44.10],'RJ|resende':[-22.47,-44.45],'RJ|petropolis':[-22.51,-43.18],
+ 'MG|belo horizonte':[-19.92,-43.94],'MG|uberlandia':[-18.92,-48.28],'MG|contagem':[-19.93,-44.05],'MG|juiz de fora':[-21.76,-43.35],'MG|pocos de caldas':[-21.79,-46.56],'MG|pouso alegre':[-22.23,-45.94],'MG|extrema':[-22.85,-46.32],'MG|uberaba':[-19.75,-47.93],'MG|betim':[-19.97,-44.20],'MG|varginha':[-21.55,-45.43],
+ 'ES|vitoria':[-20.32,-40.34],'ES|vila velha':[-20.33,-40.29],'ES|serra':[-20.13,-40.31],'ES|cariacica':[-20.26,-40.42],'ES|cachoeiro de itapemirim':[-20.85,-41.11],
+ 'PR|curitiba':[-25.43,-49.27],'PR|londrina':[-23.31,-51.16],'PR|maringa':[-23.42,-51.94],'PR|ponta grossa':[-25.09,-50.16],'PR|cascavel':[-24.96,-53.46],'PR|foz do iguacu':[-25.54,-54.59],
+ 'SC|florianopolis':[-27.60,-48.55],'SC|joinville':[-26.30,-48.85],'SC|blumenau':[-26.92,-49.07],'SC|balneario camboriu':[-26.99,-48.63],'SC|itajai':[-26.91,-48.66],'SC|chapeco':[-27.10,-52.62],'SC|criciuma':[-28.68,-49.37],
+ 'RS|porto alegre':[-30.03,-51.23],'RS|caxias do sul':[-29.17,-51.18],'RS|pelotas':[-31.77,-52.34],'RS|canoas':[-29.92,-51.18],'RS|santa maria':[-29.68,-53.81],
+ 'BA|salvador':[-12.97,-38.51],'BA|feira de santana':[-12.27,-38.97],'BA|vitoria da conquista':[-14.86,-40.84],'BA|camacari':[-12.70,-38.32],'BA|itabuna':[-14.79,-39.28],
+ 'GO|goiania':[-16.69,-49.26],'GO|aparecida de goiania':[-16.82,-49.24],'GO|anapolis':[-16.33,-48.95],'DF|brasilia':[-15.79,-47.88],
+ 'MT|cuiaba':[-15.60,-56.10],'MT|varzea grande':[-15.65,-56.13],'MT|rondonopolis':[-16.47,-54.64],'MS|campo grande':[-20.47,-54.62],'MS|dourados':[-22.22,-54.81],
+ 'CE|fortaleza':[-3.73,-38.52],'CE|caucaia':[-3.74,-38.65],'CE|juazeiro do norte':[-7.21,-39.32],
+ 'PE|recife':[-8.05,-34.88],'PE|jaboatao dos guararapes':[-8.11,-35.01],'PE|caruaru':[-8.28,-35.97],'PE|olinda':[-8.01,-34.86],
+ 'PA|belem':[-1.46,-48.50],'PA|ananindeua':[-1.37,-48.37],'PA|santarem':[-2.44,-54.70],'PA|maraba':[-5.37,-49.13],'AM|manaus':[-3.12,-60.02],
+ 'PB|joao pessoa':[-7.12,-34.86],'PB|campina grande':[-7.22,-35.88],'RN|natal':[-5.79,-35.21],'RN|mossoro':[-5.19,-37.34],
+ 'AL|maceio':[-9.65,-35.74],'PI|teresina':[-5.09,-42.80],'SE|aracaju':[-10.95,-37.07],'MA|sao luis':[-2.53,-44.30],'MA|imperatriz':[-5.53,-47.49],
+ 'TO|palmas':[-10.18,-48.33],'RO|porto velho':[-8.76,-63.90],'AC|rio branco':[-9.97,-67.81],'RR|boa vista':[2.82,-60.67],'AP|macapa':[0.03,-51.07]
+};
+function _nrm(s){ return (s||'').toLowerCase().normalize('NFD').replace(new RegExp('[̀-ͯ]','g'),'').replace(/\s+/g,' ').trim(); }
+function _hav(aLat,aLng,bLat,bLng){ var R=6371,t=Math.PI/180,dLa=(bLat-aLat)*t,dLo=(bLng-aLng)*t,x=Math.sin(dLa/2)*Math.sin(dLa/2)+Math.cos(aLat*t)*Math.cos(bLat*t)*Math.sin(dLo/2)*Math.sin(dLo/2); return Math.round(2*R*Math.asin(Math.sqrt(x))); }
+function _avalia(uf,cidade){ // {out:bool,dist:Number|null} ou null
+  var c=_nrm(cidade); if(!uf||!c) return null;
+  var hit=GEO[uf+'|'+c];
+  if(hit){ var d=_hav(ORIGEM.lat,ORIGEM.lng,hit[0],hit[1]); return {out:d>RAIO_KM,dist:d}; }
+  if(uf!=='SP') return {out:true,dist:null};
+  return {out:false,dist:null};
+}
+
 document.querySelectorAll('form.lead-form').forEach(function(f){
+  var steps=[].slice.call(f.querySelectorAll('.f-step')), total=steps.length, cur=0;
+  var bar=f.querySelector('#fBar'); for(var i=0;i<total;i++){ bar.appendChild(document.createElement('i')); }
+  var segs=[].slice.call(bar.children);
+  var nextB=f.querySelector('#fNext'), backB=f.querySelector('#fBack');
+  var ufSel=f.querySelector('#fUf'), cidInp=f.querySelector('#fCidade'), dl=f.querySelector('#fCidades');
+  var geo=f.querySelector('#fGeo'), geoT=f.querySelector('#fGeoT'), geoOk=f.querySelector('#fGeoOk'), geoOkT=f.querySelector('#fGeoOkT'), cityLink=f.querySelector('#fCityLink');
   var warn=f.querySelector('.f-warn');
-  function _checkPerfil(){ if(!warn)return; var tipo=(f.querySelector('[name="tipo_operacao"]')||{}).value||''; var vol=(f.querySelector('[name="volume"]')||{}).value||''; var repele=/avulsa|Mudan/i.test(tipo)||/Até R\$ 10 mil/.test(vol); warn.classList.toggle('show',!!repele); }
-  f.querySelectorAll('[name="tipo_operacao"],[name="volume"]').forEach(function(s){ s.addEventListener('change',_checkPerfil); });
-});
-document.querySelectorAll('form.lead-form').forEach(function(f){
-  f.addEventListener('submit',function(e){
-    e.preventDefault();
-    var cnpjEl=this.querySelector('[name="cnpj"]');
-    if(cnpjEl){ if(!_cnpjValido(cnpjEl.value)){ var d=_soDigitos(cnpjEl.value); cnpjEl.setCustomValidity(d.length===11?'Este é um CPF. Informe o CNPJ da sua empresa (14 dígitos).':'Informe um CNPJ válido (14 dígitos).'); cnpjEl.reportValidity(); return; } cnpjEl.setCustomValidity(''); }
-    if(!this.checkValidity()){ this.reportValidity(); return; }
-    var form=this;
-    window.dataLayer=window.dataLayer||[]; window.dataLayer.push({event:'lead_submit',form_origem:LP_ORIGEM});
-    var utms=new URLSearchParams(window.location.search);
-    var data={ nome:form.querySelector('[name="nome"]').value, empresa:form.querySelector('[name="empresa"]').value, email:form.querySelector('[name="email"]').value, cnpj:form.querySelector('[name="cnpj"]').value, whatsapp:form.querySelector('[name="whatsapp"]').value, volume:form.querySelector('[name="volume"]').value, tipo_operacao:form.querySelector('[name="tipo_operacao"]').value, origem:LP_ORIGEM, utm_source:utms.get('utm_source')||'', utm_medium:utms.get('utm_medium')||'', utm_campaign:utms.get('utm_campaign')||'', utm_content:utms.get('utm_content')||'', utm_term:utms.get('utm_term')||'' };
-    form.querySelector('.f-fields').style.display='none'; form.querySelector('.f-ok').classList.add('show');
-    if(!document.getElementById('__gf__')){ var ifr=document.createElement('iframe'); ifr.id='__gf__'; ifr.name='__gf__'; ifr.style.cssText='position:absolute;width:1px;height:1px;left:-9999px;top:-9999px'; document.body.appendChild(ifr); }
-    var hf=document.createElement('form'); hf.method='GET'; hf.action=SCRIPT_URL; hf.target='__gf__'; hf.style.display='none';
-    Object.keys(data).forEach(function(k){ var i=document.createElement('input'); i.type='hidden'; i.name=k; i.value=data[k]; hf.appendChild(i); });
-    document.body.appendChild(hf); hf.submit();
-    setTimeout(function(){ try{document.body.removeChild(hf);}catch(e){} },5000);
+
+  UFS.forEach(function(u){ var o=document.createElement('option'); o.value=u; o.textContent=u; ufSel.appendChild(o); });
+  Object.keys(GEO).forEach(function(k){ if(k.indexOf('SP|')===0){ var nm=k.slice(3).replace(/\b\w/g,function(ch){return ch.toUpperCase();}); var o=document.createElement('option'); o.value=nm; dl.appendChild(o); } });
+
+  var geoRes=null, geoAck=false;
+  function paintGeo(){
+    geoRes=_avalia(ufSel.value,cidInp.value);
+    geo.classList.remove('show'); geoOk.classList.remove('show'); cityLink.classList.remove('show');
+    if(!geoRes) return;
+    if(geoRes.out){ geoT.textContent='Nossa coleta cobre ~'+RAIO_KM+' km de '+ORIGEM.nome+(geoRes.dist?(' — sua cidade está a ~'+geoRes.dist+' km'):'')+'. Você pode seguir mesmo assim; nosso time confere a viabilidade e retorna.'; geo.classList.add('show'); cityLink.classList.add('show'); }
+    else { geoOkT.textContent = geoRes.dist!=null ? ('Dentro da área — a ~'+geoRes.dist+' km da base de coleta.') : 'Dentro do estado de São Paulo.'; geoOk.classList.add('show'); }
+  }
+  ufSel.addEventListener('change',function(){ geoAck=false; paintGeo(); });
+  cidInp.addEventListener('input',function(){ geoAck=false; paintGeo(); });
+  cityLink.addEventListener('click',function(){ cidInp.value=''; geoAck=false; paintGeo(); cidInp.focus(); });
+
+  if(warn){ f.querySelectorAll('[name="tipo_operacao"],[name="volume"]').forEach(function(s){ s.addEventListener('change',function(){ var tp=(f.querySelector('[name="tipo_operacao"]')||{}).value||'', vl=(f.querySelector('[name="volume"]')||{}).value||''; warn.classList.toggle('show',/avulsa|Mudan/i.test(tp)||/Até R\$ 10 mil/.test(vl)); }); }); }
+
+  function mark(el){ el.classList.add('f-invalid'); setTimeout(function(){ el.classList.remove('f-invalid'); },1500); }
+  function validStep(){
+    var ok=true;
+    steps[cur].querySelectorAll('input[required],select[required]').forEach(function(el){ if(!el.value.trim()){ mark(el); ok=false; } });
+    if(ok && cur===1){ var cj=f.querySelector('[name="cnpj"]'); if(cj){ if(!_cnpjValido(cj.value)){ var d=_soDigitos(cj.value); cj.setCustomValidity(d.length===11?'Este é um CPF. Informe o CNPJ da empresa (14 dígitos).':'Informe um CNPJ válido (14 dígitos).'); cj.reportValidity(); ok=false; } else { cj.setCustomValidity(''); } } }
+    return ok;
+  }
+  function render(){
+    steps.forEach(function(s,i){ s.classList.toggle('on',i===cur); });
+    segs.forEach(function(sg,i){ sg.classList.toggle('on',i<=cur); });
+    backB.hidden = cur===0;
+    nextB.innerHTML = (cur===total-1 ? 'Solicitar proposta' : 'Continuar') + ' <span class="ar">→</span>';
+    if(cur===2){ paintGeo(); if(geoRes && geoRes.out && !geoAck){ nextB.innerHTML='Seguir mesmo assim <span class="ar">→</span>'; } }
+    var fst=steps[cur].querySelector('input,select'); if(fst){ setTimeout(function(){ try{ fst.focus({preventScroll:true}); }catch(e){} },50); }
+  }
+  nextB.addEventListener('click',function(){
+    if(!validStep()) return;
+    if(cur===2){ paintGeo(); if(geoRes && geoRes.out && !geoAck){ geoAck=true; render(); return; } }
+    if(cur<total-1){ cur++; render(); } else { _enviar(f); }
   });
+  backB.addEventListener('click',function(){ if(cur>0){ cur--; render(); } });
+  f.addEventListener('keydown',function(e){ if(e.key==='Enter' && e.target.tagName!=='SELECT' && e.target.tagName!=='TEXTAREA'){ e.preventDefault(); nextB.click(); } });
+  render();
 });
+
+function _enviar(form){
+  window.dataLayer=window.dataLayer||[]; window.dataLayer.push({event:'lead_submit',form_origem:LP_ORIGEM});
+  var val=function(n){ var el=form.querySelector('[name="'+n+'"]'); return el?el.value:''; };
+  var uf=val('uf'), cidade=val('cidade'), r=_avalia(uf,cidade);
+  var fora = (r && r.out) ? 'Sim' : 'Nao';
+  var distKm = (r && r.out && r.dist!=null) ? r.dist : '';
+  var utms=new URLSearchParams(window.location.search);
+  var data={ nome:val('nome'), empresa:val('empresa'), email:val('email'), cnpj:val('cnpj'), whatsapp:val('whatsapp'), uf:uf, cidade:cidade, fora_da_area:fora, distancia_km:distKm, volume:val('volume'), tipo_operacao:val('tipo_operacao'), origem:LP_ORIGEM, utm_source:utms.get('utm_source')||'', utm_medium:utms.get('utm_medium')||'', utm_campaign:utms.get('utm_campaign')||'', utm_content:utms.get('utm_content')||'', utm_term:utms.get('utm_term')||'' };
+  form.querySelector('.f-fields').style.display='none'; form.querySelector('.f-ok').classList.add('show');
+  if(!document.getElementById('__gf__')){ var ifr=document.createElement('iframe'); ifr.id='__gf__'; ifr.name='__gf__'; ifr.style.cssText='position:absolute;width:1px;height:1px;left:-9999px;top:-9999px'; document.body.appendChild(ifr); }
+  var hf=document.createElement('form'); hf.method='GET'; hf.action=SCRIPT_URL; hf.target='__gf__'; hf.style.display='none';
+  Object.keys(data).forEach(function(k){ var inp=document.createElement('input'); inp.type='hidden'; inp.name=k; inp.value=data[k]; hf.appendChild(inp); });
+  document.body.appendChild(hf); hf.submit();
+  setTimeout(function(){ try{ document.body.removeChild(hf); }catch(e){} },5000);
+}
 
 // ---- reviews carousel (3D, Google) ----
 (function(){
