@@ -241,7 +241,7 @@ section{padding:86px 0}
 .cta{background:url('assets/dft/lotacao.jpg') center/cover;color:#fff;padding:86px 0;position:relative;overflow:hidden}
 .cta::before{content:'';position:absolute;inset:0;background:linear-gradient(118deg,rgba(10,43,87,.96),rgba(13,63,120,.9) 52%,rgba(30,111,192,.82))}
 .cta::after{content:'';position:absolute;inset:0;background:radial-gradient(620px 360px at 20% 20%,rgba(255,255,255,.1),transparent 60%)}
-.cta .grid{display:grid;grid-template-columns:1fr 440px;gap:50px;align-items:center;position:relative;z-index:1}
+.cta .grid{display:grid;grid-template-columns:1fr 440px;gap:50px;align-items:start;position:relative;z-index:1}
 .cta .tag{color:#bcd9f6}
 .cta h2{font-size:2.5rem;font-weight:900;margin-bottom:16px}
 .cta h2 b{color:#fff;text-decoration:underline;text-decoration-color:rgba(255,255,255,.45);text-underline-offset:6px}
@@ -267,7 +267,7 @@ form{background:#fff;border-radius:20px;padding:30px;box-shadow:0 40px 80px -34p
 .f-bar{display:flex;gap:6px;margin:0 0 20px}
 .f-bar i{height:5px;flex:1;border-radius:99px;background:var(--line);transition:background .3s}
 .f-bar i.on{background:var(--blue)}
-.f-step{display:none}
+.f-step{display:none;min-height:208px}
 .f-step.on{display:block;animation:fstep .3s ease both}
 @keyframes fstep{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
 @media(prefers-reduced-motion:reduce){.f-step.on{animation:none}}
